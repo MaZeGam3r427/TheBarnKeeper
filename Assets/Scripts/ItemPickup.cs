@@ -8,6 +8,8 @@ public class ItemPickup : MonoBehaviour
     public CaseManager CaseManager;
     public TextDisplaying TextDisplaying;
 
+    public GameObject LadderFixed;
+
     //Quand le joueur collide avec 1 item à ramasser,
     //Un bool correspondant à l'item est activé sur le script CaseManager
     private void OnTriggerEnter(Collider other)
@@ -18,12 +20,14 @@ public class ItemPickup : MonoBehaviour
         {
             CaseManager.Hammer = true;
             other.gameObject.SetActive(false);
+            TextDisplaying.hammerBool = true;
         }
 
         if (other.tag == "Planks")
         {
             CaseManager.Planks = true;
             other.gameObject.SetActive(false);
+            TextDisplaying.planksBool = true;
         }
 
         if (other.tag == "Etabli")
@@ -39,10 +43,15 @@ public class ItemPickup : MonoBehaviour
             }
         }
 
-        if (other.tag == "Ladder")
+        if (other.tag == "LadderBroken")
         {
-            CaseManager.Ladder = true;
-            other.gameObject.SetActive(false);
+            if(CaseManager.Ladder == true)
+            {
+                other.gameObject.SetActive(false);
+                LadderFixed.SetActive(true);
+                CaseManager.LadderCheck = true;
+
+            }
         }
 
         if (other.tag == "KeyRemise")

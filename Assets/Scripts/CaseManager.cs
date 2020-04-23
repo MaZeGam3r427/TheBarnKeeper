@@ -90,6 +90,11 @@ public class CaseManager : MonoBehaviour
         {
             CaseDeux.GetComponent<Image>().sprite = SprPlanksCheck;
         }
+
+        if(LadderCheck == true)
+        {
+            CaseTrois.GetComponent<Image>().sprite = SprLadderCheck;
+        }
     }
 
 

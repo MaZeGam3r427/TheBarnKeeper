@@ -12,6 +12,8 @@ TagManager:
   - KeyLabo
   - MunLampe
   - Etabli
+  - Ladder
+  - LadderBroken
   layers:
   - Default
   - TransparentFX

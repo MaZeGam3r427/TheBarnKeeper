@@ -29,7 +29,7 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 1f, layerMask))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.5f, layerMask))
         {
             if(useRayCast == true)
             {

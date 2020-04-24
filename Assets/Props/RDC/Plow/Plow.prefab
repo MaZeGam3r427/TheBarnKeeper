@@ -72,9 +72,10 @@ GameObject:
   - component: {fileID: 5374766163686792384}
   - component: {fileID: 9045780295559134196}
   - component: {fileID: 2635683414238768970}
+  - component: {fileID: 7769943940731311474}
   m_Layer: 0
   m_Name: pCylinder10
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +140,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7769943940731311474
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863918538156435680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2721331549007201028, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &1188089203312671045
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,9 +165,10 @@ GameObject:
   - component: {fileID: 4126517285452046800}
   - component: {fileID: 535159622440525775}
   - component: {fileID: 1763054870737743327}
+  - component: {fileID: 7517888804252831655}
   m_Layer: 0
   m_Name: pCube5
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,6 +233,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7517888804252831655
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188089203312671045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -3758573805739257388, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &1447616308340703745
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,9 +258,10 @@ GameObject:
   - component: {fileID: 1404857444234592757}
   - component: {fileID: 1796538553134563094}
   - component: {fileID: 7600168515999117120}
+  - component: {fileID: 2978456667838603364}
   m_Layer: 0
   m_Name: pCube2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,6 +326,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2978456667838603364
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447616308340703745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5302568919011541938, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &1626199029499537120
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,9 +381,10 @@ GameObject:
   - component: {fileID: 1632231513977333947}
   - component: {fileID: 211354701665803299}
   - component: {fileID: 4999327596197363797}
+  - component: {fileID: 5584704778267513584}
   m_Layer: 0
   m_Name: pCylinder9
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,6 +449,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5584704778267513584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641268540045499252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3191843991455854740, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &1711502433672288481
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,9 +474,10 @@ GameObject:
   - component: {fileID: 6881028461122376282}
   - component: {fileID: 6055547904713678915}
   - component: {fileID: 5555999930056284960}
+  - component: {fileID: 1149677765693966150}
   m_Layer: 0
   m_Name: pCube7
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,6 +542,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1149677765693966150
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711502433672288481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7759331768739107841, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &1762069295658508893
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,9 +567,10 @@ GameObject:
   - component: {fileID: 2723228325561014735}
   - component: {fileID: 1104584210329812846}
   - component: {fileID: 9094950873599102601}
+  - component: {fileID: 478912075079658717}
   m_Layer: 0
   m_Name: pCylinder12
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,6 +635,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &478912075079658717
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762069295658508893}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 1595783810130990727, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &1941532435523833333
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,9 +722,10 @@ GameObject:
   - component: {fileID: 7269904831611004334}
   - component: {fileID: 3264537425075733309}
   - component: {fileID: 1036716169395352345}
+  - component: {fileID: 1508088494259377729}
   m_Layer: 0
   m_Name: pCylinder11
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,6 +790,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1508088494259377729
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357881669782291951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4162253513501663206, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &2508550958946257705
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,9 +920,10 @@ GameObject:
   - component: {fileID: 1245653588263187640}
   - component: {fileID: 5856592283134911055}
   - component: {fileID: 3661324557176443629}
+  - component: {fileID: 5449384849344008334}
   m_Layer: 0
   m_Name: pCylinder13
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -882,6 +988,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5449384849344008334
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038846684456222219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5942086413982268935, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &3051190640194791465
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,9 +1013,10 @@ GameObject:
   - component: {fileID: 827945755091499643}
   - component: {fileID: 6383458565469054555}
   - component: {fileID: 4306997802793513546}
+  - component: {fileID: 5835761725542639320}
   m_Layer: 0
   m_Name: pCube6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -960,6 +1081,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5835761725542639320
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051190640194791465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 6606501483488557099, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &3058533850169041028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,9 +1228,10 @@ GameObject:
   - component: {fileID: 8171791383286653375}
   - component: {fileID: 3377963281296281625}
   - component: {fileID: 6781763687218537661}
+  - component: {fileID: 8053528165654350898}
   m_Layer: 0
   m_Name: pCube1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1160,6 +1296,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8053528165654350898
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026512482880394213}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4068373912626513877, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &5866264823842484693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,9 +1351,10 @@ GameObject:
   - component: {fileID: 4474015112699102207}
   - component: {fileID: 2715362211897181140}
   - component: {fileID: 2294217694959837957}
+  - component: {fileID: 2395331598563622579}
   m_Layer: 0
   m_Name: pCylinder14
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1268,6 +1419,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2395331598563622579
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919916281526601189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6239469015914299103, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &6636637928949761869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,9 +1475,10 @@ GameObject:
   - component: {fileID: 230524609407761999}
   - component: {fileID: 6017340090400192272}
   - component: {fileID: 294523370650837834}
+  - component: {fileID: 7013046948212020942}
   m_Layer: 0
   m_Name: pCube4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,6 +1543,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7013046948212020942
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753252466784183240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3861478300804232965, guid: 840af83a78297c84b9e0e813d447f607, type: 3}
 --- !u!1 &6783506531912229598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,9 +1759,10 @@ GameObject:
   - component: {fileID: 2419360402851744597}
   - component: {fileID: 5474186744811292043}
   - component: {fileID: 1761033130679208833}
+  - component: {fileID: 1747984795577294815}
   m_Layer: 0
   m_Name: pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1646,3 +1827,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1747984795577294815
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140712860883401445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 6788383922943872000, guid: 840af83a78297c84b9e0e813d447f607, type: 3}

@@ -45,8 +45,13 @@ public class ItemPickup : MonoBehaviour
 
         if (other.tag == "LadderBroken")
         {
+            if (CaseManager.Ladder == false)
+            {
+                TextDisplaying.LadderBroken = true;
+            }
             if(CaseManager.Ladder == true)
             {
+                TextDisplaying.LadderFixed = true;
                 other.gameObject.SetActive(false);
                 LadderFixed.SetActive(true);
                 CaseManager.LadderCheck = true;

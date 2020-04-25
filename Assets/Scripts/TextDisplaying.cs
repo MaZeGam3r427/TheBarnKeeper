@@ -10,6 +10,9 @@ public class TextDisplaying : MonoBehaviour
 
     public GameObject TextRessource;
 
+    public GameObject TextLadderBroken;
+    public GameObject TextLadderFixed;
+
     public GameObject TextHammer;
     public GameObject TextPlanks;
 
@@ -20,34 +23,55 @@ public class TextDisplaying : MonoBehaviour
 
     public bool EtabliNoRessource = false;
     public bool EtabliRessource = false;
+    public bool LadderBroken = false;
+    public bool LadderFixed = false;
     public bool hammerBool = false;
     public bool planksBool = false;
 
+    public bool textDelay = true;
 
     private void Update()
     {
-        if (EtabliNoRessource == true)
+        if (EtabliNoRessource == true && textDelay == true)
         {
+            textDelay = false;
             EtabliNoRessource = false;
             EtablietextNoRessources();
         }
 
-        if(EtabliRessource == true)
+        if(EtabliRessource == true && textDelay == true)
         {
+            textDelay = false;
             EtabliRessource = false;
             CaseManager.HammerCheck = true;
             CaseManager.PlanksCheck = true;
             EtablietextRessources();
         }
 
-        if(hammerBool == true)
+        if (LadderBroken == true && textDelay == true)
         {
+            textDelay = false;
+            LadderBroken = false;
+            LadderBrokenText();
+        }
+
+        if(LadderFixed == true && textDelay == true)
+        {
+            textDelay = false;
+            LadderFixed = false;
+            LadderFixedText();
+        }
+
+        if (hammerBool == true && textDelay == true)
+        {
+            textDelay = false;
             hammerBool = false;
             HammerText();
         }
 
-        if(planksBool == true)
+        if(planksBool == true && textDelay == true)
         {
+            textDelay = false;
             planksBool = false;
             PlanksText();
         }
@@ -55,7 +79,7 @@ public class TextDisplaying : MonoBehaviour
 
     public void EtablietextNoRessources()
     {
-        StartCoroutine(ShowMessageNoRessource(3));
+        StartCoroutine(ShowMessageNoRessource(2));
     }
 
     IEnumerator ShowMessageNoRessource(float delay)
@@ -65,11 +89,12 @@ public class TextDisplaying : MonoBehaviour
         yield return new WaitForSeconds(delay);
         TextNoRessource.SetActive(false);
         Etabli.GetComponent<BoxCollider>().enabled = true;
+        textDelay = true;
     }
 
     public void EtablietextRessources()
     {
-        StartCoroutine(ShowMessageRessource(3));
+        StartCoroutine(ShowMessageRessource(2));
     }
 
     IEnumerator ShowMessageRessource(float delay)
@@ -79,6 +104,33 @@ public class TextDisplaying : MonoBehaviour
         CaseManager.Ladder = true;
         yield return new WaitForSeconds(delay);
         TextRessource.SetActive(false);
+        textDelay = true;
+    }
+
+    public void LadderBrokenText()
+    {
+        StartCoroutine(ShowMessageLadderBroken(2));
+    }
+
+    IEnumerator ShowMessageLadderBroken(float delay)
+    {
+        TextLadderBroken.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextLadderBroken.SetActive(false);
+        textDelay = true;
+    }
+
+    public void LadderFixedText()
+    {
+        StartCoroutine(ShowMessageLadderFixed(2));
+    }
+
+    IEnumerator ShowMessageLadderFixed(float delay)
+    {
+        TextLadderFixed.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextLadderFixed.SetActive(false);
+        textDelay = true;
     }
 
     public void HammerText()
@@ -91,6 +143,7 @@ public class TextDisplaying : MonoBehaviour
         TextHammer.SetActive(true);
         yield return new WaitForSeconds(delay);
         TextHammer.SetActive(false);
+        textDelay = true;
     }
 
     public void PlanksText()
@@ -103,5 +156,8 @@ public class TextDisplaying : MonoBehaviour
         TextPlanks.SetActive(true);
         yield return new WaitForSeconds(delay);
         TextPlanks.SetActive(false);
+        textDelay = true;
     }
+
+   
 }

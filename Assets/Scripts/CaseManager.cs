@@ -102,7 +102,7 @@ public class CaseManager : MonoBehaviour
     {
         if (Hammer == true)
         {
-            InfoText.text = "Un simple marteau.";
+            InfoText.text = "A simple hammer that can help me create ladder steps with planks";
         }
     }
 
@@ -110,7 +110,7 @@ public class CaseManager : MonoBehaviour
     {
         if (Planks == true)
         {
-            InfoText.text = "Des planches en bois.";
+            InfoText.text = "Some wooden planks that can be created into ladder steps";
         }
     }
 
@@ -118,7 +118,7 @@ public class CaseManager : MonoBehaviour
     {
         if (Ladder == true)
         {
-            InfoText.text = "Une échelle ! Elle pourra surement me servir pour monter !";
+            InfoText.text = "Some ladder steps that i can put on the broken ladder";
         }
     }
 
@@ -126,7 +126,7 @@ public class CaseManager : MonoBehaviour
     {
         if (KeyRemise == true)
         {
-            InfoText.text = "Une clé pour la remise au rez de chaussé.";
+            InfoText.text = "A key for the door at the ground floor";
         }
     }
 
@@ -134,7 +134,7 @@ public class CaseManager : MonoBehaviour
     {
         if (KeyLabo == true)
         {
-            InfoText.text = "Une clé pour le laboratoire du second étage.";
+            InfoText.text = "A key for the door at the second floor";
         }
     }
 

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Climbing : MonoBehaviour
 {
-    /*public Transform Player;
+    public Transform Player;
     public bool inside = false;
     public float heightFactor = 3f;
+
+    public bool Recule = false;
 
     private PlayerMovement CharacterControls;
 
@@ -20,7 +22,7 @@ public class Climbing : MonoBehaviour
         if (other.tag == "Ladder")
         {
             CharacterControls.enabled = false;
-            inside = !inside;
+            inside = true;
         }
     }
 
@@ -29,9 +31,11 @@ public class Climbing : MonoBehaviour
         if(other.tag == "Ladder")
         {
             CharacterControls.enabled = true;
-            inside = !inside;
+            inside = false;
         }
     }
+
+
 
     private void Update()
     {
@@ -39,5 +43,9 @@ public class Climbing : MonoBehaviour
         {
             Player.transform.position += Vector3.up / heightFactor;
         }
-    }*/
+        if(inside == true && Input.GetKey(KeyCode.S))
+        {
+            Player.transform.position += Vector3.down / heightFactor;
+        }
+    }
 }

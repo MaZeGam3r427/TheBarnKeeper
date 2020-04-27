@@ -38,4 +38,11 @@ public class OilBar : MonoBehaviour
             Light.SetActive(true);
         }
     }
+    public void RechargeClick()
+    {
+        if (Input.GetButtonDown("Recharge"))
+        {
+            Oil = Oil + 10;
+        }
+    }
 }

@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Climbing : MonoBehaviour
 {
+
+    public GameObject TriggerSol;
     public Transform Player;
     public bool inside = false;
     public float heightFactor = 3f;
 
     public bool Recule = false;
+
+    public bool ground = false;
 
     private PlayerMovement CharacterControls;
 
@@ -23,6 +27,13 @@ public class Climbing : MonoBehaviour
         {
             CharacterControls.enabled = false;
             inside = true;
+            LadderDelay();
+        }
+
+        if (other.tag == "Sol")
+        {
+            ground = true;
+            TriggerSol.SetActive(false);
         }
     }
 
@@ -46,6 +57,25 @@ public class Climbing : MonoBehaviour
         if(inside == true && Input.GetKey(KeyCode.S))
         {
             Player.transform.position += Vector3.down / heightFactor;
+            
+        }
+        if (ground == true)
+        {
+            inside = false;
+            CharacterControls.enabled = true;
+            ground = false;
         }
     }
+
+    public void LadderDelay()
+    {
+        StartCoroutine(DelayLadder(0.5f));
+    }
+    IEnumerator DelayLadder(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        TriggerSol.SetActive(true);
+    }
+
+
 }

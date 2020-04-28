@@ -16,6 +16,10 @@ public class TextDisplaying : MonoBehaviour
     public GameObject TextHammer;
     public GameObject TextPlanks;
 
+    public GameObject TextNoKeyRemise;
+    public GameObject TextKeyRemise;
+    public GameObject TextKeyRemiseTaken;
+
     public GameObject Etabli;
 
     public CaseManager CaseManager;
@@ -27,6 +31,9 @@ public class TextDisplaying : MonoBehaviour
     public bool LadderFixed = false;
     public bool hammerBool = false;
     public bool planksBool = false;
+    public bool NoKeyRemiseBool = false;
+    public bool KeyRemiseBool = false;
+    public bool KeyRemiseTakenBool = false;
 
     public bool textDelay = true;
 
@@ -74,6 +81,27 @@ public class TextDisplaying : MonoBehaviour
             textDelay = false;
             planksBool = false;
             PlanksText();
+        }
+
+
+        if (NoKeyRemiseBool == true && textDelay == true)
+        {
+            textDelay = false;
+            NoKeyRemiseBool = false;
+            NoKeyRemiseText();
+        }
+
+        if (KeyRemiseBool == true && textDelay == true)
+        {
+            textDelay = false;
+            KeyRemiseBool = false;
+            KeyRemiseText();
+        }
+        if(KeyRemiseTakenBool == true && textDelay == true)
+        {
+            textDelay = false;
+            KeyRemiseTakenBool = false;
+            KeyRemiseTakenText();
         }
     }
 
@@ -159,5 +187,42 @@ public class TextDisplaying : MonoBehaviour
         textDelay = true;
     }
 
-   
+
+    public void NoKeyRemiseText()
+    {
+        StartCoroutine(ShowMessageNoKeyRemise(2));
+    }
+    IEnumerator ShowMessageNoKeyRemise(float delay)
+    {
+        TextNoKeyRemise.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextNoKeyRemise.SetActive(false);
+        textDelay = true;
+    }
+
+    public void KeyRemiseText()
+    {
+        StartCoroutine(ShowMessageKeyRemise(2));
+    }
+    IEnumerator ShowMessageKeyRemise(float delay)
+    {
+        TextKeyRemise.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextKeyRemise.SetActive(false);
+        textDelay = true;
+    }
+
+    public void KeyRemiseTakenText()
+    {
+        StartCoroutine(ShowMessageKeyRemiseTaken(2));
+    }
+    IEnumerator ShowMessageKeyRemiseTaken(float delay)
+    {
+        TextKeyRemiseTaken.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextKeyRemiseTaken.SetActive(false);
+        textDelay = true;
+    }
+
+
 }

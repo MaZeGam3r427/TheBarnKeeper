@@ -10,6 +10,9 @@ public class ItemPickup : MonoBehaviour
 
     public GameObject LadderFixed;
 
+    public GameObject PorteRemise;
+    public GameObject PorteLabo;
+
     //Quand le joueur collide avec 1 item à ramasser,
     //Un bool correspondant à l'item est activé sur le script CaseManager
     private void OnTriggerEnter(Collider other)
@@ -63,6 +66,21 @@ public class ItemPickup : MonoBehaviour
         {
             CaseManager.KeyRemise = true;
             other.gameObject.SetActive(false);
+            TextDisplaying.KeyRemiseTakenBool = true;
+        }
+
+        if(other.tag == "DoorRemise")
+        {
+            if(CaseManager.KeyRemise == false)
+            {
+                TextDisplaying.NoKeyRemiseBool = true;
+            }
+            if (CaseManager.KeyRemise == true)
+            {
+                TextDisplaying.KeyRemiseBool = true;
+                CaseManager.KeyRemiseCheck = true;
+                PorteRemise.SetActive(false);
+            }
         }
 
         if (other.tag == "KeyLabo")

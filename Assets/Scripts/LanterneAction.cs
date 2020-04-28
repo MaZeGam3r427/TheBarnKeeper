@@ -5,20 +5,14 @@ using UnityEngine;
 public class LanterneAction : MonoBehaviour
 {
     public Animator myAnims;
-    private bool isLighting = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        myAnims = GetComponent<Animator>();
-    }
+    public static bool isLighting = false;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A) && !isLighting)
         {
-            myAnims.SetTrigger("ActiveMouvementLight");
+            myAnims.SetTrigger("ActivateLight");
             isLighting = true;
         }
         if (Input.GetKeyUp(KeyCode.A) && isLighting == true)

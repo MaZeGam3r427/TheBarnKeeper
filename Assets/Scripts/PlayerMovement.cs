@@ -5,7 +5,6 @@ using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Animator Myanim;
 
     [Header("Character")]
     public CharacterController controller;
@@ -17,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     bool canClimbing;
     bool lookAt;
     bool canWalk = true;
+    bool LightOn = false;
     public static bool useRaycast;
     [HideInInspector] public Raycast myRaycast;
     public GameObject LanternLight;
@@ -51,6 +51,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        LightOn = LanterneAction.isLighting;
+
+        if(LightOn == false)
+        {
+            canWalk = true;
+        }
+        else
+        {
+            canWalk = false;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 

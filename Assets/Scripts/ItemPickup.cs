@@ -87,9 +87,24 @@ public class ItemPickup : MonoBehaviour
         {
             CaseManager.KeyLabo = true;
             other.gameObject.SetActive(false);
+            TextDisplaying.KeyLaboTakenBool = true;
         }
 
-        if(other.tag == "MunLampe")
+        if (other.tag == "DoorLabo")
+        {
+            if (CaseManager.KeyLabo == false)
+            {
+                TextDisplaying.NoKeyLaboBool = true;
+            }
+            if (CaseManager.KeyLabo == true)
+            {
+                TextDisplaying.KeyLaboBool = true;
+                CaseManager.KeyLaboCheck = true;
+                PorteLabo.SetActive(false);
+            }
+        }
+
+        if (other.tag == "MunLampe")
         {
             CaseManager.MunLampe = true;
             other.gameObject.SetActive(false);

@@ -20,6 +20,10 @@ public class TextDisplaying : MonoBehaviour
     public GameObject TextKeyRemise;
     public GameObject TextKeyRemiseTaken;
 
+    public GameObject TextNoKeyLabo;
+    public GameObject TextKeyLabo;
+    public GameObject TextKeyLaboTaken;
+
     public GameObject Etabli;
 
     public CaseManager CaseManager;
@@ -31,9 +35,14 @@ public class TextDisplaying : MonoBehaviour
     public bool LadderFixed = false;
     public bool hammerBool = false;
     public bool planksBool = false;
+
     public bool NoKeyRemiseBool = false;
     public bool KeyRemiseBool = false;
     public bool KeyRemiseTakenBool = false;
+
+    public bool NoKeyLaboBool = false;
+    public bool KeyLaboBool = false;
+    public bool KeyLaboTakenBool = false;
 
     public bool textDelay = true;
 
@@ -102,6 +111,27 @@ public class TextDisplaying : MonoBehaviour
             textDelay = false;
             KeyRemiseTakenBool = false;
             KeyRemiseTakenText();
+        }
+
+
+        if (NoKeyLaboBool == true && textDelay == true)
+        {
+            textDelay = false;
+            NoKeyLaboBool = false;
+            NoKeyLaboText();
+        }
+
+        if (KeyLaboBool == true && textDelay == true)
+        {
+            textDelay = false;
+            KeyLaboBool = false;
+            KeyLaboText();
+        }
+        if (KeyLaboTakenBool == true && textDelay == true)
+        {
+            textDelay = false;
+            KeyLaboTakenBool = false;
+            KeyLaboTakenText();
         }
     }
 
@@ -221,6 +251,43 @@ public class TextDisplaying : MonoBehaviour
         TextKeyRemiseTaken.SetActive(true);
         yield return new WaitForSeconds(delay);
         TextKeyRemiseTaken.SetActive(false);
+        textDelay = true;
+    }
+
+
+    public void NoKeyLaboText()
+    {
+        StartCoroutine(ShowMessageNoKeyLabo(2));
+    }
+    IEnumerator ShowMessageNoKeyLabo(float delay)
+    {
+        TextNoKeyLabo.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextNoKeyLabo.SetActive(false);
+        textDelay = true;
+    }
+
+    public void KeyLaboText()
+    {
+        StartCoroutine(ShowMessageKeyLabo(2));
+    }
+    IEnumerator ShowMessageKeyLabo(float delay)
+    {
+        TextKeyLabo.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextKeyLabo.SetActive(false);
+        textDelay = true;
+    }
+
+    public void KeyLaboTakenText()
+    {
+        StartCoroutine(ShowMessageKeyLaboTaken(2));
+    }
+    IEnumerator ShowMessageKeyLaboTaken(float delay)
+    {
+        TextKeyLaboTaken.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextKeyLaboTaken.SetActive(false);
         textDelay = true;
     }
 

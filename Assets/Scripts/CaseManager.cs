@@ -73,7 +73,8 @@ public class CaseManager : MonoBehaviour
 
         if (KeyLabo == true)
         {
-            //CaseCinq.GetComponent<Image>().sprite = ;
+            CaseCinq.GetComponent<Image>().sprite = SprKeyLabo;
+            CaseCinq.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
         }
 
         if (MunLampe == true)
@@ -100,6 +101,11 @@ public class CaseManager : MonoBehaviour
         if(KeyRemiseCheck == true)
         {
             CaseQuatre.GetComponent<Image>().sprite = SprKeyRemiseCheck;
+        }
+
+        if (KeyLaboCheck == true)
+        {
+            CaseCinq.GetComponent<Image>().sprite = SprKeyLaboCheck;
         }
     }
 

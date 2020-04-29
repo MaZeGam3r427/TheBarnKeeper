@@ -10,6 +10,14 @@ public class OilBar : MonoBehaviour
     public GameObject Light;
     public Image oilBarImage;
 
+    public KeyCode _Key;
+    public Button _button;
+
+    private void Awake()
+    {
+        _button = GetComponent<Button>();
+    }
+
     void Update()
     {
         //permet de remplire la barre d'huile sans dépaser de zéro a cent 
@@ -40,6 +48,12 @@ public class OilBar : MonoBehaviour
         {
             Light.SetActive(true);
         }
+
+        if(Input.GetKeyDown(_Key))
+        {
+           
+            Oil = Oil + 10;
+        }
     }
     public void RechargeClick()
     {
@@ -48,4 +62,5 @@ public class OilBar : MonoBehaviour
             Oil = Oil + 10;
         }
     }
+
 }

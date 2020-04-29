@@ -16,13 +16,16 @@ public class OilBar : MonoBehaviour
         oilBarImage.fillAmount = Oil / MaxOil;
         Oil = Mathf.Clamp(Oil, 0f, MaxOil);
 
-        //touche temporaire pour remplir la barre d'huile
+
+        Oil -= 0.5f * Time.deltaTime;
+
+        //Touche temporaire pour remplir la barre d'huile
         if(Input.GetKeyDown(KeyCode.E))
         {
             Oil = Oil + 10;
         }
 
-        //touche pour activer la lanterne et la consommation d'huile
+        //Touche pour activer la lanterne et la consommation d'huile
         if(Input.GetKeyDown(KeyCode.A))
         {
             Oil = Oil - 10;

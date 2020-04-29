@@ -10,16 +10,20 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public GameObject Player;
 
-    int WayClimb = 1;
+
+    [Header("Variables")]
+    int WayClimb = -1;
     float climbTimer;
     bool isClimbing;
+    bool gotLantern;
     bool canClimbing;
-    bool lookAt;
+    bool canPick;
+    bool isPickable;
     bool canWalk = true;
     bool LightOn = false;
     public static bool useRaycast;
+    bool lookAt;
     [HideInInspector] public Raycast myRaycast;
-    public GameObject LanternLight;
 
     [Header("Camera")]
     public CinemachineVirtualCamera VirtualCam1;
@@ -30,13 +34,23 @@ public class PlayerMovement : MonoBehaviour
     public GameObject WayPoint1;
     public GameObject WayPoint2;
 
-    [Header("Climbing")]
-    public GameObject CamMovment;
+    [Header("UI")]
     public GameObject ClimbText;
+    public GameObject PickText;
+
+    [Header("Climbing")]
+    public GameObject GroundPlow;
+    public GameObject WallPlow;
+    public GameObject CamMovment;
+    public GameObject LanternClimbing;
 
     [Header("Stats")]
     public float speed = 12f;
     public float gravity = -9.81f;
+
+    [Header("Lanterne")]
+    public GameObject Lantern;
+    public GameObject PickableLantern;
 
     Vector3 velocity;
 
@@ -65,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        //Si le joueur n'utilise pas la lanterne ou n'enjambe pas, il peut se déplacer
         if(canWalk)
         {
             Vector3 move = transform.right * x + transform.forward * z;
@@ -78,11 +93,12 @@ public class PlayerMovement : MonoBehaviour
 
         lookAt = Raycast.isLooking;
         ClimbText.SetActive(false);
+        PickText.SetActive(false);
 
         //Augmente le timer si on enjambe l'obstalce
         if (isClimbing)
         {
-            LanternLight.SetActive(false);
+            Lantern.SetActive(false);
             climbTimer += Time.deltaTime;
         }
 
@@ -124,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(climbTimer == 0f)
         {
-            LanternLight.SetActive(true);
+            Lantern.SetActive(true);
         }
 
         //Si le timer d'enjambement est plus grand que 0 et si l'on vient de la gauche
@@ -162,6 +178,25 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        isPickable = Raycast.canPick;
+        Debug.Log(isPickable);
+
+        if(isPickable)
+        {
+            CanPick();
+        }
+        else
+        {
+            CanNotPick();
+        }
+
+        if(Input.GetKeyDown(KeyCode.E) && canPick)
+        {
+            PickableLantern.SetActive(false);
+            Lantern.SetActive(true);
+            PickText.SetActive(false);
+        }
+
     }
 
     void ActivateClimb()
@@ -176,4 +211,15 @@ public class PlayerMovement : MonoBehaviour
         ClimbText.SetActive(false);
     }
 
+    void CanPick()
+    {
+        canPick = true;
+        PickText.SetActive(true);
+    }
+
+    void CanNotPick()
+    {
+        canPick = false;
+        PickText.SetActive(false);
+    }
 }

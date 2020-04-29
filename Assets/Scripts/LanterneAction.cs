@@ -6,11 +6,20 @@ public class LanterneAction : MonoBehaviour
 {
     public Animator myAnims;
     public static bool isLighting = false;
+    float lanternCD;
+
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && !isLighting)
+        Debug.Log(lanternCD);
+        if(lanternCD > 0)
+        {
+            lanternCD = -Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) && !isLighting && lanternCD <= 0)
         {
             myAnims.SetTrigger("ActivateLight");
             isLighting = true;

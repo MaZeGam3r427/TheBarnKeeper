@@ -17,6 +17,7 @@ TagManager:
   - Sol
   - DoorRemise
   - DoorLabo
+  - Lanterne
   layers:
   - Default
   - TransparentFX

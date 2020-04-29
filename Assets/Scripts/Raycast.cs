@@ -6,6 +6,7 @@ public class Raycast : MonoBehaviour
 {
     bool useRayCast = true;
     public static bool isLooking = false;
+    public static bool canPick = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.5f, layerMask))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
         {
             if(useRayCast == true)
             {
@@ -37,14 +38,16 @@ public class Raycast : MonoBehaviour
                 {
                     isLooking = true;
                 }
-                else
+
+                if(hit.collider.gameObject.CompareTag("Lanterne"))
                 {
-                    isLooking = false;
+                    canPick = true;
                 }
             }
             else
             {
                 isLooking = false;
+                canPick = false;
             }
             
         }

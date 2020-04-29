@@ -30,7 +30,7 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.5f, layerMask))
         {
             if(useRayCast == true)
             {
@@ -38,10 +38,9 @@ public class Raycast : MonoBehaviour
                 {
                     isLooking = true;
                 }
-
-                if(hit.collider.gameObject.CompareTag("Lanterne"))
+                else
                 {
-                    canPick = true;
+                    isLooking = false;
                 }
             }
             else
@@ -50,6 +49,18 @@ public class Raycast : MonoBehaviour
                 canPick = false;
             }
             
+        }
+
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
+        {
+            if (hit.collider.gameObject.CompareTag("Lanterne"))
+            {
+                canPick = true;
+            }
+            else
+            {
+                canPick = false;
+            }
         }
     }
 }

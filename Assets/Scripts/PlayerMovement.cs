@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     int WayClimb = -1;
     float climbTimer;
     bool isClimbing;
-    bool gotLantern;
+    public static bool gotLantern;
     bool canClimbing;
     bool canPick;
     bool isPickable;
@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
             DeactivateClimb();
         }
 
-        if(climbTimer == 0f)
+        if(climbTimer == 0f && gotLantern)
         {
             Lantern.SetActive(true);
         }
@@ -195,6 +195,10 @@ public class PlayerMovement : MonoBehaviour
             PickableLantern.SetActive(false);
             Lantern.SetActive(true);
             PickText.SetActive(false);
+            canPick = false;
+
+            GroundPlow.SetActive(true);
+            WallPlow.SetActive(false);
         }
 
     }

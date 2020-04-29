@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class OilBar : MonoBehaviour
 {
-    public float Oil= 75f;
+    public float Oil= 100f;
     public float MaxOil= 100f;
     public GameObject Light;
     public Image oilBarImage;
+
+    public bool hasLantern;
 
     public KeyCode _Key;
     public Button _button;
@@ -23,9 +25,13 @@ public class OilBar : MonoBehaviour
         //permet de remplire la barre d'huile sans dépaser de zéro a cent 
         oilBarImage.fillAmount = Oil / MaxOil;
         Oil = Mathf.Clamp(Oil, 0f, MaxOil);
+        hasLantern = PlayerMovement.gotLantern;
 
-
-        Oil -= 0.5f * Time.deltaTime;
+        if(hasLantern)
+        {
+            Oil -= 0.5f * Time.deltaTime;
+        }
+        
 
         //Touche temporaire pour remplir la barre d'huile
         if(Input.GetKeyDown(KeyCode.E))

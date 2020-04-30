@@ -196,6 +196,7 @@ public class PlayerMovement : MonoBehaviour
             Lantern.SetActive(true);
             PickText.SetActive(false);
             canPick = false;
+            gotLantern = true;
 
             GroundPlow.SetActive(true);
             WallPlow.SetActive(false);

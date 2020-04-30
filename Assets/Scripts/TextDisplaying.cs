@@ -5,23 +5,33 @@ using UnityEngine.UI;
 
 public class TextDisplaying : MonoBehaviour
 {
-
+    //texte quand on a pas assez de ressources pour construire l'échelle
     public GameObject TextNoRessource;
-
+    //texte quand on a pas assez de ressources pour construire l'échelle
     public GameObject TextRessource;
 
+    //texte quand on a pas l'objet échelle pour réparer l'échelle
     public GameObject TextLadderBroken;
+    //texte quand on a réparé l'échelle
     public GameObject TextLadderFixed;
 
+    //texte quand on a récupéré le marteau
     public GameObject TextHammer;
+    //texte quand on a récupéré les planches
     public GameObject TextPlanks;
 
+    //texte quand on a pas la clé pour la porte de la remise
     public GameObject TextNoKeyRemise;
+    //texte quand on utilise la clé sur la porte de la remise
     public GameObject TextKeyRemise;
+    //texte quand on récupère la clé de la remise
     public GameObject TextKeyRemiseTaken;
 
+    //texte quand on a pas la clé pour la porte du labo
     public GameObject TextNoKeyLabo;
+    //texte quand on utilise la clé sur la porte du labo
     public GameObject TextKeyLabo;
+    //texte quand on récupère la clé du labo
     public GameObject TextKeyLaboTaken;
 
     public GameObject Etabli;
@@ -135,6 +145,12 @@ public class TextDisplaying : MonoBehaviour
         }
     }
 
+    //Toutes les fonctions plus bas sont appellées dans Update pour chaques objets ramassés/interragit
+
+    //Start Coroutine permet de faire une éxecution pendant un certain temps (affficher un texte dans ce cas là)
+    //La plupart des IEnumerator est juste l'affichage d'un message, un délai en secondes et la désactivation du texte
+    //La seule exception étant quand on s'approche de l'établi qui désactive son collider (pour éviter d'afficher le même message plein de fois)
+    //et le réactive après sauf quand on a toutes les ressources (vu qu'on en a plus besoin)
     public void EtablietextNoRessources()
     {
         StartCoroutine(ShowMessageNoRessource(2));

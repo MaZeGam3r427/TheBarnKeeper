@@ -8,6 +8,7 @@ public class CaseManager : MonoBehaviour
 {
     public TextMeshProUGUI InfoText;
 
+    //sprites des objets
     public Sprite SprHammer;
     public Sprite SprPlanks;
     public Sprite SprLadder;
@@ -15,12 +16,14 @@ public class CaseManager : MonoBehaviour
     public Sprite SprKeyLabo;
     public Sprite MunitionsLampe;
 
+    //sprites des objets checked
     public Sprite SprHammerCheck;
     public Sprite SprPlanksCheck;
     public Sprite SprLadderCheck;
     public Sprite SprKeyRemiseCheck;
     public Sprite SprKeyLaboCheck;
 
+    //boolean pour chaques objets quand on les ramassent
     public bool Hammer = false;
     public bool Planks = false;
     public bool Ladder = false;
@@ -28,12 +31,14 @@ public class CaseManager : MonoBehaviour
     public bool KeyLabo = false;
     public bool MunLampe = false;
 
+    //boolean pour les objets quand il faut les check
     public bool HammerCheck = false;
     public bool PlanksCheck = false;
     public bool LadderCheck = false;
     public bool KeyRemiseCheck = false;
     public bool KeyLaboCheck = false;
 
+    //Correspond à chaques cases de l'inventaire qui peuvent contenir un seul sprite à la fois
     public GameObject CaseUne;
     public GameObject CaseDeux;
     public GameObject CaseTrois;
@@ -109,7 +114,7 @@ public class CaseManager : MonoBehaviour
         }
     }
 
-
+    //Texte que l'on retrouve dans l'inventaire quand on possède l'objet
     public void CaseMarteau()
     {
         if (Hammer == true)

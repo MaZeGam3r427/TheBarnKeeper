@@ -13,12 +13,13 @@ public class ItemPickup : MonoBehaviour
     public GameObject PorteRemise;
     public GameObject PorteLabo;
 
-    //Quand le joueur collide avec 1 item à ramasser,
-    //Un bool correspondant à l'item est activé sur le script CaseManager
+    //Quand le joueur collide avec 1 item à ramasser
     private void OnTriggerEnter(Collider other)
     {
 
-
+        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
+        //+ l'objet est désactivé dans le jeu
+        //+ un message s'affiche (cf : script TextDisplaying)
         if (other.tag == "Hammer")
         {
             CaseManager.Hammer = true;
@@ -26,6 +27,9 @@ public class ItemPickup : MonoBehaviour
             TextDisplaying.hammerBool = true;
         }
 
+        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
+        //+ l'objet est désactivé dans le jeu
+        //+ un message s'affiche (cf : script TextDisplaying)
         if (other.tag == "Planks")
         {
             CaseManager.Planks = true;
@@ -33,6 +37,8 @@ public class ItemPickup : MonoBehaviour
             TextDisplaying.planksBool = true;
         }
 
+        //Quand le joueur est devant l'établi mais qu'il n'a pas les deux objets,
+        //Un message s'affiche et si il a les deux objets, un autre message s'affiche
         if (other.tag == "Etabli")
         {
             if (CaseManager.Hammer == false || CaseManager.Planks == false)
@@ -46,6 +52,10 @@ public class ItemPickup : MonoBehaviour
             }
         }
 
+        //Si le joueur est devant l'échelle cassé alors qu'il n'a pas l'objet "échelle"
+        //un message s'affiche et si il a l'objet "échelle", alors un autre message s'affiche,
+        //l'échelle cassé est désactivée, l'échelle réparée est activée et le sprite "check"
+        //de l'échelle est appliqué dans l'inventaire
         if (other.tag == "LadderBroken")
         {
             if (CaseManager.Ladder == false)
@@ -62,6 +72,9 @@ public class ItemPickup : MonoBehaviour
             }
         }
 
+        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
+        //+ l'objet est désactivé dans le jeu
+        //+ un message s'affiche (cf : script TextDisplaying)
         if (other.tag == "KeyRemise")
         {
             CaseManager.KeyRemise = true;
@@ -69,7 +82,10 @@ public class ItemPickup : MonoBehaviour
             TextDisplaying.KeyRemiseTakenBool = true;
         }
 
-        if(other.tag == "DoorRemise")
+        //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
+        //un message s'affiche et si il a la clé, alors un autre message s'affiche,
+        //le sprite "check" de la clé est appliqué dans l'inventaire et la porte est désactivée
+        if (other.tag == "DoorRemise")
         {
             if(CaseManager.KeyRemise == false)
             {
@@ -83,6 +99,9 @@ public class ItemPickup : MonoBehaviour
             }
         }
 
+        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
+        //+ l'objet est désactivé dans le jeu
+        //+ un message s'affiche (cf : script TextDisplaying)
         if (other.tag == "KeyLabo")
         {
             CaseManager.KeyLabo = true;
@@ -90,6 +109,9 @@ public class ItemPickup : MonoBehaviour
             TextDisplaying.KeyLaboTakenBool = true;
         }
 
+        //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
+        //un message s'affiche et si il a la clé, alors un autre message s'affiche,
+        //le sprite "check" de la clé est appliqué dans l'inventaire et la porte est désactivée
         if (other.tag == "DoorLabo")
         {
             if (CaseManager.KeyLabo == false)

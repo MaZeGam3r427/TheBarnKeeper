@@ -18,6 +18,8 @@ TagManager:
   - DoorRemise
   - DoorLabo
   - Lanterne
+  - DoorCell
+  - Lock
   layers:
   - Default
   - TransparentFX

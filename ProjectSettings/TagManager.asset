@@ -19,7 +19,8 @@ TagManager:
   - DoorLabo
   - Lanterne
   - DoorCell
-  - Lock
+  - LockStorage
+  - LockDesktop
   layers:
   - Default
   - TransparentFX

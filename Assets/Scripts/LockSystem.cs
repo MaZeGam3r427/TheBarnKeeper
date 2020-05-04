@@ -6,8 +6,9 @@ using TMPro;
 
 public class LockSystem : MonoBehaviour
 {
-    //objet où se trouve le script
+    //objet à faire apparaitre/disparaitre
     public GameObject StorageLockMinigame;
+    public GameObject ReturnGame;
 
     //Emplacements des lettres (gameobjects) et numéro de l'array (ints) pour la remise
     public GameObject StorageLockSlot1;
@@ -27,7 +28,8 @@ public class LockSystem : MonoBehaviour
 
     private void Start()
     {
-        //StorageLockMinigame.SetActive(false);
+        StorageLockMinigame.SetActive(false);
+        ReturnGame.SetActive(false);
         AlphabetArray = Alphabet.ToCharArray();
         LetterStorageLockSlot1 = 9;
         LetterStorageLockSlot2 = 21;
@@ -43,8 +45,25 @@ public class LockSystem : MonoBehaviour
     {
         if(other.tag == "LockStorage")
         {
-            StorageLockMinigame.SetActive(true);
+            LockUIEnter();
         }
+    }
+
+    public void LockUIEnter()
+    {
+        StorageLockMinigame.SetActive(true);
+        ReturnGame.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void LockUIExit()
+    {
+        StorageLockMinigame.SetActive(false);
+        ReturnGame.SetActive(false);
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //STORAGE

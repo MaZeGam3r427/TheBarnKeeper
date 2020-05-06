@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     bool canWalk = true;
     bool LightOn = false;
     public static bool useRaycast;
+    public static bool isInteracting;
     bool lookAt;
     [HideInInspector] public Raycast myRaycast;
 
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ClimbText;
     public GameObject PickText;
     public GameObject InteractText;
+    public GameObject UseText;
+    public GameObject RepairText;
 
     [Header("Climbing")]
     public GameObject GroundPlow;
@@ -181,20 +184,24 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log(Raycast.canInteract);
 
+        //Active la récupération de la lanterne et le texte associé si on la regarde
         if(Raycast.canPick)
         {
             CanPick();
         }
-        if(Raycast.canPick == false)
+        //Désactive la récupération de la lanterne et le texte associé si on ne la regarde plus
+        if (Raycast.canPick == false)
         {
             CanNotPick();
         }
 
+        //Active l'interaction avec les objets spéciaux et le texte associé si on les regarde
         if(Raycast.canInteract == true)
         {
             DisplayText();
         }
-        if(Raycast.canInteract == false)
+        //Désactive l'interaction avec les objets spéciaux et le texte associé si on ne les regarde plus
+        if (Raycast.canInteract == false)
         {
             HidingText();
         }
@@ -209,6 +216,11 @@ public class PlayerMovement : MonoBehaviour
 
             GroundPlow.SetActive(true);
             WallPlow.SetActive(false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.E) && Raycast.canInteract== true)
+        {
+            isInteracting = true;
         }
 
     }
@@ -239,11 +251,27 @@ public class PlayerMovement : MonoBehaviour
 
     void DisplayText()
     {
-        InteractText.SetActive(true);
+        if(Raycast.useEtabli == true)
+        {
+            UseText.SetActive(true);
+        }
+
+        if(Raycast.useLadder == true)
+        {
+            RepairText.SetActive(true);
+        }
+
+        if(Raycast.useLadder == false && Raycast.useEtabli == false)
+        {
+            InteractText.SetActive(true);
+        }
+        
     }
 
     void HidingText()
     {
+        RepairText.SetActive(false);
+        UseText.SetActive(false);
         InteractText.SetActive(false);
     }
 }

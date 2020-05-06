@@ -16,43 +16,7 @@ public class ItemPickup : MonoBehaviour
     //Quand le joueur collide avec 1 item à ramasser
     private void OnTriggerEnter(Collider other)
     {
-
-        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
-        //+ l'objet est désactivé dans le jeu
-        //+ un message s'affiche (cf : script TextDisplaying)
-        if (other.tag == "Hammer")
-        {
-            CaseManager.Hammer = true;
-            other.gameObject.SetActive(false);
-            TextDisplaying.hammerBool = true;
-        }
-
-        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
-        //+ l'objet est désactivé dans le jeu
-        //+ un message s'affiche (cf : script TextDisplaying)
-        /*if (other.tag == "Planks")
-        {
-            CaseManager.Planks = true;
-            other.gameObject.SetActive(false);
-            TextDisplaying.planksBool = true;
-        }*/
-
-        //Quand le joueur est devant l'établi mais qu'il n'a pas les deux objets,
-        //Un message s'affiche et si il a les deux objets, un autre message s'affiche
-        if (other.tag == "Etabli")
-        {
-            if (CaseManager.Hammer == false || CaseManager.Planks == false)
-            {
-                TextDisplaying.EtabliNoRessource = true;
-            }
-            
-            if (CaseManager.Hammer == true && CaseManager.Planks == true)
-            {
-                TextDisplaying.EtabliRessource = true;
-            }
-        }
-
-        //Si le joueur est devant l'échelle cassé alors qu'il n'a pas l'objet "échelle"
+        /*//Si le joueur est devant l'échelle cassé alors qu'il n'a pas l'objet "échelle"
         //un message s'affiche et si il a l'objet "échelle", alors un autre message s'affiche,
         //l'échelle cassé est désactivée, l'échelle réparée est activée et le sprite "check"
         //de l'échelle est appliqué dans l'inventaire
@@ -70,7 +34,7 @@ public class ItemPickup : MonoBehaviour
                 CaseManager.LadderCheck = true;
 
             }
-        }
+        }*/
 
         //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
         //+ l'objet est désactivé dans le jeu

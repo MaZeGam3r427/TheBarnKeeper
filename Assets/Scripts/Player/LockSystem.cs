@@ -7,10 +7,14 @@ using TMPro;
 public class LockSystem : MonoBehaviour
 {
     //objet à faire apparaitre/disparaitre
+    public GameObject Locks;
     public GameObject StorageLockMinigame;
     public GameObject DesktopLockMinigame;
     public GameObject ReturnGameStorage;
     public GameObject ReturnGameDesktop;
+
+    public GameObject LockStorageDoor;
+    public GameObject LockDesktopDrawer;
 
     //Emplacements des lettres (gameobjects) et numéro de l'array (ints) pour la remise
     public GameObject StorageLockSlot1;
@@ -33,14 +37,15 @@ public class LockSystem : MonoBehaviour
     private int NumberDesktopLockSlot4 = 0;
     //
 
-    public string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public char[] AlphabetArray;
+    private string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private char[] AlphabetArray;
 
-    public string Numbers = "0123456789";
-    public char[] NumbersArray;
+    private string Numbers = "0123456789";
+    private char[] NumbersArray;
 
     private void Start()
     {
+        Locks.SetActive(true);
         StorageLockMinigame.SetActive(false);
         DesktopLockMinigame.SetActive(false);
 
@@ -66,6 +71,29 @@ public class LockSystem : MonoBehaviour
         DesktopLockSlot2.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot2].ToString();
         DesktopLockSlot3.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot3].ToString();
         DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot4].ToString();
+    }
+
+    private void Update()
+    {
+        //Si on a la réponse de l'énigme de la remise
+        if(StorageLockSlot1.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString() &&
+            StorageLockSlot2.GetComponent<TextMeshProUGUI>().text == AlphabetArray[4].ToString() &&
+            StorageLockSlot3.GetComponent<TextMeshProUGUI>().text == AlphabetArray[0].ToString() &&
+            StorageLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString())
+        {
+            LockStorageUIExit();
+            LockStorageDoor.SetActive(false);
+        }
+
+        //Si on a la réponse de l'énigme du bureau
+        if (DesktopLockSlot1.GetComponent<TextMeshProUGUI>().text == AlphabetArray[1].ToString() &&
+            DesktopLockSlot2.GetComponent<TextMeshProUGUI>().text == AlphabetArray[8].ToString() &&
+            DesktopLockSlot3.GetComponent<TextMeshProUGUI>().text == AlphabetArray[6].ToString() &&
+            DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[2].ToString())
+        {
+            LockDesktopUIExit();
+            LockDesktopDrawer.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -243,15 +271,21 @@ public class LockSystem : MonoBehaviour
     }
 
 
+
+
+
+
+
+
     //DESKTOP
     //SLOT1
     public void DesktopLockUpSlot1()
     {
-        if (NumberDesktopLockSlot1 != 26)
+        if (NumberDesktopLockSlot1 != 10)
         {
             NumberDesktopLockSlot1 = NumberDesktopLockSlot1 + 1;
 
-            if (NumberDesktopLockSlot1 == 26)
+            if (NumberDesktopLockSlot1 == 10)
             {
                 NumberDesktopLockSlot1 = 0;
             }
@@ -268,7 +302,7 @@ public class LockSystem : MonoBehaviour
 
             if (NumberDesktopLockSlot1 == -1)
             {
-                NumberDesktopLockSlot1 = 25;
+                NumberDesktopLockSlot1 = 9;
             }
 
             DesktopLockSlot1.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot1].ToString();
@@ -278,11 +312,11 @@ public class LockSystem : MonoBehaviour
     //SLOT 2
     public void DesktopLockUpSlot2()
     {
-        if (NumberDesktopLockSlot2 != 26)
+        if (NumberDesktopLockSlot2 != 10)
         {
             NumberDesktopLockSlot2 = NumberDesktopLockSlot2 + 1;
 
-            if (NumberDesktopLockSlot2 == 26)
+            if (NumberDesktopLockSlot2 == 10)
             {
                 NumberDesktopLockSlot2 = 0;
             }
@@ -299,7 +333,7 @@ public class LockSystem : MonoBehaviour
 
             if (NumberDesktopLockSlot2 == -1)
             {
-                NumberDesktopLockSlot2 = 25;
+                NumberDesktopLockSlot2 = 9;
             }
 
             DesktopLockSlot2.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot2].ToString();
@@ -309,11 +343,11 @@ public class LockSystem : MonoBehaviour
     //SLOT 3
     public void DesktopLockUpSlot3()
     {
-        if (NumberDesktopLockSlot3 != 26)
+        if (NumberDesktopLockSlot3 != 10)
         {
             NumberDesktopLockSlot3 = NumberDesktopLockSlot3 + 1;
 
-            if (NumberDesktopLockSlot3 == 26)
+            if (NumberDesktopLockSlot3 == 10)
             {
                 NumberDesktopLockSlot3 = 0;
             }
@@ -330,7 +364,7 @@ public class LockSystem : MonoBehaviour
 
             if (NumberDesktopLockSlot3 == -1)
             {
-                NumberDesktopLockSlot3 = 25;
+                NumberDesktopLockSlot3 = 9;
             }
 
             DesktopLockSlot3.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot3].ToString();
@@ -340,11 +374,11 @@ public class LockSystem : MonoBehaviour
     //SLOT 4
     public void DesktopLockUpSlot4()
     {
-        if (NumberDesktopLockSlot4 != 26)
+        if (NumberDesktopLockSlot4 != 10)
         {
             NumberDesktopLockSlot4 = NumberDesktopLockSlot4 + 1;
 
-            if (NumberDesktopLockSlot4 == 26)
+            if (NumberDesktopLockSlot4 == 10)
             {
                 NumberDesktopLockSlot4 = 0;
             }
@@ -361,7 +395,7 @@ public class LockSystem : MonoBehaviour
 
             if (NumberDesktopLockSlot4 == -1)
             {
-                NumberDesktopLockSlot4 = 25;
+                NumberDesktopLockSlot4 = 9;
             }
 
             DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text = NumbersArray[NumberDesktopLockSlot4].ToString();

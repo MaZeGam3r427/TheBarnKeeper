@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("UI")]
     public GameObject ClimbText;
     public GameObject PickText;
+    public GameObject InteractText;
 
     [Header("Climbing")]
     public GameObject GroundPlow;
@@ -178,16 +179,24 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        isPickable = Raycast.canPick;
-        Debug.Log(isPickable);
+        //Debug.Log(Raycast.canInteract);
 
-        if(isPickable)
+        if(Raycast.canPick)
         {
             CanPick();
         }
-        else
+        if(Raycast.canPick == false)
         {
             CanNotPick();
+        }
+
+        if(Raycast.canInteract == true)
+        {
+            DisplayText();
+        }
+        if(Raycast.canInteract == false)
+        {
+            HidingText();
         }
 
         if(Input.GetKeyDown(KeyCode.E) && canPick)
@@ -226,5 +235,15 @@ public class PlayerMovement : MonoBehaviour
     {
         canPick = false;
         PickText.SetActive(false);
+    }
+
+    void DisplayText()
+    {
+        InteractText.SetActive(true);
+    }
+
+    void HidingText()
+    {
+        InteractText.SetActive(false);
     }
 }

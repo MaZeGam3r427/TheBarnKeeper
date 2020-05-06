@@ -7,6 +7,7 @@ public class Raycast : MonoBehaviour
     bool useRayCast = true;
     public static bool isLooking = false;
     public static bool canPick = false;
+    public static bool canInteract = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,20 +47,36 @@ public class Raycast : MonoBehaviour
             else
             {
                 isLooking = false;
-                canPick = false;
             }
             
         }
 
+        Debug.Log(canInteract);
         if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
         {
             if (hit.collider.gameObject.CompareTag("Lanterne"))
             {
                 canPick = true;
             }
-            else
+
+            if (hit.collider.gameObject.CompareTag("Planks"))
             {
+                canInteract = true;
+            }
+           
+        }
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 100f, layerMask))
+        {
+            if (hit.collider.gameObject.tag != "Lanterne")
+            {
+                Debug.Log(hit.collider.gameObject.tag != "Lanterne");
                 canPick = false;
+            }
+
+            if(hit.collider.gameObject.tag != "Planks")
+            {
+                canInteract = false;
             }
         }
     }

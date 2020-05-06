@@ -30,12 +30,12 @@ public class ItemPickup : MonoBehaviour
         //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
         //+ l'objet est désactivé dans le jeu
         //+ un message s'affiche (cf : script TextDisplaying)
-        if (other.tag == "Planks")
+        /*if (other.tag == "Planks")
         {
             CaseManager.Planks = true;
             other.gameObject.SetActive(false);
             TextDisplaying.planksBool = true;
-        }
+        }*/
 
         //Quand le joueur est devant l'établi mais qu'il n'a pas les deux objets,
         //Un message s'affiche et si il a les deux objets, un autre message s'affiche

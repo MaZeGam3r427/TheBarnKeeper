@@ -359,9 +359,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6228869633548385393}
-  m_LocalRotation: {x: 0.22090957, y: -0.45721835, z: -0.37478068, w: 0.7756867}
+  m_LocalRotation: {x: 0.22090872, y: -0.45721596, z: -0.37478176, w: 0.7756878}
   m_LocalPosition: {x: 4.496, y: 2.8744397, z: -16.069}
-  m_LocalScale: {x: 71.46289, y: 71.46289, z: 71.46289}
+  m_LocalScale: {x: 71.46289, y: 71.46288, z: 71.46294}
   m_Children:
   - {fileID: 7755203817367634646}
   - {fileID: 5222781923074698606}
@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 7352573546545278133}
   - component: {fileID: 8233053723223709741}
   - component: {fileID: 3877144840088323163}
+  - component: {fileID: 1983533399}
   m_Layer: 0
   m_Name: pCylinder9
   m_TagString: Untagged
@@ -544,6 +545,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1983533399
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379634300833849210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3191843991455854740, guid: 4b8734881dda7a14b8777c6b6b641bdd, type: 3}
 --- !u!1 &7664838699969858043
 GameObject:
   m_ObjectHideFlags: 0

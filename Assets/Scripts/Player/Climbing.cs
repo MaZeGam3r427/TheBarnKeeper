@@ -27,14 +27,14 @@ public class Climbing : MonoBehaviour
         {
             CharacterControls.enabled = false;
             inside = true;
-            LadderDelay();
+            /*LadderDelay();*/
         }
 
-        if (other.tag == "Sol")
+        /*if (other.tag == "Sol")
         {
             ground = true;
             TriggerSol.SetActive(false);
-        }
+        }*/
     }
 
     public void OnTriggerExit(Collider other)
@@ -54,7 +54,7 @@ public class Climbing : MonoBehaviour
         {
             Player.transform.position += Vector3.up / heightFactor;
         }
-        if(inside == true && Input.GetKey(KeyCode.S))
+        /*if(inside == true && Input.GetKey(KeyCode.S))
         {
             Player.transform.position += Vector3.down / heightFactor;
             
@@ -64,18 +64,18 @@ public class Climbing : MonoBehaviour
             inside = false;
             CharacterControls.enabled = true;
             ground = false;
-        }
+        }*/
     }
 
-    public void LadderDelay()
+    /*public void LadderDelay()
     {
         StartCoroutine(DelayLadder(0.5f));
-    }
-    IEnumerator DelayLadder(float delay)
+    }*/
+    /*IEnumerator DelayLadder(float delay)
     {
         yield return new WaitForSeconds(delay);
         TriggerSol.SetActive(true);
-    }
+    }*/
 
 
 }

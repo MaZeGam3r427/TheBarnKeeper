@@ -158,8 +158,10 @@ public class Raycast : MonoBehaviour
             }
 
             if(hit.collider.gameObject.tag != "Planks" && hit.collider.gameObject.tag != "Hammer" 
-                && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken")
+                && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
+                && hit.collider.gameObject.tag != "Obstacle")
             {
+                isLooking = false;
                 useLadder = false;
                 useEtabli = false;
                 canInteract = false;

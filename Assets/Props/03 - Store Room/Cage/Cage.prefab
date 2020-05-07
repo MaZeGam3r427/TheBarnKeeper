@@ -52,6 +52,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &574044578046013833
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513818600739333697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -939202440219544743, guid: 6c61e11fd6c3df545b17faff19525d9e, type: 3}
+--- !u!64 &8989797009568046831
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513818601645832978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5667961617959078298, guid: 6a84bf660060abc48aa11f05aaa05800, type: 3}
 --- !u!1001 &362194517299372571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,13 +157,29 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 34.68031
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 6a84bf660060abc48aa11f05aaa05800,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 6a84bf660060abc48aa11f05aaa05800,
         type: 3}
       propertyPath: m_Name
       value: CageBody
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6a84bf660060abc48aa11f05aaa05800,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a84bf660060abc48aa11f05aaa05800, type: 3}
+--- !u!1 &8513818601645832978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 6a84bf660060abc48aa11f05aaa05800,
+    type: 3}
+  m_PrefabInstance: {fileID: 362194517299372571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4646713366891497729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6a84bf660060abc48aa11f05aaa05800,
@@ -219,13 +263,29 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 34.68034
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 6c61e11fd6c3df545b17faff19525d9e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 6c61e11fd6c3df545b17faff19525d9e,
         type: 3}
       propertyPath: m_Name
       value: CageDoor
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6c61e11fd6c3df545b17faff19525d9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c61e11fd6c3df545b17faff19525d9e, type: 3}
+--- !u!1 &8513818600739333697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 6c61e11fd6c3df545b17faff19525d9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 362194517666905928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4646713367262172242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6c61e11fd6c3df545b17faff19525d9e,

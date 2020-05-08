@@ -179,7 +179,6 @@ public class Raycast : MonoBehaviour
         {
             if (hit.collider.gameObject.tag != "Lanterne")
             {
-                Debug.Log(hit.collider.gameObject.tag);
                 canPick = false;
             }
 

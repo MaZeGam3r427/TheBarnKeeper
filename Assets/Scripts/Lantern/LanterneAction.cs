@@ -8,8 +8,6 @@ public class LanterneAction : MonoBehaviour
     public static bool isLighting = false;
     float lanternCD;
 
-
-
     // Update is called once per frame
     void Update()
     {

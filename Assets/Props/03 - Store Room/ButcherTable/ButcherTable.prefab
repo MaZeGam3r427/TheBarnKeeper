@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5813877243391092146}
   - component: {fileID: 3311285041937686404}
   - component: {fileID: 9135698461118260093}
+  - component: {fileID: 2832783688766057525}
   m_Layer: 0
   m_Name: ButcherTable
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2832783688766057525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418646107965314977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 8421744311104621043, guid: fb6fe738f9dbcba49a73eeda8f7daf37, type: 3}

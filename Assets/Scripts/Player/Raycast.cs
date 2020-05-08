@@ -9,7 +9,7 @@ public class Raycast : MonoBehaviour
 
     public GameObject LadderFixed;
     //public Animator CageAnims;
-    bool isOpen;
+    public static bool isOpen;
 
     bool useRayCast = true;
     public static bool isLooking = false;
@@ -160,11 +160,13 @@ public class Raycast : MonoBehaviour
                         {
                             hit.collider.GetComponent<Animator>().SetTrigger("CloseDoor");
                             isOpen = false;
+                            PlayerMovement.isInteracting = false;
                         }
                         else
                         {
                             hit.collider.GetComponent<Animator>().SetTrigger("OpenDoor");
                             isOpen = true;
+                            PlayerMovement.isInteracting = false;
                         }
                     }
                 }

@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject UseText;
     public GameObject RepairText;
     public GameObject OpenText;
+    public GameObject CloseText;
 
     [Header("Climbing")]
     public GameObject GroundPlow;
@@ -262,12 +263,18 @@ public class PlayerMovement : MonoBehaviour
             RepairText.SetActive(true);
         }
 
-        if(Raycast.useCage == true)
+        if(Raycast.useCage == true && Raycast.isOpen == true)
+        {
+            OpenText.SetActive(false);
+            CloseText.SetActive(true); 
+        }
+        if (Raycast.useCage == true && Raycast.isOpen == false)
         {
             OpenText.SetActive(true);
+            CloseText.SetActive(false);
         }
 
-        if(Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false)
+        if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false)
         {
             InteractText.SetActive(true);
         }
@@ -280,5 +287,6 @@ public class PlayerMovement : MonoBehaviour
         UseText.SetActive(false);
         InteractText.SetActive(false);
         OpenText.SetActive(false);
+        CloseText.SetActive(false);
     }
 }

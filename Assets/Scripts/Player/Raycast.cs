@@ -8,6 +8,8 @@ public class Raycast : MonoBehaviour
     public TextDisplaying TextDisplaying;
 
     public GameObject LadderFixed;
+    //public Animator CageAnims;
+    bool isOpen;
 
     bool useRayCast = true;
     public static bool isLooking = false;
@@ -15,6 +17,7 @@ public class Raycast : MonoBehaviour
     public static bool canInteract = false;
     public static bool useEtabli;
     public static bool useLadder;
+    public static bool useCage;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +70,8 @@ public class Raycast : MonoBehaviour
             }
 
             if (hit.collider.gameObject.CompareTag("Planks") || hit.collider.gameObject.CompareTag("Hammer")
-                || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken"))
+                || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken")
+                || hit.collider.gameObject.CompareTag("Cage"))
             {
                 canInteract = true;
 
@@ -145,6 +149,26 @@ public class Raycast : MonoBehaviour
                     }
                     
                 }
+
+                if(hit.collider.gameObject.CompareTag("Cage"))
+                {
+                    useCage = true;
+
+                    if(PlayerMovement.isInteracting == true)
+                    {
+                        if(isOpen)
+                        {
+                            hit.collider.GetComponent<Animator>().SetTrigger("CloseDoor");
+                            isOpen = false;
+                        }
+                        else
+                        {
+                            hit.collider.GetComponent<Animator>().SetTrigger("OpenDoor");
+                            isOpen = true;
+                        }
+                    }
+                }
+
             }
            
         }
@@ -159,11 +183,12 @@ public class Raycast : MonoBehaviour
 
             if(hit.collider.gameObject.tag != "Planks" && hit.collider.gameObject.tag != "Hammer" 
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
-                && hit.collider.gameObject.tag != "Obstacle")
+                && hit.collider.gameObject.tag != "Obstacle"  &&hit.collider.gameObject.tag != "Cage")
             {
                 isLooking = false;
                 useLadder = false;
                 useEtabli = false;
+                useCage = false;
                 canInteract = false;
             }
         }

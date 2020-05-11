@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6383601051973959278}
   - component: {fileID: 2723584769076528216}
   - component: {fileID: 8570513375219644577}
+  - component: {fileID: 496786027}
   m_Layer: 0
   m_Name: 'Tonnel '
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &496786027
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983829413536025725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 8321685774571456786, guid: 8ade864e74483fe4c903461d1e69480d, type: 3}

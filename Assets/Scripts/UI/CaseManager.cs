@@ -16,12 +16,6 @@ public class CaseManager : MonoBehaviour
     public Sprite SprKeyLabo;
     public Sprite MunitionsLampe;
 
-    //sprites des objets checked
-    public Sprite SprHammerCheck;
-    public Sprite SprPlanksCheck;
-    public Sprite SprLadderCheck;
-    public Sprite SprKeyRemiseCheck;
-    public Sprite SprKeyLaboCheck;
 
     //boolean pour chaques objets quand on les ramassent
     public bool Hammer = false;
@@ -45,6 +39,8 @@ public class CaseManager : MonoBehaviour
     public GameObject CaseQuatre;
     public GameObject CaseCinq;
     public GameObject CaseSix;
+
+    private bool textDelay = true;
 
     
 
@@ -122,44 +118,84 @@ public class CaseManager : MonoBehaviour
     //Texte que l'on retrouve dans l'inventaire quand on possède l'objet
     public void CaseMarteau()
     {
-        if (HammerCheck == false && Hammer == true)
+        if (HammerCheck == false && Hammer == true && textDelay == true)
         {
-            InfoText.text = "A simple hammer that can help me create ladder steps with planks";
+            textDelay = false;
+            StartCoroutine(ShowHammerMessage(3));
         }
+    }
+
+    IEnumerator ShowHammerMessage(float delay)
+    {
+        InfoText.text = "A simple hammer that can help me create ladder steps with planks";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
     }
 
     public void CasePlanches()
     {
-        if (PlanksCheck == false && Planks == true)
+        if (PlanksCheck == false && Planks == true && textDelay == true)
         {
-            InfoText.text = "Some wooden planks that can be created into ladder steps";
+            textDelay = false;
+            StartCoroutine(ShowPlanchesMessage(3));
         }
+    }
+    IEnumerator ShowPlanchesMessage(float delay)
+    {
+        InfoText.text = "Some wooden planks that can be created into ladder steps";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
     }
 
     public void CaseEchelle()
     {
-        if (LadderCheck == false && Ladder == true)
+        if (LadderCheck == false && Ladder == true && textDelay == true)
         {
-            InfoText.text = "Some ladder steps that i can put on the broken ladder";
+            textDelay = false;
+            StartCoroutine(ShowEchelleMessage(3));
         }
+    }
+    IEnumerator ShowEchelleMessage(float delay)
+    {
+        InfoText.text = "Some ladder steps that i can put on the broken ladder";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
     }
 
     public void CaseCléRemise()
     {
-        if (KeyRemiseCheck == false && KeyRemise == true)
+        if (KeyRemiseCheck == false && KeyRemise == true && textDelay == true)
         {
-            InfoText.text = "A key for the door at the ground floor";
+            textDelay = false;
+            StartCoroutine(ShowCléRemiseMessage(3));
         }
+    }
+    IEnumerator ShowCléRemiseMessage(float delay)
+    {
+        InfoText.text = "A key for the door at the ground floor";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
     }
 
     public void CaseCléLabo()
     {
-        if (KeyLaboCheck == false && KeyLabo == true)
+        if (KeyLaboCheck == false && KeyLabo == true && textDelay == true)
         {
-            InfoText.text = "A key for the door at the second floor";
+            textDelay = false;
+            StartCoroutine(ShowCléLaboMessage(3));
         }
     }
-
+    IEnumerator ShowCléLaboMessage(float delay)
+    {
+        InfoText.text = "A key for the door at the second floor";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
+    }
     public void CaseMunitionsLampe()
     {
         if (MunLampe == true)

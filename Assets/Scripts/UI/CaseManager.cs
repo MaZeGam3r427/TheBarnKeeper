@@ -90,34 +90,39 @@ public class CaseManager : MonoBehaviour
         //Quand les objets sont utilisés ils sont checked (sprite)
         if(HammerCheck == true)
         {
-            CaseUne.GetComponent<Image>().sprite = SprHammerCheck;
+            CaseUne.GetComponent<Image>().sprite = null;
+            CaseUne.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
 
         if(PlanksCheck == true)
         {
-            CaseDeux.GetComponent<Image>().sprite = SprPlanksCheck;
+            CaseDeux.GetComponent<Image>().sprite = null;
+            CaseDeux.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
 
         if(LadderCheck == true)
         {
-            CaseTrois.GetComponent<Image>().sprite = SprLadderCheck;
+            CaseTrois.GetComponent<Image>().sprite = null;
+            CaseTrois.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
 
         if(KeyRemiseCheck == true)
         {
-            CaseQuatre.GetComponent<Image>().sprite = SprKeyRemiseCheck;
+            CaseQuatre.GetComponent<Image>().sprite = null;
+            CaseQuatre.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
 
         if (KeyLaboCheck == true)
         {
-            CaseCinq.GetComponent<Image>().sprite = SprKeyLaboCheck;
+            CaseCinq.GetComponent<Image>().sprite = null;
+            CaseCinq.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
     }
 
     //Texte que l'on retrouve dans l'inventaire quand on possède l'objet
     public void CaseMarteau()
     {
-        if (Hammer == true)
+        if (HammerCheck == false && Hammer == true)
         {
             InfoText.text = "A simple hammer that can help me create ladder steps with planks";
         }
@@ -125,7 +130,7 @@ public class CaseManager : MonoBehaviour
 
     public void CasePlanches()
     {
-        if (Planks == true)
+        if (PlanksCheck == false && Planks == true)
         {
             InfoText.text = "Some wooden planks that can be created into ladder steps";
         }
@@ -133,7 +138,7 @@ public class CaseManager : MonoBehaviour
 
     public void CaseEchelle()
     {
-        if (Ladder == true)
+        if (LadderCheck == false && Ladder == true)
         {
             InfoText.text = "Some ladder steps that i can put on the broken ladder";
         }
@@ -141,7 +146,7 @@ public class CaseManager : MonoBehaviour
 
     public void CaseCléRemise()
     {
-        if (KeyRemise == true)
+        if (KeyRemiseCheck == false && KeyRemise == true)
         {
             InfoText.text = "A key for the door at the ground floor";
         }
@@ -149,7 +154,7 @@ public class CaseManager : MonoBehaviour
 
     public void CaseCléLabo()
     {
-        if (KeyLabo == true)
+        if (KeyLaboCheck == false && KeyLabo == true)
         {
             InfoText.text = "A key for the door at the second floor";
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2374125231947345693}
   - component: {fileID: 6749084871828460843}
   - component: {fileID: 1050774149305706962}
-  - component: {fileID: 7316135662554104832}
+  - component: {fileID: 5647396764594292000}
   m_Layer: 0
   m_Name: Wheat
   m_TagString: Untagged
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633064528039484686}
-  m_LocalRotation: {x: -0, y: 0.14277168, z: -0, w: 0.98975563}
+  m_LocalRotation: {x: 0, y: 0.14277574, z: 0, w: 0.9897551}
   m_LocalPosition: {x: 5.849, y: 5.397, z: -10.348}
-  m_LocalScale: {x: 326.67245, y: 91.36457, z: 134.26176}
+  m_LocalScale: {x: 135.41763, y: 71.76309, z: 93.74057}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7316135662554104832
-BoxCollider:
+--- !u!64 &5647396764594292000
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,6 +89,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01, z: 0.010000001}
-  m_Center: {x: 0, y: -0.000000007450581, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2145510716379573695, guid: 1126e0dce7ef98142a27295f8cdb056c, type: 3}

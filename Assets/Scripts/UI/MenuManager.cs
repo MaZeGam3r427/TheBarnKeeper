@@ -6,11 +6,12 @@ public class MenuManager : MonoBehaviour
 {
     [Header("Inventory")]
     public static bool InventoryOpen = false;
-    public GameObject InventoryUI;
+    public GameObject InventoryUI; 
+    public GameObject CursorIG;
 
-    /*[Header("PauseMenu")]
+    [Header("PauseMenu")]
     public static bool PauseOpen = false;
-    public GameObject MenuPauseUI;*/
+    public GameObject MenuPauseUI;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        /*if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (PauseOpen)
             {
@@ -44,18 +45,19 @@ public class MenuManager : MonoBehaviour
             {
                 OpenPauseMenu();
             }
-        }*/
+        }
     }
 
     public void Resume()
     {
-        //MenuPauseUI.SetActive(false);
+        MenuPauseUI.SetActive(false);
         InventoryUI.SetActive(false);
         Time.timeScale = 1f;
         InventoryOpen = false;
-        //PauseOpen = false;
+        PauseOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        CursorIG.SetActive(true);
 
     }
 
@@ -66,13 +68,16 @@ public class MenuManager : MonoBehaviour
         InventoryOpen = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        CursorIG.SetActive(false);
     }
 
-    /*public void OpenPauseMenu()
+    public void OpenPauseMenu()
     {
+        PauseOpen = true;
         MenuPauseUI.SetActive(true);
         Time.timeScale = 0f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-    }*/
+        CursorIG.SetActive(false);
+    }
 }

@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Debug.Log("Play");
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Cinematic");
     }
 
     public void Options()

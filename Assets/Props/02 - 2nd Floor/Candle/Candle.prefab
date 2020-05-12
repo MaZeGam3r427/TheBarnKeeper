@@ -4814,7 +4814,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.9339623, g: 0.8648873, b: 0.18062477, a: 1}
   m_Intensity: 2.63
-  m_Range: 1.7556305
+  m_Range: 1.75
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4949,6 +4949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5817912600709164855}
+  - component: {fileID: 9135205455253264015}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -4974,6 +4975,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &9135205455253264015
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414677021455752484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1784222ce706fc74bab217c4508d68a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9015241069826851287
 GameObject:
   m_ObjectHideFlags: 0

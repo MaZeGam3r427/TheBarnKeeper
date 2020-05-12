@@ -18,6 +18,7 @@ public class Raycast : MonoBehaviour
     public static bool useEtabli;
     public static bool useLadder;
     public static bool useCage;
+    public static bool isLookingWheat = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,8 @@ public class Raycast : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        Debug.Log(isLookingWheat);
         useRayCast = PlayerMovement.useRaycast;
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -52,6 +54,11 @@ public class Raycast : MonoBehaviour
                 else
                 {
                     isLooking = false;
+                }
+
+                if(hit.collider.gameObject.CompareTag("Wheat"))
+                {
+                    isLookingWheat = true;
                 }
             }
             else
@@ -184,9 +191,10 @@ public class Raycast : MonoBehaviour
 
             if(hit.collider.gameObject.tag != "Planks" && hit.collider.gameObject.tag != "Hammer" 
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
-                && hit.collider.gameObject.tag != "Obstacle"  &&hit.collider.gameObject.tag != "Cage")
+                && hit.collider.gameObject.tag != "Obstacle"  && hit.collider.gameObject.tag != "Cage")
             {
                 isLooking = false;
+                isLookingWheat = false;
                 useLadder = false;
                 useEtabli = false;
                 useCage = false;

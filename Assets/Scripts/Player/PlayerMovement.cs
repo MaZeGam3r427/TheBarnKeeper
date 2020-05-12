@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Variables")]
     int WayClimb = -1;
+    int WheatWayClimb = -1;
     float climbTimer;
     bool isClimbing;
     public static bool gotLantern;
@@ -21,19 +22,23 @@ public class PlayerMovement : MonoBehaviour
     bool isPickable;
     bool canWalk = true;
     bool LightOn = false;
+    bool lookAt;
     public static bool useRaycast;
     public static bool isInteracting;
-    bool lookAt;
     [HideInInspector] public Raycast myRaycast;
 
     [Header("Camera")]
     public CinemachineVirtualCamera VirtualCam1;
     public CinemachineVirtualCamera VirtualCam2;
     public CinemachineVirtualCamera VirtualCam3;
+    public CinemachineVirtualCamera VirtualCam4;
+    public CinemachineVirtualCamera VirtualCam5;
 
     [Header("WayPoints")]
     public GameObject WayPoint1;
     public GameObject WayPoint2;
+    public GameObject WayPoint3;
+    public GameObject WayPoint4;
 
     [Header("UI")]
     public GameObject ClimbText;
@@ -109,11 +114,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Si le joueur observe l'obstacle, le joueur peut enjamber
-        if (lookAt)
+        if (lookAt || Raycast.isLookingWheat)
         {
             ActivateClimb();
         }
-        else
+        else if(lookAt == false || Raycast.isLookingWheat == false)
         {
             DeactivateClimb();
         }
@@ -137,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 VirtualCam3.Priority = 15;
             }
+
         }
 
         if (climbTimer > 0)

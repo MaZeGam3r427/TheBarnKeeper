@@ -5,6 +5,22 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - LockDesktop
+  - Sol
+  - Obstacle
+  - LadderBroken
+  - KeyRemise
+  - DoorLabo
+  - Ladder
+  - LockStorage
+  - KeyLabo
+  - DoorRemise
+  - Etabli
+  - Cage
+  - Hammer
+  - Lanterne
+  - Planks
+  - Wheat
   layers:
   - Default
   - TransparentFX

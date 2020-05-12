@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 2179646719378950408}
   - component: {fileID: 2179646719378950409}
   - component: {fileID: 2179646719378950406}
-  - component: {fileID: 2179646719378950407}
+  - component: {fileID: 450409605677268160}
+  - component: {fileID: 694655149354994117}
+  - component: {fileID: 1076965536945358989}
+  - component: {fileID: 4365471657411283616}
   - component: {fileID: 2179646719378950411}
   m_Layer: 0
   m_Name: Monstre
@@ -94,7 +97,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2179646719378950407
+--- !u!114 &450409605677268160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,12 +106,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 2179646719378950405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cb55ffd20d5da048aa538de1f4390aa, type: 3}
+  m_Script: {fileID: 11500000, guid: f6b7de556fa95b54ab786fe681ed82db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTime: 2
-  MaxTime: 5
-  Ground: {fileID: 0}
+  timeForNewPath: 3
+--- !u!114 &694655149354994117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179646719378950405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd86d39bcd25724ea4ea429e435bb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 2179646719378950411}
+  target: {fileID: 0}
+  distance: 0
+  radius: 3
+--- !u!114 &1076965536945358989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179646719378950405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7cf3ff07abd524bbe13d3d2720e495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceDetect: 4
+  detecter: 0
+  decroche: 3
+--- !u!114 &4365471657411283616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179646719378950405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fb8083cab8f4d43804b576a221fc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cible: {fileID: 0}
+  poursuite: 0
+  pdv: 10
+  pause: 0
+  PLS: 5
+  Fine: 0
 --- !u!195 &2179646719378950411
 NavMeshAgent:
   m_ObjectHideFlags: 0

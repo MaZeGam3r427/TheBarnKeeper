@@ -39,13 +39,14 @@ public class ScriptDetection : MonoBehaviour
         if(pause == true)
         {
             Fine -= 1 * Time.deltaTime;
-
+            agent.stoppingDistance = 1f;
         }
 
         if (Fine <= 0f)
         {
             pause = false;
             Fine = PLS;
+            agent.stoppingDistance = 3f;
         }
 
         if (poursuite)

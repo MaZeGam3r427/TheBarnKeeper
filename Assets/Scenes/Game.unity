@@ -20780,8 +20780,8 @@ GameObject:
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &378760453
 Transform:
@@ -35429,6 +35429,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2004706554}
     m_Modifications:
+    - target: {fileID: 310807641156075950, guid: 1751904178ed0df4892de23f5c508f88,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 310807641156075950, guid: 1751904178ed0df4892de23f5c508f88,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5290920055163070474, guid: 1751904178ed0df4892de23f5c508f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35549,6 +35559,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 6.5540004
       objectReference: {fileID: 0}
+    - target: {fileID: 5620103027983884391, guid: 1751904178ed0df4892de23f5c508f88,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620103027983884391, guid: 1751904178ed0df4892de23f5c508f88,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6546710315488926761, guid: 1751904178ed0df4892de23f5c508f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35648,6 +35668,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -22.539001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239737857687204605, guid: 1751904178ed0df4892de23f5c508f88,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239737857687204605, guid: 1751904178ed0df4892de23f5c508f88,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9166591165173783065, guid: 1751904178ed0df4892de23f5c508f88,
         type: 3}
@@ -38923,8 +38953,8 @@ GameObject:
   m_Name: Wall 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1875477022
 Transform:
@@ -43150,12 +43180,12 @@ PrefabInstance:
     - target: {fileID: 7405351267401513926, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1399985
+      value: -0.13999982
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267401513926, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.099999905
+      value: -0.09999986
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267401513926, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
@@ -43180,7 +43210,7 @@ PrefabInstance:
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.217
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
@@ -43190,7 +43220,7 @@ PrefabInstance:
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.83
+      value: 9.52
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
@@ -44235,7 +44265,7 @@ PrefabInstance:
     - target: {fileID: 2179646719378950405, guid: 5278b066a20044a42891efddd2dccdf2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2179646719378950407, guid: 5278b066a20044a42891efddd2dccdf2,
         type: 3}

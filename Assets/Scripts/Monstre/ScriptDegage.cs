@@ -17,7 +17,7 @@ public class ScriptDegage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         { 
             agent.destination = target.position;
-            agent.stoppingDistance = 5f;
+            agent.stoppingDistance = 3f;
             
         }
     }

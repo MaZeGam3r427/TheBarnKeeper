@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Variables")]
     int WayClimb = -1;
-    int WheatWayClimb = -1;
     float climbTimer;
     bool isClimbing;
     public static bool gotLantern;

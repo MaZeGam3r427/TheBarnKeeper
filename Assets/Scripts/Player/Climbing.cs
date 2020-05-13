@@ -53,13 +53,14 @@ public class Climbing : MonoBehaviour
         if(inside == true && Input.GetKey(KeyCode.Z))
         {
             Player.transform.position += Vector3.up / heightFactor;
+
         }
-        /*if(inside == true && Input.GetKey(KeyCode.S))
+        if(inside == true && Input.GetKey(KeyCode.S))
         {
             Player.transform.position += Vector3.down / heightFactor;
             
         }
-        if (ground == true)
+        /*if (ground == true)
         {
             inside = false;
             CharacterControls.enabled = true;

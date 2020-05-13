@@ -17,7 +17,7 @@ public class LanterneAction : MonoBehaviour
             lanternCD = -Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isLighting && lanternCD <= 0)
+        if (Input.GetKeyDown(KeyCode.A) && !isLighting && lanternCD <= 0 && PlayerMovement.gotLantern)
         {
             myAnims.SetTrigger("ActivateLight");
             isLighting = true;

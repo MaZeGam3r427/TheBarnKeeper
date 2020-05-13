@@ -116,6 +116,7 @@ public class Raycast : MonoBehaviour
                             TextDisplaying.EtabliNoRessource = true;
                             PlayerMovement.isInteracting = false;
                             useEtabli = false;
+                            canInteract = false;
                         }
 
                         if (CaseManager.Hammer == true && CaseManager.Planks == true)
@@ -124,6 +125,7 @@ public class Raycast : MonoBehaviour
                             PlayerMovement.isInteracting = false;
                             hit.collider.enabled = false;
                             useEtabli = false;
+                            canInteract = false;
                         }
                     }
                 }

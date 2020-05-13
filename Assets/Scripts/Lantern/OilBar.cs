@@ -40,7 +40,7 @@ public class OilBar : MonoBehaviour
         }
 
         //Touche pour activer la lanterne et la consommation d'huile
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A) && hasLantern)
         {
             Oil = Oil - 10;
         }

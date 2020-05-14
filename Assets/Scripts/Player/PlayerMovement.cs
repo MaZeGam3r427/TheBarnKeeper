@@ -113,11 +113,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Si le joueur observe l'obstacle, le joueur peut enjamber
-        if (lookAt || Raycast.isLookingWheat)
+        if (lookAt)
         {
             ActivateClimb();
         }
-        else if(lookAt == false || Raycast.isLookingWheat == false)
+        else if(lookAt == false)
         {
             DeactivateClimb();
         }
@@ -268,16 +268,16 @@ public class PlayerMovement : MonoBehaviour
             RepairText.SetActive(true);
         }
 
-        if(Raycast.useCage == true && Raycast.isOpen == true)
-        {
-            OpenText.SetActive(false);
-            CloseText.SetActive(true); 
-        }
-        if (Raycast.useCage == true && Raycast.isOpen == false)
-        {
-            OpenText.SetActive(true);
-            CloseText.SetActive(false);
-        }
+       //if(Raycast.useCage == true && Raycast.isOpen == true)
+       //{
+       //    OpenText.SetActive(false);
+       //    CloseText.SetActive(true); 
+       //}
+       //if (Raycast.useCage == true && Raycast.isOpen == false)
+       //{
+       //    OpenText.SetActive(true);
+       //    CloseText.SetActive(false);
+       //}
 
         if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false)
         {

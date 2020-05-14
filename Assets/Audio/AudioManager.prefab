@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Main Theme
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
     clip: {fileID: 8300000, guid: b4bed1e0cd8651448841aa3b7b6175ef, type: 3}
     volume: 0.1
     pitch: 1

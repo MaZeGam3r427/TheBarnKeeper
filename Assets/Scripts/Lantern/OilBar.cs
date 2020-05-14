@@ -33,11 +33,11 @@ public class OilBar : MonoBehaviour
         }
         
 
-        //Touche temporaire pour remplir la barre d'huile
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Oil = Oil + 10;
-        }
+        ////Touche temporaire pour remplir la barre d'huile
+        //if(Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Oil = Oil + 10;
+        //}
 
         //Touche pour activer la lanterne et la consommation d'huile
         if(Input.GetKeyDown(KeyCode.A) && hasLantern)

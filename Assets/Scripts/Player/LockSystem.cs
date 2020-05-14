@@ -6,6 +6,9 @@ using TMPro;
 
 public class LockSystem : MonoBehaviour
 {
+    public Animator CageAnims;
+    public GameObject StoreRoomLock;
+
     //objet à faire apparaitre/disparaitre
     public GameObject Locks;
     public GameObject StorageLockMinigame;
@@ -82,7 +85,9 @@ public class LockSystem : MonoBehaviour
             StorageLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString())
         {
             LockStorageUIExit();
-            LockStorageDoor.SetActive(false);
+            CageAnims.SetTrigger("OpenDoor");
+            StoreRoomLock.SetActive(false);
+            //LockStorageDoor.SetActive(false);
         }
 
         //Si on a la réponse de l'énigme du bureau

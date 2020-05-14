@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     bool canClimbing;
     bool canPick;
     bool isPickable;
-    bool canWalk = true;
+    public static bool canWalk = true;
     bool LightOn = false;
     bool lookAt;
     public static bool useRaycast;
@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject UseText;
     public GameObject RepairText;
     public GameObject OpenText;
-    public GameObject CloseText;
 
     [Header("Climbing")]
     public GameObject GroundPlow;
@@ -101,93 +100,93 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(velocity * Time.deltaTime);
         }
 
-        lookAt = Raycast.isLooking;
-        ClimbText.SetActive(false);
+        //lookAt = Raycast.isLooking;
+        //ClimbText.SetActive(false);
         PickText.SetActive(false);
 
-        //Augmente le timer si on enjambe l'obstalce
-        if (isClimbing)
-        {
-            Lantern.SetActive(false);
-            climbTimer += Time.deltaTime;
-        }
+        ////Augmente le timer si on enjambe l'obstalce
+        //if (isClimbing)
+        //{
+        //    Lantern.SetActive(false);
+        //    climbTimer += Time.deltaTime;
+        //}
 
-        //Si le joueur observe l'obstacle, le joueur peut enjamber
-        if (lookAt)
-        {
-            ActivateClimb();
-        }
-        else if(lookAt == false)
-        {
-            DeactivateClimb();
-        }
+        ////Si le joueur observe l'obstacle, le joueur peut enjamber
+        //if (lookAt)
+        //{
+        //    ActivateClimb();
+        //}
+        //else if(lookAt == false)
+        //{
+        //    DeactivateClimb();
+        //}
 
-        //Si on appuie sur E et que l'on peut enjamber l'obstacle
-        if (Input.GetKeyDown(KeyCode.F) && canClimbing)
-        {
-            Player.gameObject.SetActive(false);
-            CamMovment.GetComponent<CameraMovement>().enabled = false;
-            canWalk = false;
-            isClimbing = true;
-            useRaycast = false;
+        ////Si on appuie sur E et que l'on peut enjamber l'obstacle
+        //if (Input.GetKeyDown(KeyCode.F) && canClimbing)
+        //{
+        //    Player.gameObject.SetActive(false);
+        //    CamMovment.GetComponent<CameraMovement>().enabled = false;
+        //    canWalk = false;
+        //    isClimbing = true;
+        //    useRaycast = false;
 
-            //Si l'on vient de la droite, change la priorité sur la première caméra
-            if (WayClimb > 0)
-            {
-                VirtualCam2.Priority = 15;
-            }
-            //Sinon change la priorité sur la deuxième caméra
-            else
-            {
-                VirtualCam3.Priority = 15;
-            }
+        //    //Si l'on vient de la droite, change la priorité sur la première caméra
+        //    if (WayClimb > 0)
+        //    {
+        //        VirtualCam2.Priority = 15;
+        //    }
+        //    //Sinon change la priorité sur la deuxième caméra
+        //    else
+        //    {
+        //        VirtualCam3.Priority = 15;
+        //    }
 
-        }
+        //}
 
-        if (climbTimer > 0)
-        {
-            DeactivateClimb();
-        }
+        //if (climbTimer > 0)
+        //{
+        //    DeactivateClimb();
+        //}
 
-        if(climbTimer == 0f && gotLantern)
-        {
-            Lantern.SetActive(true);
-        }
+        //if(climbTimer == 0f && gotLantern)
+        //{
+        //    Lantern.SetActive(true);
+        //}
 
-        //Si le timer d'enjambement est plus grand que 0 et si l'on vient de la gauche
-        if (climbTimer >= 1f && WayClimb > 0)
-        {
-            gameObject.transform.position = WayPoint2.transform.position;
-            VirtualCam2.Priority = 5;
-        }
+        ////Si le timer d'enjambement est plus grand que 0 et si l'on vient de la gauche
+        //if (climbTimer >= 1f && WayClimb > 0)
+        //{
+        //    gameObject.transform.position = WayPoint2.transform.position;
+        //    VirtualCam2.Priority = 5;
+        //}
 
-        //Si le timer d'enjambement est plus petit que 0 et si l'on vient de la droite
-        if (climbTimer >= 1f && WayClimb < 0)
-        {
-            gameObject.transform.position = WayPoint1.transform.position;
-            VirtualCam3.Priority = 5;
-        }
+        ////Si le timer d'enjambement est plus petit que 0 et si l'on vient de la droite
+        //if (climbTimer >= 1f && WayClimb < 0)
+        //{
+        //    gameObject.transform.position = WayPoint1.transform.position;
+        //    VirtualCam3.Priority = 5;
+        //}
 
-        //s'éxécute quand l'enjambement est fini
-        if (climbTimer >= 2f)
-        {
-            Player.gameObject.SetActive(true);
-            CamMovment.GetComponent<CameraMovement>().enabled = true;
-            canWalk = true;
-            isClimbing = false;
-            useRaycast = true;
+        ////s'éxécute quand l'enjambement est fini
+        //if (climbTimer >= 2f)
+        //{
+        //    Player.gameObject.SetActive(true);
+        //    CamMovment.GetComponent<CameraMovement>().enabled = true;
+        //    canWalk = true;
+        //    isClimbing = false;
+        //    useRaycast = true;
 
-            climbTimer = 0f;
+        //    climbTimer = 0f;
 
-            if (WayClimb < 0)
-            {
-                WayClimb = 1;
-            }
-            else
-            {
-                WayClimb = -1;
-            }
-        }
+        //    if (WayClimb < 0)
+        //    {
+        //        WayClimb = 1;
+        //    }
+        //    else
+        //    {
+        //        WayClimb = -1;
+        //    }
+        //}
 
         //Debug.Log(Raycast.canInteract);
 
@@ -268,16 +267,10 @@ public class PlayerMovement : MonoBehaviour
             RepairText.SetActive(true);
         }
 
-       //if(Raycast.useCage == true && Raycast.isOpen == true)
-       //{
-       //    OpenText.SetActive(false);
-       //    CloseText.SetActive(true); 
-       //}
-       //if (Raycast.useCage == true && Raycast.isOpen == false)
-       //{
-       //    OpenText.SetActive(true);
-       //    CloseText.SetActive(false);
-       //}
+        if (Raycast.useCage == true)
+        {
+            OpenText.SetActive(true);
+        }
 
         if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false)
         {
@@ -292,6 +285,5 @@ public class PlayerMovement : MonoBehaviour
         UseText.SetActive(false);
         InteractText.SetActive(false);
         OpenText.SetActive(false);
-        CloseText.SetActive(false);
     }
 }

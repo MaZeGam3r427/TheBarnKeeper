@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4563901035492128779}
   - component: {fileID: 5252796497895415324}
   - component: {fileID: 1990442065691750497}
+  - component: {fileID: 65422989}
   m_Layer: 0
   m_Name: "Pages_Livre_Ferm\xE9"
   m_TagString: Untagged
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &65422989
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772378106688511091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -509908272168650658, guid: ca1d4dded9eaab8428fd44fc6231a3ec, type: 3}
 --- !u!1 &3004962806839258706
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +104,7 @@ GameObject:
   - component: {fileID: 8464850720855686702}
   - component: {fileID: 548820330324476324}
   - component: {fileID: 34386307749966872}
+  - component: {fileID: 463374838}
   m_Layer: 0
   m_Name: "Couverture_Livre_Ferm\xE9"
   m_TagString: Untagged
@@ -156,6 +172,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &463374838
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004962806839258706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 9149229615300152834, guid: ca1d4dded9eaab8428fd44fc6231a3ec, type: 3}
 --- !u!1 &6814653630053921013
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7113323311115536466}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000032782555}
+  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
   m_LocalPosition: {x: -3.0319, y: 3.844, z: 3.0985}
   m_LocalScale: {x: 6.9201508, y: 6.9201508, z: 6.9201508}
   m_Children:

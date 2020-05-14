@@ -18,9 +18,8 @@ public class Raycast : MonoBehaviour
     public static bool useEtabli;
     public static bool useLadder;
     public static bool useCage;
-
-    public GameObject OpenText;
-    public GameObject CloseText;
+    public static bool useStorageLock;
+    public static bool useDesktopLock;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +32,8 @@ public class Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log(useCage);
         useRayCast = PlayerMovement.useRaycast;
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -44,27 +45,28 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 0.5f, layerMask))
-        {
-            if(useRayCast == true)
-            {
-                if (hit.collider.gameObject.CompareTag("Obstacle"))
-                {
-                    isLooking = true;
-                }
-                else
-                {
-                    isLooking = false;
-                }
-            }
-            else
-            {
-                isLooking = false;
-            }
+        //if(Physics.Raycast(transform.position, transform.forward, out hit, 0.5f, layerMask))
+        //{
+        //    if(useRayCast == true)
+        //    {
+        //        if (hit.collider.gameObject.CompareTag("Obstacle"))
+        //        {
+        //            isLooking = true;
+        //            if(PlayerMovement.isInteracting && true)
+        //        }
+        //        else
+        //        {
+        //            isLooking = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        isLooking = false;
+        //    }
             
-        }
+        //}
 
-        Debug.Log(canInteract);
+        //Debug.Log(canInteract);
         if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
         {
             if (hit.collider.gameObject.CompareTag("Lanterne"))
@@ -73,9 +75,17 @@ public class Raycast : MonoBehaviour
             }
 
             if (hit.collider.gameObject.CompareTag("Planks") || hit.collider.gameObject.CompareTag("Hammer")
-                || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken"))
+                || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken") ||
+                hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("Obstacle"))
             {
                 canInteract = true;
+
+                if (hit.collider.gameObject.CompareTag("Obstacle") && Input.GetKeyDown(KeyCode.F))
+                {
+                    hit.collider.gameObject.GetComponent<Obstacle>().enabled = true;
+                    Obstacle.canClimbing = true;
+                    PlayerMovement.isInteracting = false;
+                }
 
                 //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
                 //+ l'objet est désactivé dans le jeu
@@ -154,26 +164,15 @@ public class Raycast : MonoBehaviour
                     
                 }
 
-                //if(hit.collider.gameObject.CompareTag("Cage"))
-                //{
-                //    useCage = true;
+                if(hit.collider.gameObject.CompareTag("LockStorage"))
+                {
+                    useCage = true;
 
-                //    if(PlayerMovement.isInteracting == true)
-                //    {
-                //        if(isOpen)
-                //        {
-                //            hit.collider.GetComponent<Animator>().SetTrigger("CloseDoor");
-                //            isOpen = false;
-                //            PlayerMovement.isInteracting = false;
-                //        }
-                //        else
-                //        {
-                //            hit.collider.GetComponent<Animator>().SetTrigger("OpenDoor");
-                //            isOpen = true;
-                //            PlayerMovement.isInteracting = false;
-                //        }
-                //    }
-                //}
+                    if (PlayerMovement.isInteracting == true)
+                    {
+                        useStorageLock = true;
+                    }
+                }
 
             }
            
@@ -188,12 +187,13 @@ public class Raycast : MonoBehaviour
 
             if(hit.collider.gameObject.tag != "Planks" && hit.collider.gameObject.tag != "Hammer" 
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
-                && hit.collider.gameObject.tag != "Obstacle")
+                && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage")
             {
                 isLooking = false;
                 useLadder = false;
                 useEtabli = false;
                 useCage = false;
+                useStorageLock = false;
                 canInteract = false;
             }
         }

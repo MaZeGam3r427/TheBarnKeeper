@@ -78,6 +78,11 @@ public class LockSystem : MonoBehaviour
 
     private void Update()
     {
+        if(Raycast.useStorageLock == true)
+        {
+            LockStorageUIEnter();
+        }
+
         //Si on a la réponse de l'énigme de la remise
         if(StorageLockSlot1.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString() &&
             StorageLockSlot2.GetComponent<TextMeshProUGUI>().text == AlphabetArray[4].ToString() &&
@@ -101,18 +106,18 @@ public class LockSystem : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "LockStorage")
-        {
-            LockStorageUIEnter();
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.tag == "LockStorage")
+    //    {
+    //        LockStorageUIEnter();
+    //    }
 
-        if (other.tag == "LockDesktop")
-        {
-            LockDesktopUIEnter();
-        }
-    }
+    //    if (other.tag == "LockDesktop")
+    //    {
+    //        LockDesktopUIEnter();
+    //    }
+    //}
 
     public void LockStorageUIEnter()
     {

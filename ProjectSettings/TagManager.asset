@@ -21,6 +21,8 @@ TagManager:
   - Lanterne
   - Planks
   - Wheat
+  - KeyExit
+  - DoorExit
   layers:
   - Default
   - TransparentFX

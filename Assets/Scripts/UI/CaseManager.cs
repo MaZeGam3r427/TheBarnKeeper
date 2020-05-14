@@ -23,6 +23,7 @@ public class CaseManager : MonoBehaviour
     public bool Ladder = false;
     public bool KeyRemise = false;
     public bool KeyLabo = false;
+    public bool KeyExit = false;
     public bool MunLampe = false;
 
     //boolean pour les objets quand il faut les check
@@ -31,6 +32,7 @@ public class CaseManager : MonoBehaviour
     public bool LadderCheck = false;
     public bool KeyRemiseCheck = false;
     public bool KeyLaboCheck = false;
+    public bool KeyExitCheck = false;
 
     //Correspond à chaques cases de l'inventaire qui peuvent contenir un seul sprite à la fois
     public GameObject CaseUne;

@@ -12,6 +12,7 @@ public class ItemPickup : MonoBehaviour
 
     public GameObject PorteRemise;
     public GameObject PorteLabo;
+    public GameObject PorteSortie;
 
     //Quand le joueur collide avec 1 item à ramasser
     private void OnTriggerEnter(Collider other)
@@ -87,6 +88,28 @@ public class ItemPickup : MonoBehaviour
                 TextDisplaying.KeyLaboBool = true;
                 CaseManager.KeyLaboCheck = true;
                 PorteLabo.SetActive(false);
+            }
+        }
+
+
+        if (other.tag == "KeyExit")
+        {
+            CaseManager.KeyExit = true;
+            other.gameObject.SetActive(false);
+            //TextDisplaying.KeyExitTakenBool = true;
+        }
+
+        if (other.tag == "DoorExit")
+        {
+            if (CaseManager.KeyExit == false)
+            {
+                //TextDisplaying.NoKeyExitBool = true;
+            }
+            if (CaseManager.KeyExit == true)
+            {
+                //TextDisplaying.KeyExitBool = true;
+                CaseManager.KeyExitCheck = true;
+                PorteSortie.SetActive(false);
             }
         }
 

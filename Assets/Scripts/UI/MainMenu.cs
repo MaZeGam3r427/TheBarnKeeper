@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -8,9 +9,13 @@ public class MainMenu : MonoBehaviour
     public GameObject OptionMenuObj;
     public GameObject MainMenuObj;
 
+    public Sprite OptionWindowed;
+    public Sprite OptionFullscreen;
+
     private void Start()
     {
         OptionMenuObj.SetActive(false);
+        Screen.fullScreen = true;
     }
 
     //Menu Principal
@@ -36,5 +41,19 @@ public class MainMenu : MonoBehaviour
     {
         MainMenuObj.SetActive(true);
         OptionMenuObj.SetActive(false);
+    }
+
+    public void Windowed()
+    {
+        Debug.Log("windowed");
+        Screen.fullScreen = false;
+        OptionMenuObj.GetComponent<Image>().sprite = OptionWindowed;
+    }
+
+    public void Fullscreen()
+    {
+        Debug.Log("fullscreen");
+        Screen.fullScreen = true;
+        OptionMenuObj.GetComponent<Image>().sprite = OptionFullscreen;
     }
 }

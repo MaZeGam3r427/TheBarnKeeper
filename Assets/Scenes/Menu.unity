@@ -235,6 +235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionMenuObj: {fileID: 148571045}
   MainMenuObj: {fileID: 943475144}
+  OptionWindowed: {fileID: 21300000, guid: e31c6f68bc6b10a4699dfe34ea9b1716, type: 3}
+  OptionFullscreen: {fileID: 21300000, guid: 6bed73d91841bea44962114fd5c9036e, type: 3}
 --- !u!1 &148571045
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a68ff50dee59c6841ab1acd0b85cfd70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6bed73d91841bea44962114fd5c9036e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1167,8 +1169,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 21300000, guid: e31c6f68bc6b10a4699dfe34ea9b1716, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: e31c6f68bc6b10a4699dfe34ea9b1716, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1179,7 +1181,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 148571047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 64621996}
+        m_MethodName: Windowed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323260568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,8 +1820,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 21300000, guid: 6bed73d91841bea44962114fd5c9036e, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6bed73d91841bea44962114fd5c9036e, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1819,7 +1832,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 148571047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 64621996}
+        m_MethodName: Fullscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1927009649
 MonoBehaviour:
   m_ObjectHideFlags: 0

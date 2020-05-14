@@ -19,25 +19,17 @@ public class Obstacle : MonoBehaviour
     bool isClimbing;
     public static bool canClimbing;
     float climbTimer;
-    int WayClimb = -1;
+    public int WayClimb = -1;
 
 
     //public GameObject ClimbText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(climbTimer);
+       //Debug.Log(climbTimer);
        lookAt = Raycast.isLooking;
        //ClimbText.SetActive(false);
-
-
 
        //Augmente le timer si on enjambe l'obstalce
        if (isClimbing == true)
@@ -48,14 +40,10 @@ public class Obstacle : MonoBehaviour
        
        if(isClimbing == false)
        {
-            if(PlayerMovement.gotLantern)
+            climbTimer = 0f;
+            if (PlayerMovement.gotLantern)
             {
                 Lantern.SetActive(true);
-                climbTimer = 0f;
-            }
-            else
-            {
-                climbTimer = 0f;
             }
        }
 
@@ -69,10 +57,10 @@ public class Obstacle : MonoBehaviour
        //    DeactivateClimb();
        //}
 
-       //Si on appuie sur E et que l'on peut enjamber l'obstacle
+       //Si on appuie sur F et que l'on peut enjamber l'obstacle
        if (canClimbing)
        {
-           Player.gameObject.SetActive(false);
+           //Player.gameObject.SetActive(false);
            CamMovment.GetComponent<CameraMovement>().enabled = false;
            PlayerMovement.canWalk = false;
            isClimbing = true;
@@ -98,24 +86,26 @@ public class Obstacle : MonoBehaviour
        //Si le timer d'enjambement est plus grand que 0 et si l'on vient de la gauche
        if (climbTimer >= 1f && WayClimb > 0)
        {
-           Player.transform.position = WayPoint2.transform.position;
+           Player.transform.position = WayPoint1.transform.position;
            VirtualCam3.Priority = 5;
        }
 
        //Si le timer d'enjambement est plus petit que 0 et si l'on vient de la droite
        if (climbTimer >= 1f && WayClimb < 0)
        {
-           Player.transform.position = WayPoint1.transform.position;
+           Player.transform.position = WayPoint2.transform.position;
            VirtualCam2.Priority = 5;
        }
 
        //s'éxécute quand l'enjambement est fini
        if (climbTimer >= 2f)
        {
-           Player.gameObject.SetActive(true);
+           //Player.gameObject.SetActive(true);
            CamMovment.GetComponent<CameraMovement>().enabled = true;
            PlayerMovement.canWalk = true;
            isClimbing = false;
+           PlayerMovement.isInteracting = false;
+            Lantern.SetActive(true);
 
            if (WayClimb < 0)
            {
@@ -125,6 +115,7 @@ public class Obstacle : MonoBehaviour
            {
                WayClimb = -1;
            }
+           this.enabled = false;
        }
     }
 

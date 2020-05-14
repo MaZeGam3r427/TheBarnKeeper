@@ -18,6 +18,7 @@ public class Raycast : MonoBehaviour
     public static bool useEtabli;
     public static bool useLadder;
     public static bool useCage;
+    public static bool useObstacle;
     public static bool useStorageLock;
     public static bool useDesktopLock;
 
@@ -80,11 +81,16 @@ public class Raycast : MonoBehaviour
             {
                 canInteract = true;
 
-                if (hit.collider.gameObject.CompareTag("Obstacle") && Input.GetKeyDown(KeyCode.F))
+                if (hit.collider.gameObject.CompareTag("Obstacle"))
                 {
-                    hit.collider.gameObject.GetComponent<Obstacle>().enabled = true;
-                    Obstacle.canClimbing = true;
-                    PlayerMovement.isInteracting = false;
+                    useObstacle = true;
+                    if(Input.GetKeyDown(KeyCode.F))
+                    {
+                        hit.collider.gameObject.GetComponent<Obstacle>().enabled = true;
+                        Obstacle.canClimbing = true;
+                        PlayerMovement.isInteracting = false;
+                    }
+                    
                 }
 
                 //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
@@ -189,6 +195,8 @@ public class Raycast : MonoBehaviour
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
                 && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage")
             {
+                Obstacle.canClimbing = false;
+                useObstacle = false;
                 isLooking = false;
                 useLadder = false;
                 useEtabli = false;

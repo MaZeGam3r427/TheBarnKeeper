@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -12,18 +14,27 @@ public class MenuManager : MonoBehaviour
     [Header("PauseMenu")]
     public static bool PauseOpen = false;
     public GameObject MenuPauseUI;
+    public GameObject OptionsUI;
+
+    bool OptionsOpen;
+
+    public Sprite OptionWindowed;
+    public Sprite OptionFullscreen;
+
+    public GameObject LanternUI;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.visible = false;
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Screen.fullScreen = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (PauseOpen == false && OptionsOpen == false && Input.GetKeyDown(KeyCode.Tab))
         {
             if(InventoryOpen)
             {
@@ -35,7 +46,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (InventoryOpen == false && OptionsOpen == false && Input.GetKeyDown(KeyCode.Escape))
         {
             if (PauseOpen)
             {
@@ -52,6 +63,7 @@ public class MenuManager : MonoBehaviour
     {
         MenuPauseUI.SetActive(false);
         InventoryUI.SetActive(false);
+        LanternUI.SetActive(true);
         Time.timeScale = 1f;
         InventoryOpen = false;
         PauseOpen = false;
@@ -75,9 +87,45 @@ public class MenuManager : MonoBehaviour
     {
         PauseOpen = true;
         MenuPauseUI.SetActive(true);
+        LanternUI.SetActive(false);
         Time.timeScale = 0f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         CursorIG.SetActive(false);
+    }
+
+    public void Back()
+    {
+        OptionsOpen = false;
+        OptionsUI.SetActive(false);
+        MenuPauseUI.SetActive(true);
+    }
+
+    public void Options()
+    {
+        OptionsOpen = true;
+        OptionsUI.SetActive(true);
+        MenuPauseUI.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+
+    public void Windowed()
+    {
+        Debug.Log("windowed");
+        Screen.fullScreen = false;
+        OptionsUI.GetComponent<Image>().sprite = OptionWindowed;
+    }
+
+    public void Fullscreen()
+    {
+        Debug.Log("fullscreen");
+        Screen.fullScreen = true; 
+        OptionsUI.GetComponent<Image>().sprite = OptionFullscreen;
+
     }
 }

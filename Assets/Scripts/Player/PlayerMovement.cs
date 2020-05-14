@@ -272,7 +272,13 @@ public class PlayerMovement : MonoBehaviour
             OpenText.SetActive(true);
         }
 
-        if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false)
+        if(Raycast.useObstacle == true)
+        {
+            ClimbText.SetActive(true);
+        }
+
+        if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false
+            && Raycast.useObstacle == false)
         {
             InteractText.SetActive(true);
         }
@@ -281,6 +287,7 @@ public class PlayerMovement : MonoBehaviour
 
     void HidingText()
     {
+        ClimbText.SetActive(false);
         RepairText.SetActive(false);
         UseText.SetActive(false);
         InteractText.SetActive(false);

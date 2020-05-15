@@ -19,6 +19,8 @@ public class LockSystem : MonoBehaviour
     public GameObject LockStorageDoor;
     public GameObject LockDesktopDrawer;
 
+    public GameObject Monstre;
+
     //Emplacements des lettres (gameobjects) et numéro de l'array (ints) pour la remise
     public GameObject StorageLockSlot1;
     private int LetterStorageLockSlot1 = 0;
@@ -92,6 +94,7 @@ public class LockSystem : MonoBehaviour
             LockStorageUIExit();
             CageAnims.SetTrigger("OpenDoor");
             StoreRoomLock.SetActive(false);
+            Monstre.SetActive(false);
             //LockStorageDoor.SetActive(false);
         }
 

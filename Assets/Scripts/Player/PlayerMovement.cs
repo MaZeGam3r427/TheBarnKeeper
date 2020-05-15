@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     int WayClimb = -1;
     float climbTimer;
     bool isClimbing;
-    public static bool gotLantern;
     bool canClimbing;
     bool canPick;
     bool isPickable;
@@ -25,19 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public static bool useRaycast;
     public static bool isInteracting;
     [HideInInspector] public Raycast myRaycast;
-
-    [Header("Camera")]
-    public CinemachineVirtualCamera VirtualCam1;
-    public CinemachineVirtualCamera VirtualCam2;
-    public CinemachineVirtualCamera VirtualCam3;
-    public CinemachineVirtualCamera VirtualCam4;
-    public CinemachineVirtualCamera VirtualCam5;
-
-    [Header("WayPoints")]
-    public GameObject WayPoint1;
-    public GameObject WayPoint2;
-    public GameObject WayPoint3;
-    public GameObject WayPoint4;
 
     [Header("UI")]
     public GameObject ClimbText;
@@ -50,8 +36,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Climbing")]
     public GameObject GroundPlow;
     public GameObject WallPlow;
-    public GameObject CamMovment;
-    public GameObject LanternClimbing;
 
     [Header("Stats")]
     public float speed = 12f;
@@ -59,7 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Lanterne")]
     public GameObject Lantern;
+    public GameObject LanternUI;
     public GameObject PickableLantern;
+    public static bool gotLantern;
 
     Vector3 velocity;
 
@@ -216,7 +202,9 @@ public class PlayerMovement : MonoBehaviour
         {
             PickableLantern.SetActive(false);
             Lantern.SetActive(true);
+            LanternUI.SetActive(true);
             PickText.SetActive(false);
+
             canPick = false;
             gotLantern = true;
 

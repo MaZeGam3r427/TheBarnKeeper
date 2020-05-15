@@ -7,13 +7,13 @@ public class ScriptDetection : MonoBehaviour
 {
 
     public Transform cible;//glisser l'objet player
-    private Transform maTransform;
-    private NavMeshAgent agent;
+    public Transform maTransform;
+    public NavMeshAgent agent;
     public bool poursuite;
     public float pdv = 10f;
     public bool pause;
 
-    public float PLS = 5f;
+    public float PLS = 4f;
     public float Fine = 0f;
 
     void Awake()

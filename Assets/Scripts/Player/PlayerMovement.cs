@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Variables")]
-    int WayClimb = -1;
     float climbTimer;
     bool isClimbing;
     bool canClimbing;

@@ -76,10 +76,18 @@ public class Raycast : MonoBehaviour
             }
 
             if (hit.collider.gameObject.CompareTag("Planks") || hit.collider.gameObject.CompareTag("Hammer")
-                || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken") ||
-                hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("Obstacle"))
+                || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken") 
+                || hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("Obstacle") 
+                || hit.collider.gameObject.CompareTag("KeyRemise")|| hit.collider.gameObject.CompareTag("KeyLabo")
+                || hit.collider.gameObject.CompareTag("KeyExit"))
             {
                 canInteract = true;
+
+                if(hit.collider.gameObject.CompareTag("KeyRemise") && hit.collider.gameObject.CompareTag("KeyLabo")
+                    && hit.collider.gameObject.CompareTag("KeyExit"))
+                {
+
+                }
 
                 if (hit.collider.gameObject.CompareTag("Obstacle"))
                 {

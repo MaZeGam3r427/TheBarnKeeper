@@ -13,6 +13,7 @@ public class MoveRandomly : MonoBehaviour
     bool inCoRoutine;
     Vector3 target;
     bool validPath;
+    Vector3 destination;
 
 
     // Use this for initialization
@@ -20,6 +21,9 @@ public class MoveRandomly : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
+
+        NavMeshAgent.ResetPath();
+        NavMeshAgent.SetDestination(destination);
     }
 
     // Update is called once per frame

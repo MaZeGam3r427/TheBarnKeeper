@@ -22,8 +22,6 @@ public class MoveRandomly : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
 
-        NavMeshAgent.ResetPath();
-        NavMeshAgent.SetDestination(destination);
     }
 
     // Update is called once per frame
@@ -51,7 +49,7 @@ public class MoveRandomly : MonoBehaviour
         if (!validPath) Debug.Log("found invalid path");
         while (!validPath)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(1.01f);
             GetNewPath();
             validPath = navMeshAgent.CalculatePath(target, path);
         }

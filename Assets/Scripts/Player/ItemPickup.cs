@@ -40,12 +40,12 @@ public class ItemPickup : MonoBehaviour
         //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
         //+ l'objet est désactivé dans le jeu
         //+ un message s'affiche (cf : script TextDisplaying)
-        if (other.tag == "KeyRemise")
-        {
-            CaseManager.KeyRemise = true;
-            other.gameObject.SetActive(false);
-            TextDisplaying.KeyRemiseTakenBool = true;
-        }
+        //if (other.tag == "KeyRemise")
+        //{
+        //    CaseManager.KeyRemise = true;
+        //    other.gameObject.SetActive(false);
+        //    TextDisplaying.KeyRemiseTakenBool = true;
+        //}
 
         //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
         //un message s'affiche et si il a la clé, alors un autre message s'affiche,
@@ -67,12 +67,12 @@ public class ItemPickup : MonoBehaviour
         //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
         //+ l'objet est désactivé dans le jeu
         //+ un message s'affiche (cf : script TextDisplaying)
-        if (other.tag == "KeyLabo")
-        {
-            CaseManager.KeyLabo = true;
-            other.gameObject.SetActive(false);
-            TextDisplaying.KeyLaboTakenBool = true;
-        }
+        //if (other.tag == "KeyLabo")
+        //{
+        //    CaseManager.KeyLabo = true;
+        //    other.gameObject.SetActive(false);
+        //    TextDisplaying.KeyLaboTakenBool = true;
+        //}
 
         //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
         //un message s'affiche et si il a la clé, alors un autre message s'affiche,

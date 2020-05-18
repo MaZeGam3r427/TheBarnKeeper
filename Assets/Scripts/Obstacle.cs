@@ -45,6 +45,10 @@ public class Obstacle : MonoBehaviour
             {
                 Lantern.SetActive(true);
             }
+            else
+            {
+                Lantern.SetActive(false);
+            }
        }
 
        ////Si le joueur observe l'obstacle, le joueur peut enjamber

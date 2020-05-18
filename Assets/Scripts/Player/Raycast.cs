@@ -83,10 +83,19 @@ public class Raycast : MonoBehaviour
             {
                 canInteract = true;
 
-                if(hit.collider.gameObject.CompareTag("KeyRemise") && hit.collider.gameObject.CompareTag("KeyLabo")
-                    && hit.collider.gameObject.CompareTag("KeyExit"))
+                if (hit.collider.gameObject.CompareTag("KeyRemise") && PlayerMovement.isInteracting == true)
                 {
+                    CaseManager.KeyRemise = true;
+                    hit.collider.gameObject.SetActive(false);
+                    TextDisplaying.KeyRemiseTakenBool = true;
+                }
 
+                if(hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
+                {
+                    CaseManager.KeyLabo = true;
+                    hit.collider.gameObject.SetActive(false);
+                    TextDisplaying.KeyLaboTakenBool = true;
+                    
                 }
 
                 if (hit.collider.gameObject.CompareTag("Obstacle"))
@@ -201,7 +210,9 @@ public class Raycast : MonoBehaviour
 
             if(hit.collider.gameObject.tag != "Planks" && hit.collider.gameObject.tag != "Hammer" 
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
-                && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage")
+                && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage" 
+                && hit.collider.gameObject.tag != "KeyRemise" && hit.collider.gameObject.tag != "KeyLabo"
+                && hit.collider.gameObject.tag != "KeyExit")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;

@@ -85,6 +85,11 @@ public class LockSystem : MonoBehaviour
             LockStorageUIEnter();
         }
 
+        if(Raycast.useDesktopLock == true)
+        {
+            LockDesktopUIEnter();
+        }
+
         //Si on a la réponse de l'énigme de la remise
         if(StorageLockSlot1.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString() &&
             StorageLockSlot2.GetComponent<TextMeshProUGUI>().text == AlphabetArray[4].ToString() &&
@@ -95,7 +100,6 @@ public class LockSystem : MonoBehaviour
             CageAnims.SetTrigger("OpenDoor");
             StoreRoomLock.SetActive(false);
             Monstre.SetActive(false);
-            //LockStorageDoor.SetActive(false);
         }
 
         //Si on a la réponse de l'énigme du bureau
@@ -147,6 +151,7 @@ public class LockSystem : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Raycast.useStorageLock = false;
     }
 
     public void LockDesktopUIExit()
@@ -156,6 +161,7 @@ public class LockSystem : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Raycast.useDesktopLock = false;
     }
 
     //STORAGE

@@ -77,9 +77,10 @@ public class Raycast : MonoBehaviour
 
             if (hit.collider.gameObject.CompareTag("Planks") || hit.collider.gameObject.CompareTag("Hammer")
                 || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken") 
-                || hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("Obstacle") 
-                || hit.collider.gameObject.CompareTag("KeyRemise")|| hit.collider.gameObject.CompareTag("KeyLabo")
-                || hit.collider.gameObject.CompareTag("KeyExit"))
+                || hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("LockDesktop")
+                || hit.collider.gameObject.CompareTag("Obstacle") || hit.collider.gameObject.CompareTag("KeyRemise")
+                || hit.collider.gameObject.CompareTag("KeyLabo") || hit.collider.gameObject.CompareTag("KeyExit") 
+                || hit.collider.gameObject.CompareTag("Muntions"))
             {
                 canInteract = true;
 
@@ -88,6 +89,7 @@ public class Raycast : MonoBehaviour
                     CaseManager.KeyRemise = true;
                     hit.collider.gameObject.SetActive(false);
                     TextDisplaying.KeyRemiseTakenBool = true;
+                    PlayerMovement.isInteracting = false;
                 }
 
                 if(hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
@@ -95,7 +97,8 @@ public class Raycast : MonoBehaviour
                     CaseManager.KeyLabo = true;
                     hit.collider.gameObject.SetActive(false);
                     TextDisplaying.KeyLaboTakenBool = true;
-                    
+                    PlayerMovement.isInteracting = false;
+
                 }
 
                 if (hit.collider.gameObject.CompareTag("Obstacle"))
@@ -194,6 +197,19 @@ public class Raycast : MonoBehaviour
                     if (PlayerMovement.isInteracting == true)
                     {
                         useStorageLock = true;
+                        PlayerMovement.isInteracting = false;
+                    }
+                }
+
+                if(hit.collider.gameObject.CompareTag("LockDesktop"))
+                {
+                    useCage = true;
+                    {
+                        if(PlayerMovement.isInteracting == true)
+                        {
+                            useDesktopLock = true;
+                            PlayerMovement.isInteracting = false;
+                        }
                     }
                 }
 
@@ -210,9 +226,9 @@ public class Raycast : MonoBehaviour
 
             if(hit.collider.gameObject.tag != "Planks" && hit.collider.gameObject.tag != "Hammer" 
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
-                && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage" 
-                && hit.collider.gameObject.tag != "KeyRemise" && hit.collider.gameObject.tag != "KeyLabo"
-                && hit.collider.gameObject.tag != "KeyExit")
+                && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage"
+                && hit.collider.gameObject.tag != "LockDesktop"&& hit.collider.gameObject.tag != "KeyRemise" 
+                && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;

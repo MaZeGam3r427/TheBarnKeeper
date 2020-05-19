@@ -10,12 +10,15 @@ public class Cinematic : MonoBehaviour
     public GameObject Illu1;
     public GameObject Illu2;
     public GameObject Illu3;
+    public GameObject Illu4;
 
     private bool delay = false;
     private bool delay1 = false;
     private bool delay2 = false;
     private bool delay3 = false;
     private bool delay4 = false;
+    private bool delay5 = false;
+
 
 
     void Update()
@@ -37,7 +40,11 @@ public class Cinematic : MonoBehaviour
         {
             StartCoroutine(FadeToIllu3(Illu3, 0f, 1f));
         }
-        if(delay4 == true)
+        if (delay4 == true)
+        {
+            //StartCoroutine(FadeToIllu4(Illu4, 0f, 1f));
+        }
+        if (delay5 == true)
         {
             SceneManager.LoadScene("Game");
         }

@@ -21,7 +21,6 @@ public class MainMenu : MonoBehaviour
     //Menu Principal
     public void Play()
     {
-        Debug.Log("Play");
         SceneManager.LoadScene("Cinematic");
     }
 

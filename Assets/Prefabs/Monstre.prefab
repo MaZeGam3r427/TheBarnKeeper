@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 694655149354994117}
   - component: {fileID: 1076965536945358989}
   - component: {fileID: 4365471657411283616}
-  - component: {fileID: 2179646719378950411}
   m_Layer: 0
   m_Name: Monstre
   m_TagString: Untagged
@@ -109,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b7de556fa95b54ab786fe681ed82db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}
   timeForNewPath: 3
 --- !u!114 &694655149354994117
 MonoBehaviour:
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd86d39bcd25724ea4ea429e435bb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 2179646719378950411}
+  agent: {fileID: 0}
   target: {fileID: 0}
   distance: 0
   radius: 3
@@ -154,30 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cible: {fileID: 0}
+  maTransform: {fileID: 0}
+  agent: {fileID: 0}
   poursuite: 0
   pdv: 10
   pause: 0
   PLS: 5
   Fine: 0
---- !u!195 &2179646719378950411
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2179646719378950405}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

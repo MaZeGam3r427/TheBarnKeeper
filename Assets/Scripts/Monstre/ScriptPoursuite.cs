@@ -11,7 +11,7 @@ public class ScriptPoursuite : MonoBehaviour
     public float distanceDetect = 4.0F;
     public bool detecter;
     //Une fois sorti de la zone de detection l'ennemi arrête de poursuivre le joueur apres le temps donné par cette variable "decroche" 
-    public float decroche = 3;
+    public float decroche = 1;
     private ScriptDetection sComportement;
 
 

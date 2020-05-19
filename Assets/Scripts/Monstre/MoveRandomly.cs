@@ -7,8 +7,8 @@ using UnityEngine.AI;
 public class MoveRandomly : MonoBehaviour
 {
 
-    NavMeshAgent navMeshAgent;
-    NavMeshPath path;
+    public NavMeshAgent navMeshAgent;
+    public NavMeshPath path;
     public float timeForNewPath;
     bool inCoRoutine;
     Vector3 target;

@@ -29,7 +29,7 @@ public class OilBar : MonoBehaviour
 
         if(hasLantern)
         {
-            Oil -= 0.5f * Time.deltaTime;
+            Oil -= 1f * Time.deltaTime;
         }
         
 

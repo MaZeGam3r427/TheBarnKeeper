@@ -80,7 +80,7 @@ public class Raycast : MonoBehaviour
                 || hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("LockDesktop")
                 || hit.collider.gameObject.CompareTag("Obstacle") || hit.collider.gameObject.CompareTag("KeyRemise")
                 || hit.collider.gameObject.CompareTag("KeyLabo") || hit.collider.gameObject.CompareTag("KeyExit") 
-                || hit.collider.gameObject.CompareTag("Muntions"))
+                /*|| hit.collider.gameObject.CompareTag("Muntions")*/)
             {
                 canInteract = true;
 

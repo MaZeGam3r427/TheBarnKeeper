@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4196701344585311504}
   m_Layer: 0
   m_Name: Planches
-  m_TagString: Untagged
+  m_TagString: Planks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

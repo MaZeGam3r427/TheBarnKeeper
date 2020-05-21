@@ -103,10 +103,10 @@ public class LockSystem : MonoBehaviour
         }
 
         //Si on a la réponse de l'énigme du bureau
-        if (DesktopLockSlot1.GetComponent<TextMeshProUGUI>().text == AlphabetArray[1].ToString() &&
-            DesktopLockSlot2.GetComponent<TextMeshProUGUI>().text == AlphabetArray[8].ToString() &&
-            DesktopLockSlot3.GetComponent<TextMeshProUGUI>().text == AlphabetArray[6].ToString() &&
-            DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[2].ToString())
+        if (DesktopLockSlot1.GetComponent<TextMeshProUGUI>().text == NumbersArray[1].ToString() &&
+            DesktopLockSlot2.GetComponent<TextMeshProUGUI>().text == NumbersArray[8].ToString() &&
+            DesktopLockSlot3.GetComponent<TextMeshProUGUI>().text == NumbersArray[6].ToString() &&
+            DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text == NumbersArray[2].ToString())
         {
             LockDesktopUIExit();
             LockDesktopDrawer.SetActive(false);

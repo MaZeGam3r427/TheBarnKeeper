@@ -45,7 +45,7 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        Debug.Log(useDoor);
+
         if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
         {
             if (hit.collider.gameObject.CompareTag("Lanterne"))
@@ -59,9 +59,28 @@ public class Raycast : MonoBehaviour
                 || hit.collider.gameObject.CompareTag("Obstacle") || hit.collider.gameObject.CompareTag("KeyRemise")
                 || hit.collider.gameObject.CompareTag("KeyLabo") || hit.collider.gameObject.CompareTag("KeyExit") 
                 || hit.collider.gameObject.CompareTag("MunLampe") || hit.collider.gameObject.CompareTag("DoorRemise")
-                || hit.collider.gameObject.CompareTag("DoorLabo"))
+                || hit.collider.gameObject.CompareTag("DoorLabo") || hit.collider.gameObject.CompareTag("Drawer"))
             {
                 canInteract = true;
+
+                if(hit.collider.gameObject.CompareTag("Drawer"))
+                {
+                    useDoor = true;
+                    if(PlayerMovement.isInteracting)
+                    {
+                        Animator DrawerAnims = hit.collider.GetComponent<Animator>();
+                        if(DrawerAnims.GetBool("isClosed") == false)
+                        {
+                            DrawerAnims.SetBool("isClosed", true);
+                            PlayerMovement.isInteracting = false;
+                        }
+                        else
+                        {
+                            DrawerAnims.SetBool("isClosed", false);
+                            PlayerMovement.isInteracting = false;
+                        }
+                    }
+                }
 
                 if (hit.collider.gameObject.CompareTag("KeyRemise") && PlayerMovement.isInteracting == true)
                 {
@@ -249,7 +268,8 @@ public class Raycast : MonoBehaviour
                 && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage"
                 && hit.collider.gameObject.tag != "LockDesktop"&& hit.collider.gameObject.tag != "KeyRemise" 
                 && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit"
-                && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo")
+                && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo"
+                && hit.collider.gameObject.tag != "Drawer")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;

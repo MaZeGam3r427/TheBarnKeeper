@@ -24,6 +24,7 @@ TagManager:
   - KeyExit
   - DoorExit
   - MunLampe
+  - Drawer
   layers:
   - Default
   - TransparentFX

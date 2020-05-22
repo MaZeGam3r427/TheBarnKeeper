@@ -7,6 +7,7 @@ using TMPro;
 public class LockSystem : MonoBehaviour
 {
     public Animator CageAnims;
+    public Animator DrawerAnims;
     public GameObject StoreRoomLock;
 
     //objet à faire apparaitre/disparaitre
@@ -18,6 +19,7 @@ public class LockSystem : MonoBehaviour
 
     public GameObject LockStorageDoor;
     public GameObject LockDesktopDrawer;
+    public GameObject UnlockDesktopDrawer;
 
     public GameObject Monstre;
 
@@ -109,7 +111,10 @@ public class LockSystem : MonoBehaviour
             DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text == NumbersArray[2].ToString())
         {
             LockDesktopUIExit();
+            DrawerAnims.SetBool("isOpen", true);
+            DrawerAnims.gameObject.GetComponent<BoxCollider>().enabled = false;
             LockDesktopDrawer.SetActive(false);
+            UnlockDesktopDrawer.SetActive(true);
         }
     }
 

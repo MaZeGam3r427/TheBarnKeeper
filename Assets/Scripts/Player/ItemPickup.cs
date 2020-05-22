@@ -50,19 +50,19 @@ public class ItemPickup : MonoBehaviour
         //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
         //un message s'affiche et si il a la clé, alors un autre message s'affiche,
         //le sprite "check" de la clé est appliqué dans l'inventaire et la porte est désactivée
-        if (other.tag == "DoorRemise")
-        {
-            if(CaseManager.KeyRemise == false)
-            {
-                TextDisplaying.NoKeyRemiseBool = true;
-            }
-            if (CaseManager.KeyRemise == true)
-            {
-                TextDisplaying.KeyRemiseBool = true;
-                CaseManager.KeyRemiseCheck = true;
-                PorteRemise.SetActive(false);
-            }
-        }
+        //if (other.tag == "DoorRemise")
+        //{
+        //    if(CaseManager.KeyRemise == false)
+        //    {
+        //        TextDisplaying.NoKeyRemiseBool = true;
+        //    }
+        //    if (CaseManager.KeyRemise == true)
+        //    {
+        //        TextDisplaying.KeyRemiseBool = true;
+        //        CaseManager.KeyRemiseCheck = true;
+        //        PorteRemise.SetActive(false);
+        //    }
+        //}
 
         //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
         //+ l'objet est désactivé dans le jeu

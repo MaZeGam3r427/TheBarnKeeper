@@ -23,6 +23,7 @@ TagManager:
   - Wheat
   - KeyExit
   - DoorExit
+  - MunLampe
   layers:
   - Default
   - TransparentFX

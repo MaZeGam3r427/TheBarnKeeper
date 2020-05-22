@@ -84,96 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(velocity * Time.deltaTime);
         }
-
-        //lookAt = Raycast.isLooking;
-        //ClimbText.SetActive(false);
         PickText.SetActive(false);
-
-        ////Augmente le timer si on enjambe l'obstalce
-        //if (isClimbing)
-        //{
-        //    Lantern.SetActive(false);
-        //    climbTimer += Time.deltaTime;
-        //}
-
-        ////Si le joueur observe l'obstacle, le joueur peut enjamber
-        //if (lookAt)
-        //{
-        //    ActivateClimb();
-        //}
-        //else if(lookAt == false)
-        //{
-        //    DeactivateClimb();
-        //}
-
-        ////Si on appuie sur E et que l'on peut enjamber l'obstacle
-        //if (Input.GetKeyDown(KeyCode.F) && canClimbing)
-        //{
-        //    Player.gameObject.SetActive(false);
-        //    CamMovment.GetComponent<CameraMovement>().enabled = false;
-        //    canWalk = false;
-        //    isClimbing = true;
-        //    useRaycast = false;
-
-        //    //Si l'on vient de la droite, change la priorité sur la première caméra
-        //    if (WayClimb > 0)
-        //    {
-        //        VirtualCam2.Priority = 15;
-        //    }
-        //    //Sinon change la priorité sur la deuxième caméra
-        //    else
-        //    {
-        //        VirtualCam3.Priority = 15;
-        //    }
-
-        //}
-
-        //if (climbTimer > 0)
-        //{
-        //    DeactivateClimb();
-        //}
-
-        //if(climbTimer == 0f && gotLantern)
-        //{
-        //    Lantern.SetActive(true);
-        //}
-
-        ////Si le timer d'enjambement est plus grand que 0 et si l'on vient de la gauche
-        //if (climbTimer >= 1f && WayClimb > 0)
-        //{
-        //    gameObject.transform.position = WayPoint2.transform.position;
-        //    VirtualCam2.Priority = 5;
-        //}
-
-        ////Si le timer d'enjambement est plus petit que 0 et si l'on vient de la droite
-        //if (climbTimer >= 1f && WayClimb < 0)
-        //{
-        //    gameObject.transform.position = WayPoint1.transform.position;
-        //    VirtualCam3.Priority = 5;
-        //}
-
-        ////s'éxécute quand l'enjambement est fini
-        //if (climbTimer >= 2f)
-        //{
-        //    Player.gameObject.SetActive(true);
-        //    CamMovment.GetComponent<CameraMovement>().enabled = true;
-        //    canWalk = true;
-        //    isClimbing = false;
-        //    useRaycast = true;
-
-        //    climbTimer = 0f;
-
-        //    if (WayClimb < 0)
-        //    {
-        //        WayClimb = 1;
-        //    }
-        //    else
-        //    {
-        //        WayClimb = -1;
-        //    }
-        //}
-
-        //Debug.Log(Raycast.canInteract);
 
         //Active la récupération de la lanterne et le texte associé si on la regarde
         if(Raycast.canPick)
@@ -218,18 +129,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void ActivateClimb()
-    {
-        canClimbing = true;
-        ClimbText.SetActive(true);
-    }
-
-    void DeactivateClimb()
-    {
-        canClimbing = false;
-        ClimbText.SetActive(false);
-    }
-
     void CanPick()
     {
         canPick = true;
@@ -254,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
             RepairText.SetActive(true);
         }
 
-        if (Raycast.useCage == true)
+        if (Raycast.useCage == true || Raycast.useDoor == true)
         {
             OpenText.SetActive(true);
         }
@@ -265,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false
-            && Raycast.useObstacle == false)
+            && Raycast.useObstacle == false && Raycast.useDoor == false)
         {
             InteractText.SetActive(true);
         }

@@ -18,6 +18,7 @@ public class Raycast : MonoBehaviour
     public static bool useEtabli;
     public static bool useLadder;
     public static bool useCage;
+    public static bool useDoor;
     public static bool useObstacle;
     public static bool useStorageLock;
     public static bool useDesktopLock;
@@ -33,8 +34,6 @@ public class Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log(useCage);
         useRayCast = PlayerMovement.useRaycast;
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -46,28 +45,7 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        //if(Physics.Raycast(transform.position, transform.forward, out hit, 0.5f, layerMask))
-        //{
-        //    if(useRayCast == true)
-        //    {
-        //        if (hit.collider.gameObject.CompareTag("Obstacle"))
-        //        {
-        //            isLooking = true;
-        //            if(PlayerMovement.isInteracting && true)
-        //        }
-        //        else
-        //        {
-        //            isLooking = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        isLooking = false;
-        //    }
-            
-        //}
-
-        //Debug.Log(canInteract);
+        Debug.Log(useDoor);
         if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
         {
             if (hit.collider.gameObject.CompareTag("Lanterne"))
@@ -80,7 +58,8 @@ public class Raycast : MonoBehaviour
                 || hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("LockDesktop")
                 || hit.collider.gameObject.CompareTag("Obstacle") || hit.collider.gameObject.CompareTag("KeyRemise")
                 || hit.collider.gameObject.CompareTag("KeyLabo") || hit.collider.gameObject.CompareTag("KeyExit") 
-                /*|| hit.collider.gameObject.CompareTag("Muntions")*/)
+                || hit.collider.gameObject.CompareTag("MunLampe") || hit.collider.gameObject.CompareTag("DoorRemise")
+                || hit.collider.gameObject.CompareTag("DoorLabo"))
             {
                 canInteract = true;
 
@@ -92,7 +71,48 @@ public class Raycast : MonoBehaviour
                     PlayerMovement.isInteracting = false;
                 }
 
-                if(hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
+                if (hit.collider.gameObject.CompareTag("DoorRemise") || hit.collider.gameObject.CompareTag("DoorLabo"))
+                {
+                    useDoor = true;
+                    {
+                        if (PlayerMovement.isInteracting == true)
+                        {
+                            if (hit.collider.gameObject.CompareTag("DoorRemise"))
+                            {
+                                if (CaseManager.KeyRemise == false)
+                                {
+                                    TextDisplaying.NoKeyRemiseBool = true;
+                                    PlayerMovement.isInteracting = false;
+                                }
+                                if (CaseManager.KeyRemise == true)
+                                {
+                                    TextDisplaying.KeyRemiseBool = true;
+                                    CaseManager.KeyRemiseCheck = true;
+                                    hit.collider.enabled = false;
+                                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Open");
+                                    PlayerMovement.isInteracting = false;
+                                }
+                            }
+
+                            //if (hit.collider.gameObject.CompareTag("DoorLabo"))
+                            //{
+                            //    if (CaseManager.KeyLabo == false)
+                            //    {
+                            //        TextDisplaying.NoKeyLaboBool = true;
+                            //    }
+                            //    if (CaseManager.KeyLabo == true)
+                            //    {
+                            //        TextDisplaying.KeyLaboBool = true;
+                            //        CaseManager.KeyLaboCheck = true;
+                            //    }
+                            //}
+
+
+                        }
+                    }
+                }   
+
+                if (hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
                 {
                     CaseManager.KeyLabo = true;
                     hit.collider.gameObject.SetActive(false);
@@ -228,7 +248,8 @@ public class Raycast : MonoBehaviour
                 && hit.collider.gameObject.tag != "Etabli" && hit.collider.gameObject.tag != "LadderBroken"
                 && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage"
                 && hit.collider.gameObject.tag != "LockDesktop"&& hit.collider.gameObject.tag != "KeyRemise" 
-                && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit")
+                && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit"
+                && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;
@@ -236,6 +257,7 @@ public class Raycast : MonoBehaviour
                 useLadder = false;
                 useEtabli = false;
                 useCage = false;
+                useDoor = false;
                 useStorageLock = false;
                 canInteract = false;
             }

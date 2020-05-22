@@ -296,7 +296,6 @@ GameObject:
   - component: {fileID: 2452138235275497076}
   - component: {fileID: 992801764869187931}
   - component: {fileID: 8107922350954159201}
-  - component: {fileID: 959630721}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -378,28 +377,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &959630721
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774551262086392772}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.49999994
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.9999999
-  m_BaseOffset: 0.99999994
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &7405351267401513921
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +557,7 @@ MonoBehaviour:
   OpenText: {fileID: 0}
   GroundPlow: {fileID: 0}
   WallPlow: {fileID: 0}
-  speed: 6.5
+  speed: 2.75
   gravity: -2.5
   Lantern: {fileID: 669691660647901532}
   LanternUI: {fileID: 0}
@@ -759,6 +736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Lampe \xE0 huile"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883607167239341193, guid: ba1b366d37f350845ac51df4ff1b5fd9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8475025735424980634, guid: ba1b366d37f350845ac51df4ff1b5fd9,
         type: 3}

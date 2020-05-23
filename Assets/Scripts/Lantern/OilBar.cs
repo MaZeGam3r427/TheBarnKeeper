@@ -12,12 +12,12 @@ public class OilBar : MonoBehaviour
 
     public bool hasLantern;
 
-    public KeyCode _Key;
-    public Button _button;
+    //public KeyCode _Key;
+    //public Button _button;
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
+        //_button = GetComponent<Button>();
     }
 
     void Update()
@@ -31,13 +31,6 @@ public class OilBar : MonoBehaviour
         {
             Oil -= 1f * Time.deltaTime;
         }
-        
-
-        ////Touche temporaire pour remplir la barre d'huile
-        //if(Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Oil = Oil + 10;
-        //}
 
         //Touche pour activer la lanterne et la consommation d'huile
         if(Input.GetKeyDown(KeyCode.A) && hasLantern)
@@ -54,19 +47,10 @@ public class OilBar : MonoBehaviour
         {
             Light.SetActive(true);
         }
-
-        if(Input.GetKeyDown(_Key))
-        {
-           
-            Oil = Oil + 10;
-        }
     }
     public void RechargeClick()
     {
-        if (Input.GetButtonDown("Recharge"))
-        {
             Oil = Oil + 10;
-        }
     }
 
 }

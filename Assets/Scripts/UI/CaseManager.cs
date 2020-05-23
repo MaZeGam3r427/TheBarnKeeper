@@ -82,7 +82,8 @@ public class CaseManager : MonoBehaviour
 
         if (MunLampe == true)
         {
-            //CaseSix.GetComponent<Image>().sprite = ;
+            CaseSix.GetComponent<Image>().sprite = MunitionsLampe;
+            CaseSix.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
         }
 
         //Quand les objets sont utilisés ils sont checked (sprite)
@@ -202,7 +203,16 @@ public class CaseManager : MonoBehaviour
     {
         if (MunLampe == true)
         {
-            //recharger la barre de munition
+            textDelay = false;
+            StartCoroutine(ShowMuntionsMessage(3));
         }
+    }
+
+    IEnumerator ShowMuntionsMessage(float delay)
+    {
+        InfoText.text = "A little bottle of alchool that can help me with the lantern";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
     }
 }

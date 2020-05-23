@@ -17,63 +17,6 @@ public class ItemPickup : MonoBehaviour
     //Quand le joueur collide avec 1 item à ramasser
     private void OnTriggerEnter(Collider other)
     {
-        /*//Si le joueur est devant l'échelle cassé alors qu'il n'a pas l'objet "échelle"
-        //un message s'affiche et si il a l'objet "échelle", alors un autre message s'affiche,
-        //l'échelle cassé est désactivée, l'échelle réparée est activée et le sprite "check"
-        //de l'échelle est appliqué dans l'inventaire
-        if (other.tag == "LadderBroken")
-        {
-            if (CaseManager.Ladder == false)
-            {
-                TextDisplaying.LadderBroken = true;
-            }
-            if(CaseManager.Ladder == true)
-            {
-                TextDisplaying.LadderFixed = true;
-                other.gameObject.SetActive(false);
-                LadderFixed.SetActive(true);
-                CaseManager.LadderCheck = true;
-
-            }
-        }*/
-
-        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
-        //+ l'objet est désactivé dans le jeu
-        //+ un message s'affiche (cf : script TextDisplaying)
-        //if (other.tag == "KeyRemise")
-        //{
-        //    CaseManager.KeyRemise = true;
-        //    other.gameObject.SetActive(false);
-        //    TextDisplaying.KeyRemiseTakenBool = true;
-        //}
-
-        //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
-        //un message s'affiche et si il a la clé, alors un autre message s'affiche,
-        //le sprite "check" de la clé est appliqué dans l'inventaire et la porte est désactivée
-        //if (other.tag == "DoorRemise")
-        //{
-        //    if(CaseManager.KeyRemise == false)
-        //    {
-        //        TextDisplaying.NoKeyRemiseBool = true;
-        //    }
-        //    if (CaseManager.KeyRemise == true)
-        //    {
-        //        TextDisplaying.KeyRemiseBool = true;
-        //        CaseManager.KeyRemiseCheck = true;
-        //        PorteRemise.SetActive(false);
-        //    }
-        //}
-
-        //Le sprite de l'objet est affiché sur l'inventaire (cf : script CaseManager)
-        //+ l'objet est désactivé dans le jeu
-        //+ un message s'affiche (cf : script TextDisplaying)
-        //if (other.tag == "KeyLabo")
-        //{
-        //    CaseManager.KeyLabo = true;
-        //    other.gameObject.SetActive(false);
-        //    TextDisplaying.KeyLaboTakenBool = true;
-        //}
-
         //Si le joueur est devant la porte, alors qu'il n'a pas la clé pour,
         //un message s'affiche et si il a la clé, alors un autre message s'affiche,
         //le sprite "check" de la clé est appliqué dans l'inventaire et la porte est désactivée

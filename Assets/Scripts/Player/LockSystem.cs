@@ -99,9 +99,9 @@ public class LockSystem : MonoBehaviour
             StorageLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString())
         {
             LockStorageUIExit();
-            CageAnims.SetTrigger("OpenDoor");
+            CageAnims.SetTrigger("Open");
             StoreRoomLock.SetActive(false);
-            Monstre.SetActive(false);
+            //Monstre.SetActive(false);
         }
 
         //Si on a la réponse de l'énigme du bureau
@@ -117,19 +117,6 @@ public class LockSystem : MonoBehaviour
             UnlockDesktopDrawer.SetActive(true);
         }
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.tag == "LockStorage")
-    //    {
-    //        LockStorageUIEnter();
-    //    }
-
-    //    if (other.tag == "LockDesktop")
-    //    {
-    //        LockDesktopUIEnter();
-    //    }
-    //}
 
     public void LockStorageUIEnter()
     {

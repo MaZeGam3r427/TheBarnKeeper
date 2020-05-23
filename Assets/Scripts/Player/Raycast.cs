@@ -62,7 +62,12 @@ public class Raycast : MonoBehaviour
                 || hit.collider.gameObject.CompareTag("DoorLabo") || hit.collider.gameObject.CompareTag("Drawer"))
             {
                 canInteract = true;
-
+                if(hit.collider.gameObject.CompareTag("MunLampe") && PlayerMovement.isInteracting)
+                {
+                    CaseManager.MunLampe = true;
+                    hit.collider.gameObject.SetActive(false);
+                    PlayerMovement.isInteracting = false;
+                }
                 if(hit.collider.gameObject.CompareTag("Drawer"))
                 {
                     useDoor = true;
@@ -273,7 +278,7 @@ public class Raycast : MonoBehaviour
                 && hit.collider.gameObject.tag != "LockDesktop"&& hit.collider.gameObject.tag != "KeyRemise" 
                 && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit"
                 && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo"
-                && hit.collider.gameObject.tag != "Drawer")
+                && hit.collider.gameObject.tag != "Drawer" && hit.collider.gameObject.tag != "MunLampe")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;

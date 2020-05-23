@@ -15,6 +15,7 @@ public class CaseManager : MonoBehaviour
     public Sprite SprKeyRemise;
     public Sprite SprKeyLabo;
     public Sprite MunitionsLampe;
+    public Sprite SprKeyFinal;
 
 
     //boolean pour chaques objets quand on les ramassent
@@ -41,6 +42,7 @@ public class CaseManager : MonoBehaviour
     public GameObject CaseQuatre;
     public GameObject CaseCinq;
     public GameObject CaseSix;
+    public GameObject CaseSept;
 
     private bool textDelay = true;
 
@@ -80,11 +82,18 @@ public class CaseManager : MonoBehaviour
             CaseCinq.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
         }
 
-        if (MunLampe == true)
+        if (KeyExit == true)
         {
-            CaseSix.GetComponent<Image>().sprite = MunitionsLampe;
+            CaseSix.GetComponent<Image>().sprite = SprKeyFinal;
             CaseSix.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
         }
+
+        if (MunLampe == true)
+        {
+            CaseSept.GetComponent<Image>().sprite = MunitionsLampe;
+            CaseSept.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
+        }
+
 
         //Quand les objets sont utilisés ils sont checked (sprite)
         if(HammerCheck == true)
@@ -115,6 +124,12 @@ public class CaseManager : MonoBehaviour
         {
             CaseCinq.GetComponent<Image>().sprite = null;
             CaseCinq.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
+        }
+
+        if (KeyExitCheck == true)
+        {
+            CaseSix.GetComponent<Image>().sprite = null;
+            CaseSix.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
     }
 
@@ -199,6 +214,23 @@ public class CaseManager : MonoBehaviour
         InfoText.text = null;
         textDelay = true;
     }
+
+    public void CaseCléFinal()
+    {
+        if (KeyExitCheck == false && KeyExit == true && textDelay == true)
+        {
+            textDelay = false;
+            StartCoroutine(ShowCléFinalMessage(3));
+        }
+    }
+    IEnumerator ShowCléFinalMessage(float delay)
+    {
+        InfoText.text = "I think it's the key of the front door !";
+        yield return new WaitForSecondsRealtime(delay);
+        InfoText.text = null;
+        textDelay = true;
+    }
+
     public void CaseMunitionsLampe()
     {
         if (MunLampe == true)

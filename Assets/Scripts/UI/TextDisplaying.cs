@@ -34,6 +34,11 @@ public class TextDisplaying : MonoBehaviour
     //texte quand on récupère la clé du labo
     public GameObject TextKeyLaboTaken;
 
+
+    public GameObject TextNoKeyExit;
+    public GameObject TextKeyExit;
+    public GameObject TextKeyExitTaken;
+
     public GameObject Etabli;
 
     public CaseManager CaseManager;
@@ -53,6 +58,10 @@ public class TextDisplaying : MonoBehaviour
     public bool NoKeyLaboBool = false;
     public bool KeyLaboBool = false;
     public bool KeyLaboTakenBool = false;
+
+    public bool NoKeyExitBool = false;
+    public bool KeyExitBool = false;
+    public bool KeyExitTakenBool = false;
 
     public bool textDelay = true;
 
@@ -143,6 +152,29 @@ public class TextDisplaying : MonoBehaviour
             KeyLaboTakenBool = false;
             KeyLaboTakenText();
         }
+
+
+        if (NoKeyExitBool == true && textDelay == true)
+        {
+            textDelay = false;
+            NoKeyExitBool = false;
+            NoKeyExitText();
+        }
+
+        if(KeyExitBool == true && textDelay == true)
+        {
+            textDelay = false;
+            KeyExitBool = false;
+            KeyExitText();
+        }
+
+        if (KeyExitTakenBool == true && textDelay == true)
+        {
+            textDelay = false;
+            KeyExitTakenBool = false;
+            KeyExitTakenText();
+        }
+
     }
 
     //Toutes les fonctions plus bas sont appellées dans Update pour chaques objets ramassés/interragit
@@ -304,6 +336,43 @@ public class TextDisplaying : MonoBehaviour
         TextKeyLaboTaken.SetActive(true);
         yield return new WaitForSeconds(delay);
         TextKeyLaboTaken.SetActive(false);
+        textDelay = true;
+    }
+
+
+    public void NoKeyExitText()
+    {
+        StartCoroutine(ShowMessageNoKeyExit(2));
+    }
+    IEnumerator ShowMessageNoKeyExit(float delay)
+    {
+        TextNoKeyExit.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextNoKeyExit.SetActive(false);
+        textDelay = true;
+    }
+
+    public void KeyExitText()
+    {
+        StartCoroutine(ShowMessageKeyExit(2));
+    }
+    IEnumerator ShowMessageKeyExit(float delay)
+    {
+        TextKeyExit.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextKeyExit.SetActive(false);
+        textDelay = true;
+    }
+
+    public void KeyExitTakenText()
+    {
+        StartCoroutine(ShowMessageKeyExitTaken(2));
+    }
+    IEnumerator ShowMessageKeyExitTaken(float delay)
+    {
+        TextKeyExitTaken.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        TextKeyExitTaken.SetActive(false);
         textDelay = true;
     }
 

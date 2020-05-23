@@ -35,22 +35,15 @@ public class ItemPickup : MonoBehaviour
         }
 
 
-        if (other.tag == "KeyExit")
-        {
-            CaseManager.KeyExit = true;
-            other.gameObject.SetActive(false);
-            //TextDisplaying.KeyExitTakenBool = true;
-        }
-
         if (other.tag == "DoorExit")
         {
             if (CaseManager.KeyExit == false)
             {
-                //TextDisplaying.NoKeyExitBool = true;
+                TextDisplaying.NoKeyExitBool = true;
             }
             if (CaseManager.KeyExit == true)
             {
-                //TextDisplaying.KeyExitBool = true;
+                TextDisplaying.KeyExitBool = true;
                 CaseManager.KeyExitCheck = true;
                 PorteSortie.SetActive(false);
             }

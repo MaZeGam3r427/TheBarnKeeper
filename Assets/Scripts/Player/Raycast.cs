@@ -113,18 +113,22 @@ public class Raycast : MonoBehaviour
                                 }
                             }
 
-                            //if (hit.collider.gameObject.CompareTag("DoorLabo"))
-                            //{
-                            //    if (CaseManager.KeyLabo == false)
-                            //    {
-                            //        TextDisplaying.NoKeyLaboBool = true;
-                            //    }
-                            //    if (CaseManager.KeyLabo == true)
-                            //    {
-                            //        TextDisplaying.KeyLaboBool = true;
-                            //        CaseManager.KeyLaboCheck = true;
-                            //    }
-                            //}
+                            if (hit.collider.gameObject.CompareTag("DoorLabo"))
+                            {
+                                if (CaseManager.KeyLabo == false)
+                                {
+                                    TextDisplaying.NoKeyLaboBool = true;
+                                    PlayerMovement.isInteracting = false;
+                                }
+                                if (CaseManager.KeyLabo == true)
+                                {
+                                    TextDisplaying.KeyLaboBool = true;
+                                    CaseManager.KeyLaboCheck = true;
+                                    hit.collider.enabled = false;
+                                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Open");
+                                    PlayerMovement.isInteracting = false;
+                                }
+                            }
 
 
                         }

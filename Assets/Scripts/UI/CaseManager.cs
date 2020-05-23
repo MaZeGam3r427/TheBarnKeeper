@@ -49,10 +49,6 @@ public class CaseManager : MonoBehaviour
 
     private bool textDelay = true;
 
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         //Si un item a été activé par le biais du script ItemPickup,

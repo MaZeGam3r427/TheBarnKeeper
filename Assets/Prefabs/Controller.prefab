@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -0.089999914, y: -2.315023, z: -8.344746}
+  m_FollowOffset: {x: -0.089999914, y: -2.0838046, z: -8.344746}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272602687}
   m_LocalRotation: {x: 0.11935192, y: -0, z: -0, w: 0.99285203}
-  m_LocalPosition: {x: -0.099999905, y: 0.518, z: -0.13999939}
+  m_LocalPosition: {x: -0.099999905, y: 0.85, z: -0.13999939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 974376474}
@@ -235,6 +235,9 @@ MonoBehaviour:
   CaseManager: {fileID: 0}
   TextDisplaying: {fileID: 0}
   LadderFixed: {fileID: 0}
+  KeyExit: {fileID: 0}
+  FirstAmmoText: {fileID: 0}
+  ColliderEnd: {fileID: 0}
 --- !u!114 &1265687750062515753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,8 +406,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7405351267401513921}
-  m_LocalRotation: {x: 0.11935192, y: 0.000000029802322, z: 0.0000000037252903, w: 0.99285203}
-  m_LocalPosition: {x: -0.10000047, y: 0.51800054, z: -0.13999805}
+  m_LocalRotation: {x: 0.055857334, y: -0.87740886, z: 0.10547436, w: 0.46466002}
+  m_LocalPosition: {x: 42.188923, y: 14.85765, z: 62.47177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7405351267925773004}
@@ -504,8 +507,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7405351267925773004}
+  - component: {fileID: 9174544083815233501}
   - component: {fileID: 1571602871332801820}
-  - component: {fileID: 1059663854}
   - component: {fileID: 3060248091223430809}
   - component: {fileID: 2126041730}
   - component: {fileID: 2179504722491310322}
@@ -534,6 +537,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &9174544083815233501
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7405351267925773005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1571602871332801820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,24 +579,6 @@ MonoBehaviour:
   Lantern: {fileID: 669691660647901532}
   LanternUI: {fileID: 0}
   PickableLantern: {fileID: 0}
---- !u!114 &1059663854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7405351267925773005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dae89b7cc8fa5247af00fb96ac29a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CaseManager: {fileID: 0}
-  TextDisplaying: {fileID: 0}
-  LadderFixed: {fileID: 0}
-  PorteRemise: {fileID: 0}
-  PorteLabo: {fileID: 0}
-  PorteSortie: {fileID: 0}
 --- !u!143 &3060248091223430809
 CharacterController:
   m_ObjectHideFlags: 0
@@ -591,7 +590,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1.25
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -629,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CageAnims: {fileID: 0}
+  DrawerAnims: {fileID: 0}
   StoreRoomLock: {fileID: 0}
   Locks: {fileID: 0}
   StorageLockMinigame: {fileID: 0}
@@ -637,6 +637,7 @@ MonoBehaviour:
   ReturnGameDesktop: {fileID: 0}
   LockStorageDoor: {fileID: 0}
   LockDesktopDrawer: {fileID: 0}
+  UnlockDesktopDrawer: {fileID: 0}
   Monstre: {fileID: 0}
   StorageLockSlot1: {fileID: 0}
   StorageLockSlot2: {fileID: 0}

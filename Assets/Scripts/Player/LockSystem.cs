@@ -112,7 +112,7 @@ public class LockSystem : MonoBehaviour
         {
             LockDesktopUIExit();
             DrawerAnims.SetBool("isOpen", true);
-            DrawerAnims.gameObject.tag = "Untagged";
+            DrawerAnims.gameObject.tag = "KeyExit";
             LockDesktopDrawer.SetActive(false);
             UnlockDesktopDrawer.SetActive(true);
         }

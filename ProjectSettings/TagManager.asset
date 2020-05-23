@@ -25,6 +25,7 @@ TagManager:
   - DoorExit
   - MunLampe
   - Drawer
+  - ColliderEnd
   layers:
   - Default
   - TransparentFX

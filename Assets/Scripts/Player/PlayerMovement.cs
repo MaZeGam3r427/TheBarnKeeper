@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [Header("Character")]
     public CharacterController controller;
     public GameObject Player;
@@ -55,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
 
     void Update()
     {
@@ -127,6 +126,15 @@ public class PlayerMovement : MonoBehaviour
             isInteracting = true;
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "ColliderEnd")
+        {
+            Debug.Log("SUCE");
+            SceneManager.LoadScene("End");
+        }
     }
 
     void CanPick()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Raycast : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Raycast : MonoBehaviour
     public TextDisplaying TextDisplaying;
 
     public GameObject LadderFixed;
+    public GameObject KeyExit;
     public GameObject FirstAmmoText;
+    public GameObject ColliderEnd;
     bool isOpen;
 
     public static int Ammo = 0;
@@ -67,7 +70,8 @@ public class Raycast : MonoBehaviour
                 || hit.collider.gameObject.CompareTag("Obstacle") || hit.collider.gameObject.CompareTag("KeyRemise")
                 || hit.collider.gameObject.CompareTag("KeyLabo") || hit.collider.gameObject.CompareTag("KeyExit") 
                 || hit.collider.gameObject.CompareTag("MunLampe") || hit.collider.gameObject.CompareTag("DoorRemise")
-                || hit.collider.gameObject.CompareTag("DoorLabo") || hit.collider.gameObject.CompareTag("Drawer"))
+                || hit.collider.gameObject.CompareTag("DoorLabo") || hit.collider.gameObject.CompareTag("DoorExit")
+                || hit.collider.gameObject.CompareTag("Drawer"))
             {
                 canInteract = true;
                 if(hit.collider.gameObject.CompareTag("MunLampe") && PlayerMovement.isInteracting)
@@ -109,7 +113,17 @@ public class Raycast : MonoBehaviour
                     PlayerMovement.isInteracting = false;
                 }
 
-                if (hit.collider.gameObject.CompareTag("DoorRemise") || hit.collider.gameObject.CompareTag("DoorLabo"))
+                if(hit.collider.gameObject.CompareTag("KeyExit") && PlayerMovement.isInteracting)
+                {
+                    CaseManager.KeyExit = true;
+                    hit.collider.gameObject.tag = "Untagged";
+                    KeyExit.SetActive(false);
+                    TextDisplaying.KeyExitTakenBool = true;
+                    PlayerMovement.isInteracting = false;
+                }
+
+                if (hit.collider.gameObject.CompareTag("DoorRemise") || hit.collider.gameObject.CompareTag("DoorLabo")
+                    || hit.collider.gameObject.CompareTag("DoorExit"))
                 {
                     useDoor = true;
                     {
@@ -146,6 +160,25 @@ public class Raycast : MonoBehaviour
                                     hit.collider.enabled = false;
                                     hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Open");
                                     PlayerMovement.isInteracting = false;
+                                }
+                            }
+
+                            if(hit.collider.gameObject.CompareTag("DoorExit"))
+                            {
+                                if(CaseManager.KeyExit == false)
+                                {
+                                    TextDisplaying.NoKeyExitBool = true;
+                                    PlayerMovement.isInteracting = false;
+                                }
+                                else
+                                {
+                                    TextDisplaying.KeyExitBool = true;
+                                    CaseManager.KeyExitCheck = true;
+                                    hit.collider.enabled = false;
+                                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Open");
+                                    PlayerMovement.isInteracting = false;
+                                    ColliderEnd.SetActive(true);
+                                    StartCoroutine(SUCE());
                                 }
                             }
 
@@ -217,6 +250,7 @@ public class Raycast : MonoBehaviour
                             TextDisplaying.EtabliRessource = true;
                             PlayerMovement.isInteracting = false;
                             hit.collider.enabled = false;
+                            hit.collider.gameObject.tag = "Untagged";
                             useEtabli = false;
                             canInteract = false;
                         }
@@ -291,8 +325,9 @@ public class Raycast : MonoBehaviour
                 && hit.collider.gameObject.tag != "Obstacle" && hit.collider.gameObject.tag != "LockStorage"
                 && hit.collider.gameObject.tag != "LockDesktop"&& hit.collider.gameObject.tag != "KeyRemise" 
                 && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit"
-                && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo"
-                && hit.collider.gameObject.tag != "Drawer" && hit.collider.gameObject.tag != "MunLampe")
+                && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo" 
+                && hit.collider.gameObject.tag != "DoorExit" && hit.collider.gameObject.tag != "Drawer" 
+                && hit.collider.gameObject.tag != "MunLampe")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;
@@ -305,5 +340,11 @@ public class Raycast : MonoBehaviour
                 canInteract = false;
             }
         }
+    }
+
+    IEnumerator SUCE()
+    {
+        yield return new WaitForSecondsRealtime(2.5f);
+        SceneManager.LoadScene("End");
     }
 }

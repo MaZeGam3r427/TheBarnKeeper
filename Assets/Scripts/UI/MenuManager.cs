@@ -69,6 +69,7 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         CursorIG.SetActive(true);
+
         if(PlayerMovement.gotLantern)
         {
             LanternUI.SetActive(true);

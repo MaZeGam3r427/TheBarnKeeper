@@ -48,11 +48,5 @@ public class ItemPickup : MonoBehaviour
                 PorteSortie.SetActive(false);
             }
         }
-
-        if (other.tag == "MunLampe")
-        {
-            CaseManager.MunLampe = true;
-            other.gameObject.SetActive(false);
-        }
     }
 }

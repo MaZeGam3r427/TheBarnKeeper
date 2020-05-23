@@ -50,7 +50,12 @@ public class OilBar : MonoBehaviour
     }
     public void RechargeClick()
     {
+        if(Raycast.Ammo > 0)
+        {
             Oil = Oil + 10;
+            Raycast.Ammo--;
+        }
+            
     }
 
 }

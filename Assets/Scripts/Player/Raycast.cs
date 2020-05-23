@@ -8,10 +8,13 @@ public class Raycast : MonoBehaviour
     public TextDisplaying TextDisplaying;
 
     public GameObject LadderFixed;
-    //public Animator CageAnims;
+    public GameObject FirstAmmoText;
     bool isOpen;
 
+    public static int Ammo = 0;
+
     bool useRayCast = true;
+    bool gotFirstAmmo;
     public static bool isLooking = false;
     public static bool canPick = false;
     public static bool canInteract = false;
@@ -30,7 +33,12 @@ public class Raycast : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    IEnumerator DisplayFirstAmmoText(float time)
+    {
+        FirstAmmoText.SetActive(true);
+        yield return new WaitForSecondsRealtime(time);
+        FirstAmmoText.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -64,10 +72,16 @@ public class Raycast : MonoBehaviour
                 canInteract = true;
                 if(hit.collider.gameObject.CompareTag("MunLampe") && PlayerMovement.isInteracting)
                 {
-                    CaseManager.MunLampe = true;
+                    if (!gotFirstAmmo)
+                    {
+                        StartCoroutine(DisplayFirstAmmoText(3.5f));
+                        gotFirstAmmo = true;
+                    }
+                    Ammo++;
                     hit.collider.gameObject.SetActive(false);
                     PlayerMovement.isInteracting = false;
                 }
+
                 if(hit.collider.gameObject.CompareTag("Drawer"))
                 {
                     useDoor = true;

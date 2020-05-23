@@ -43,10 +43,15 @@ public class CaseManager : MonoBehaviour
     public GameObject CaseCinq;
     public GameObject CaseSix;
     public GameObject CaseSept;
+    public GameObject CaseNumberAmmo;
+
+    public TextMeshProUGUI NumberAmmoText;
 
     private bool textDelay = true;
 
-    
+    private void Start()
+    {
+    }
 
     private void Update()
     {
@@ -88,10 +93,19 @@ public class CaseManager : MonoBehaviour
             CaseSix.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
         }
 
-        if (MunLampe == true)
+        if (Raycast.Ammo > 0)
         {
+            NumberAmmoText.text = "x" + Raycast.Ammo.ToString();
             CaseSept.GetComponent<Image>().sprite = MunitionsLampe;
             CaseSept.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
+        }
+        Debug.Log(Raycast.Ammo);
+
+        if(Raycast.Ammo == 0)
+        {
+            NumberAmmoText.text = null;
+            CaseSept.GetComponent<Image>().sprite = null;
+            CaseSept.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0f);
         }
 
 

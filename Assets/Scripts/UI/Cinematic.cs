@@ -60,7 +60,7 @@ public class Cinematic : MonoBehaviour
     IEnumerator FadeToBG(GameObject Illustration, float aValue, float aTime)
     {
         float alpha = Illustration.GetComponent<Image>().color.a;
-        for (float i = 0f; i < 15f; i += Time.deltaTime / aTime)
+        for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
         {
             Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));
             Illustration.GetComponent<Image>().color = newcolor;
@@ -72,7 +72,7 @@ public class Cinematic : MonoBehaviour
     IEnumerator FadeToIllu1(GameObject Illustration, float aValue, float aTime)
     {
         float alpha = Illustration.GetComponent<Image>().color.a;
-        for (float i = 0f; i < 15f; i += Time.deltaTime / aTime)
+        for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
         {
             Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));
             Illustration.GetComponent<Image>().color = newcolor;
@@ -84,7 +84,7 @@ public class Cinematic : MonoBehaviour
     IEnumerator FadeToIllu2(GameObject Illustration, float aValue, float aTime)
     {
         float alpha = Illustration.GetComponent<Image>().color.a;
-        for (float i = 0f; i < 15f; i += Time.deltaTime / aTime)
+        for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
         {
             Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));
             Illustration.GetComponent<Image>().color = newcolor;
@@ -96,7 +96,7 @@ public class Cinematic : MonoBehaviour
     IEnumerator FadeToIllu3(GameObject Illustration, float aValue, float aTime)
     {
         float alpha = Illustration.GetComponent<Image>().color.a;
-        for (float i = 0f; i < 15f; i += Time.deltaTime / aTime)
+        for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
         {
             Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));
             Illustration.GetComponent<Image>().color = newcolor;

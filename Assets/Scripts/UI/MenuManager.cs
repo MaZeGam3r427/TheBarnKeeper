@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public LockSystem LockSystem;
+
     [Header("Inventory")]
     public static bool InventoryOpen = false;
     public GameObject InventoryUI; 
@@ -15,6 +17,11 @@ public class MenuManager : MonoBehaviour
     public static bool PauseOpen = false;
     public GameObject MenuPauseUI;
     public GameObject OptionsUI;
+
+    [Header("LockStorage")]
+    public static bool LockStorageOpen = false;
+    public GameObject LockStorageUI;
+    public GameObject ReturnGameStorage;
 
     bool OptionsOpen;
 
@@ -48,26 +55,22 @@ public class MenuManager : MonoBehaviour
 
         if (InventoryOpen == false && OptionsOpen == false && Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PauseOpen)
-            {
-                Resume();
-            }
-            else
-            {
-                OpenPauseMenu();
-            }
+            OpenPauseMenu();
         }
     }
 
     public void Resume()
     {
-        MenuPauseUI.SetActive(false);
-        InventoryUI.SetActive(false);
         Time.timeScale = 1f;
-        InventoryOpen = false;
-        PauseOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        MenuPauseUI.SetActive(false);
+        InventoryUI.SetActive(false);
+        LockStorageUI.SetActive(false);
+        ReturnGameStorage.SetActive(false);
+        InventoryOpen = false;
+        PauseOpen = false;
+        LockStorageOpen = false;
         CursorIG.SetActive(true);
 
         if(PlayerMovement.gotLantern)

@@ -12,7 +12,7 @@ public class LockSystem : MonoBehaviour
 
     //objet à faire apparaitre/disparaitre
     public GameObject Locks;
-    public GameObject StorageLockMinigame;
+    public GameObject LockStorageUI;
     public GameObject DesktopLockMinigame;
     public GameObject ReturnGameStorage;
     public GameObject ReturnGameDesktop;
@@ -44,6 +44,7 @@ public class LockSystem : MonoBehaviour
     private int NumberDesktopLockSlot4 = 0;
     //
 
+
     private string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private char[] AlphabetArray;
 
@@ -53,7 +54,7 @@ public class LockSystem : MonoBehaviour
     private void Start()
     {
         Locks.SetActive(true);
-        StorageLockMinigame.SetActive(false);
+        LockStorageUI.SetActive(false);
         DesktopLockMinigame.SetActive(false);
 
         ReturnGameStorage.SetActive(false);
@@ -98,7 +99,6 @@ public class LockSystem : MonoBehaviour
             StorageLockSlot3.GetComponent<TextMeshProUGUI>().text == AlphabetArray[0].ToString() &&
             StorageLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString())
         {
-            LockStorageUIExit();
             CageAnims.SetTrigger("Open");
             StoreRoomLock.SetActive(false);
             //Monstre.SetActive(false);
@@ -110,7 +110,6 @@ public class LockSystem : MonoBehaviour
             DesktopLockSlot3.GetComponent<TextMeshProUGUI>().text == NumbersArray[6].ToString() &&
             DesktopLockSlot4.GetComponent<TextMeshProUGUI>().text == NumbersArray[2].ToString())
         {
-            LockDesktopUIExit();
             DrawerAnims.SetBool("isOpen", true);
             DrawerAnims.gameObject.tag = "KeyExit";
             LockDesktopDrawer.SetActive(false);
@@ -120,7 +119,7 @@ public class LockSystem : MonoBehaviour
 
     public void LockStorageUIEnter()
     {
-        StorageLockMinigame.SetActive(true);
+        LockStorageUI.SetActive(true);
         ReturnGameStorage.SetActive(true);
         Time.timeScale = 0f;
         Cursor.visible = true;
@@ -138,11 +137,11 @@ public class LockSystem : MonoBehaviour
 
     public void LockStorageUIExit()
     {
-        StorageLockMinigame.SetActive(false);
-        ReturnGameStorage.SetActive(false);
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        LockStorageUI.SetActive(false);
+        ReturnGameStorage.SetActive(false);
         Raycast.useStorageLock = false;
     }
 

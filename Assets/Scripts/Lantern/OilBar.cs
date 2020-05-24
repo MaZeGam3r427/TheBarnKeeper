@@ -10,23 +10,17 @@ public class OilBar : MonoBehaviour
     public GameObject Light;
     public Image oilBarImage;
 
-    public bool hasLantern;
-
-    //public KeyCode _Key;
-    //public Button _button;
-
-    private void Awake()
-    {
-        //_button = GetComponent<Button>();
-    }
+    bool hasLantern;
 
     void Update()
     {
-        //permet de remplire la barre d'huile sans dépaser de zéro a cent 
+        Debug.Log(hasLantern);
+        //Permet de remplire la barre d'huile sans dépaser de zéro a cent 
         oilBarImage.fillAmount = Oil / MaxOil;
         Oil = Mathf.Clamp(Oil, 0f, MaxOil);
         hasLantern = PlayerMovement.gotLantern;
 
+        //Si la lanterne est récupérée, la quantité d'huile diminue petit à petit
         if(hasLantern)
         {
             Oil -= 1f * Time.deltaTime;
@@ -39,7 +33,7 @@ public class OilBar : MonoBehaviour
         }
 
         //permet de désactiver la lanterne lorsque la barre atteint zéro
-        if (Oil == 0)
+        if (Oil <= 0)
         {
             Light.SetActive(false);
         }
@@ -54,8 +48,7 @@ public class OilBar : MonoBehaviour
         {
             Oil = Oil + 10;
             Raycast.Ammo--;
-        }
-            
+        }   
     }
 
 }

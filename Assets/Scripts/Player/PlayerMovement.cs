@@ -128,15 +128,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "ColliderEnd")
-        {
-            Debug.Log("SUCE");
-            SceneManager.LoadScene("End");
-        }
-    }
-
     void CanPick()
     {
         canPick = true;

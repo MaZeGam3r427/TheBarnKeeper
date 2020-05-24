@@ -344,7 +344,7 @@ public class Raycast : MonoBehaviour
 
     IEnumerator SUCE()
     {
-        yield return new WaitForSecondsRealtime(2.5f);
+        yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("End");
     }
 }

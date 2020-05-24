@@ -14,7 +14,6 @@ public class OilBar : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(hasLantern);
         //Permet de remplire la barre d'huile sans dépaser de zéro a cent 
         oilBarImage.fillAmount = Oil / MaxOil;
         Oil = Mathf.Clamp(Oil, 0f, MaxOil);
@@ -29,7 +28,7 @@ public class OilBar : MonoBehaviour
         //Touche pour activer la lanterne et la consommation d'huile
         if(Input.GetKeyDown(KeyCode.A) && hasLantern)
         {
-            Oil = Oil - 10;
+            Oil = Oil - 5;
         }
 
         //permet de désactiver la lanterne lorsque la barre atteint zéro
@@ -46,7 +45,7 @@ public class OilBar : MonoBehaviour
     {
         if(Raycast.Ammo > 0)
         {
-            Oil = Oil + 10;
+            Oil = Oil + 30;
             Raycast.Ammo--;
         }   
     }

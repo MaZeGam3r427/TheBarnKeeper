@@ -95,7 +95,6 @@ public class CaseManager : MonoBehaviour
             CaseSept.GetComponent<Image>().sprite = MunitionsLampe;
             CaseSept.GetComponent<Image>().color = new Color(255f, 255f, 255f, 255f);
         }
-        Debug.Log(Raycast.Ammo);
 
         if(Raycast.Ammo == 0)
         {

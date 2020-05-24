@@ -58,16 +58,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        LightOn = LanterneAction.isLighting;
+        //LightOn = LanterneAction.isLighting;
 
-        if(LightOn == false)
-        {
-            canWalk = true;
-        }
-        else
-        {
-            canWalk = false;
-        }
+        //if(LightOn == false)
+        //{
+        //    canWalk = true;
+        //}
+        //else
+        //{
+        //    canWalk = false;
+        //}
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

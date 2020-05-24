@@ -16,17 +16,18 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LightOn = LanterneAction.isLighting;
+        //LightOn = LanterneAction.isLighting;
 
-        if (LightOn == false)
-        {
-            mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        }
-        else
-        {
-            mouseY = 0;
-        }
+        //if (LightOn == false)
+        //{
+        //    mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //}
+        //else
+        //{
+        //    mouseY = 0;
+        //}
 
+        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         
 

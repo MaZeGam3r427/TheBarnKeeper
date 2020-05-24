@@ -26,6 +26,10 @@ TagManager:
   - MunLampe
   - Drawer
   - ColliderEnd
+  - Note4
+  - Note2
+  - Note1
+  - Note3
   layers:
   - Default
   - TransparentFX

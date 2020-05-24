@@ -59,11 +59,13 @@ public class Raycast : MonoBehaviour
 
         if(Physics.Raycast(transform.position, transform.forward, out hit, 0.75f, layerMask))
         {
+            //Si l'objet regardé a le tag "Lantern", le joueur peut le ramasser
             if (hit.collider.gameObject.CompareTag("Lanterne"))
             {
                 canPick = true;
             }
 
+            //Si le joueur regarde l'un des objets avec lequel il peut interagir, le texte d'interaction apparaît
             if (hit.collider.gameObject.CompareTag("Planks") || hit.collider.gameObject.CompareTag("Hammer")
                 || hit.collider.gameObject.CompareTag("Etabli") || hit.collider.gameObject.CompareTag("LadderBroken") 
                 || hit.collider.gameObject.CompareTag("LockStorage") || hit.collider.gameObject.CompareTag("LockDesktop")

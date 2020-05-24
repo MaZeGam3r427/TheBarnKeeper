@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5510711390470678827}
   - component: {fileID: 3540669811249582877}
   - component: {fileID: 7070217126445903844}
+  - component: {fileID: 1206067102}
   m_Layer: 0
   m_Name: Fer
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8800775880468257592}
-  m_LocalRotation: {x: 0.59170485, y: -0.38715044, z: 0.59170467, w: 0.38715053}
+  m_LocalRotation: {x: 0.59170544, y: -0.38714945, z: 0.5917053, w: 0.3871497}
   m_LocalPosition: {x: 26.574, y: 8.224, z: 36.909}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1206067102
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800775880468257592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1120928934185262223, guid: af741759c5667c54caaf3bed785a223a, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Climbing : MonoBehaviour
 {
 
-    public GameObject TriggerSol;
+    //public GameObject TriggerSol;
     public Transform Player;
     public bool inside = false;
     public float heightFactor = 3f;

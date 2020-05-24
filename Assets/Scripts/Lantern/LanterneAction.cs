@@ -5,27 +5,28 @@ using UnityEngine;
 public class LanterneAction : MonoBehaviour
 {
     public Animator myAnims;
-    public static bool isLighting = false;
-    float lanternCD;
+    bool isLightning = false;
+    float lanternCD = 2f;
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(lanternCD);
-        if(lanternCD > 0)
+        if(Input.GetKeyDown(KeyCode.A) && PlayerMovement.gotLantern && !isLightning)
         {
-            lanternCD = -Time.deltaTime;
+            myAnims.SetTrigger("LightUp");
+            isLightning = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isLighting && lanternCD <= 0 && PlayerMovement.gotLantern)
+        if(isLightning)
         {
-            myAnims.SetTrigger("ActivateLight");
-            isLighting = true;
+            lanternCD -= Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.A) && isLighting == true)
+
+        if(lanternCD <= 0)
         {
-            myAnims.SetTrigger("DeactivateLight");
-            isLighting = false;
+            lanternCD = 2f;
+            myAnims.SetTrigger("LightDown");
+            isLightning = false;
         }
     }
 }

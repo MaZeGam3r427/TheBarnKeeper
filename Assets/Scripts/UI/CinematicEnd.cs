@@ -4,19 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Cinematic : MonoBehaviour
+public class CinematicEnd : MonoBehaviour
 {
     public GameObject BG;
     public GameObject Illu1;
     public GameObject Illu2;
-    public GameObject Illu3;
-    public GameObject Illu4;
 
     private bool delay = false;
     private bool delay1 = false;
     private bool delay2 = false;
-    private bool delay3 = false;
-    private bool delay4 = false;
+    /*private bool delay3 = false;
+    private bool delay4 = false;*/
 
 
 
@@ -33,16 +31,16 @@ public class Cinematic : MonoBehaviour
         }
         if (delay2 == true)
         {
-            StartCoroutine(FadeToIllu2(Illu2, 0f, 1f));
+            SceneManager.LoadScene("Menu");
         }
-        if (delay3 == true)
+        /*if (delay3 == true)
         {
             StartCoroutine(FadeToIllu3(Illu3, 0f, 1f));
         }
         if (delay4 == true)
         {
             SceneManager.LoadScene("Game");
-        }
+        }*/
 
     }
 
@@ -76,7 +74,7 @@ public class Cinematic : MonoBehaviour
         delay2 = true;
     }
 
-    IEnumerator FadeToIllu2(GameObject Illustration, float aValue, float aTime)
+    /*IEnumerator FadeToIllu2(GameObject Illustration, float aValue, float aTime)
     {
         float alpha = Illustration.GetComponent<Image>().color.a;
         for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
@@ -98,5 +96,5 @@ public class Cinematic : MonoBehaviour
             yield return null;
         }
         delay4 = true;
-    }
+    }*/
 }

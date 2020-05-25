@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject UseText;
     public GameObject RepairText;
     public GameObject OpenText;
+    public GameObject ReadText;
 
     [Header("Climbing")]
     public GameObject GroundPlow;
@@ -157,13 +158,18 @@ public class PlayerMovement : MonoBehaviour
             OpenText.SetActive(true);
         }
 
+        if(Raycast.isReading)
+        {
+            ReadText.SetActive(true);
+        }
+
         if(Raycast.useObstacle == true)
         {
             ClimbText.SetActive(true);
         }
 
-        if (Raycast.useLadder == false && Raycast.useEtabli == false && Raycast.useCage == false
-            && Raycast.useObstacle == false && Raycast.useDoor == false)
+        if (!Raycast.useLadder && !Raycast.useEtabli && !Raycast.useCage
+            && !Raycast.useObstacle && !Raycast.useDoor && !Raycast.isReading)
         {
             InteractText.SetActive(true);
         }
@@ -172,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
 
     void HidingText()
     {
+        ReadText.SetActive(false);
         ClimbText.SetActive(false);
         RepairText.SetActive(false);
         UseText.SetActive(false);

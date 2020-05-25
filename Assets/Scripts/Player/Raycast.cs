@@ -14,10 +14,18 @@ public class Raycast : MonoBehaviour
     public GameObject ColliderEnd;
     bool isOpen;
 
+    [Header("Notes")]
+    public GameObject NotesUI;
+    public GameObject Note1;
+    public GameObject Note2;
+    public GameObject Note3;
+    public GameObject Note4;
+
     public static int Ammo = 0;
 
     bool useRayCast = true;
     bool gotFirstAmmo;
+    public static bool isReading = false;
     public static bool isLooking = false;
     public static bool canPick = false;
     public static bool canInteract = false;
@@ -73,9 +81,46 @@ public class Raycast : MonoBehaviour
                 || hit.collider.gameObject.CompareTag("KeyLabo") || hit.collider.gameObject.CompareTag("KeyExit") 
                 || hit.collider.gameObject.CompareTag("MunLampe") || hit.collider.gameObject.CompareTag("DoorRemise")
                 || hit.collider.gameObject.CompareTag("DoorLabo") || hit.collider.gameObject.CompareTag("DoorExit")
-                || hit.collider.gameObject.CompareTag("Drawer"))
+                || hit.collider.gameObject.CompareTag("Drawer") || hit.collider.gameObject.CompareTag("Note1")
+                || hit.collider.gameObject.CompareTag("Note2") || hit.collider.gameObject.CompareTag("Note3")
+                || hit.collider.gameObject.CompareTag("Note4"))
             {
                 canInteract = true;
+                if(hit.collider.gameObject.CompareTag("Note1") || hit.collider.gameObject.CompareTag("Note2")
+                    || hit.collider.gameObject.CompareTag("Note3") || hit.collider.gameObject.CompareTag("Note4"))
+                {
+                    isReading = true;
+                    if(PlayerMovement.isInteracting)
+                    {
+                        NotesUI.SetActive(true);
+                        Time.timeScale = 0f;
+
+                        Cursor.lockState = CursorLockMode.None;
+                        Cursor.visible = true;
+
+                        if (hit.collider.gameObject.CompareTag("Note1"))
+                        {
+                            Note1.SetActive(true);
+                        }
+
+                        if(hit.collider.gameObject.CompareTag("Note2"))
+                        {
+                            Note2.SetActive(true);
+                        }
+
+                        if(hit.collider.gameObject.CompareTag("Note3"))
+                        {
+                            Note3.SetActive(true);
+                        }
+
+                        if (hit.collider.gameObject.CompareTag("Note4"))
+                        {
+                            Note4.SetActive(true);
+                        }
+
+                    }
+                }
+
                 if(hit.collider.gameObject.CompareTag("MunLampe") && PlayerMovement.isInteracting)
                 {
                     if (!gotFirstAmmo)
@@ -329,7 +374,9 @@ public class Raycast : MonoBehaviour
                 && hit.collider.gameObject.tag != "KeyLabo" && hit.collider.gameObject.tag != "KeyExit"
                 && hit.collider.gameObject.tag != "DoorRemise" && hit.collider.gameObject.tag != "DoorLabo" 
                 && hit.collider.gameObject.tag != "DoorExit" && hit.collider.gameObject.tag != "Drawer" 
-                && hit.collider.gameObject.tag != "MunLampe")
+                && hit.collider.gameObject.tag != "MunLampe" && hit.collider.gameObject.tag != "Note1" 
+                && hit.collider.gameObject.tag != "Note2" && hit.collider.gameObject.tag != "Note3"
+                && hit.collider.gameObject.tag != "Note4")
             {
                 Obstacle.canClimbing = false;
                 useObstacle = false;
@@ -338,6 +385,7 @@ public class Raycast : MonoBehaviour
                 useEtabli = false;
                 useCage = false;
                 useDoor = false;
+                isReading = false;
                 useStorageLock = false;
                 canInteract = false;
             }
@@ -348,5 +396,17 @@ public class Raycast : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("End");
+    }
+
+    public void ExitNotesUI()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        NotesUI.SetActive(false);
+        Note1.SetActive(false);
+        Note2.SetActive(false);
+        Note3.SetActive(false);
+        Note4.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

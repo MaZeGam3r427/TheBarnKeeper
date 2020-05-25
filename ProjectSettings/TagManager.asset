@@ -30,6 +30,7 @@ TagManager:
   - Note2
   - Note1
   - Note3
+  - Monstre
   layers:
   - Default
   - TransparentFX

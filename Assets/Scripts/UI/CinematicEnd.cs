@@ -33,14 +33,6 @@ public class CinematicEnd : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
-        /*if (delay3 == true)
-        {
-            StartCoroutine(FadeToIllu3(Illu3, 0f, 1f));
-        }
-        if (delay4 == true)
-        {
-            SceneManager.LoadScene("Game");
-        }*/
 
     }
 
@@ -73,28 +65,4 @@ public class CinematicEnd : MonoBehaviour
         }
         delay2 = true;
     }
-
-    /*IEnumerator FadeToIllu2(GameObject Illustration, float aValue, float aTime)
-    {
-        float alpha = Illustration.GetComponent<Image>().color.a;
-        for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
-        {
-            Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));
-            Illustration.GetComponent<Image>().color = newcolor;
-            yield return null;
-        }
-        delay3 = true;
-    }
-
-    IEnumerator FadeToIllu3(GameObject Illustration, float aValue, float aTime)
-    {
-        float alpha = Illustration.GetComponent<Image>().color.a;
-        for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
-        {
-            Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));
-            Illustration.GetComponent<Image>().color = newcolor;
-            yield return null;
-        }
-        delay4 = true;
-    }*/
 }

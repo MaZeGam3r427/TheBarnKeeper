@@ -49,7 +49,7 @@ public class MoveRandomly : MonoBehaviour
         if (!validPath) Debug.Log("found invalid path");
         while (!validPath)
         {
-            yield return new WaitForSeconds(1.01f);
+            yield return new WaitForSeconds(0.01f);
             GetNewPath();
             validPath = navMeshAgent.CalculatePath(target, path);
         }

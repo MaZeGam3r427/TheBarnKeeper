@@ -23384,6 +23384,11 @@ PrefabInstance:
       propertyPath: Note4
       value: 
       objectReference: {fileID: 776757823}
+    - target: {fileID: 7405351267401513926, guid: 5d2ddd656051153489a6514f5aa403d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.84999955
+      objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23392,12 +23397,12 @@ PrefabInstance:
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.356
+      value: 8.357
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.059
+      value: 31.411
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
@@ -24231,9 +24236,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
         type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0.1
+      propertyPath: sounds.Array.size
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: Off Flame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 584b5b84ab88fa247bc5d99596dced89, type: 3}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[1].audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928,
+        type: 2}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: Flame On
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 26f6ed9b7619d934097c4ccbef568479, type: 3}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351783187660961177, guid: 155208db322c0cd44a2db2c3f3799967,
+        type: 3}
+      propertyPath: sounds.Array.data[2].audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928,
+        type: 2}
     - target: {fileID: 1351783187660961179, guid: 155208db322c0cd44a2db2c3f3799967,
         type: 3}
       propertyPath: m_Name

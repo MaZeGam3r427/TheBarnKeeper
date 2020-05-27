@@ -7,6 +7,7 @@ public class Raycast : MonoBehaviour
 {
     public CaseManager CaseManager;
     public TextDisplaying TextDisplaying;
+    public GameObject CursorUI;
 
     public GameObject LadderFixed;
     public GameObject KeyExit;
@@ -97,25 +98,45 @@ public class Raycast : MonoBehaviour
 
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
+                        CursorUI.SetActive(false);
+                        isReading = false;
+                        canInteract = false;
 
                         if (hit.collider.gameObject.CompareTag("Note1"))
                         {
                             Note1.SetActive(true);
+                            PlayerMovement.isInteracting = false;
+                            isReading = false;
+                            canInteract = false;
                         }
 
                         if(hit.collider.gameObject.CompareTag("Note2"))
                         {
                             Note2.SetActive(true);
+                            PlayerMovement.isInteracting = false;
+                            isReading = false;
+                            canInteract = false;
                         }
 
                         if(hit.collider.gameObject.CompareTag("Note3"))
                         {
                             Note3.SetActive(true);
+                            PlayerMovement.isInteracting = false;
+                            isReading = false;
+                            canInteract = false;
                         }
 
                         if (hit.collider.gameObject.CompareTag("Note4"))
                         {
                             Note4.SetActive(true);
+                            PlayerMovement.isInteracting = false;
+                            isReading = false;
+                            canInteract = false;
+                        }
+
+                        if(Input.GetKeyDown(KeyCode.Mouse0))
+                        {
+                            ExitNotesUI();
                         }
 
                     }
@@ -407,6 +428,11 @@ public class Raycast : MonoBehaviour
         Note2.SetActive(false);
         Note3.SetActive(false);
         Note4.SetActive(false);
+        CursorUI.SetActive(true);
+
+        PlayerMovement.isInteracting = false;
+        isReading = false;
+        canInteract = false;
         Time.timeScale = 1f;
     }
 }

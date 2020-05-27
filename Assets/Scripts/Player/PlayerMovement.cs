@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject RepairText;
     public GameObject OpenText;
     public GameObject ReadText;
+    public GameObject DeathScreenUI;
 
     [Header("Climbing")]
     public GameObject GroundPlow;
@@ -184,5 +185,17 @@ public class PlayerMovement : MonoBehaviour
         UseText.SetActive(false);
         InteractText.SetActive(false);
         OpenText.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Monstre"))
+        {
+            Debug.Log("touché");
+            Time.timeScale = 0f;
+            DeathScreenUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }

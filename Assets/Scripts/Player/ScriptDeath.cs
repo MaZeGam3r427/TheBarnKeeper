@@ -5,12 +5,6 @@ using UnityEngine;
 public class ScriptDeath : MonoBehaviour
 {
     public GameObject DeathScreenUI;
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter(Collision col)
     {
        if(col.gameObject.name == "Group7952")

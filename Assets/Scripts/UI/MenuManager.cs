@@ -135,4 +135,9 @@ public class MenuManager : MonoBehaviour
         OptionsUI.GetComponent<Image>().sprite = OptionFullscreen;
 
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -12,6 +12,9 @@ public class ScriptDeath : MonoBehaviour
             gameObject.SetActive(false);
             DeathScreenUI.SetActive(true);
             Debug.Log("your dead");
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

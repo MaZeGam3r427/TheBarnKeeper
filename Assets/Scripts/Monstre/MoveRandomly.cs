@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class MoveRandomly : MonoBehaviour
 {
-
+    Animator WalkAnimation;
     public NavMeshAgent navMeshAgent;
     public NavMeshPath path;
     public float timeForNewPath;
@@ -19,6 +19,7 @@ public class MoveRandomly : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        WalkAnimation = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
 
@@ -45,6 +46,7 @@ public class MoveRandomly : MonoBehaviour
         inCoRoutine = true;
         yield return new WaitForSeconds(timeForNewPath);
         GetNewPath();
+        WalkAnimation.SetBool("isWalking", true);
         validPath = navMeshAgent.CalculatePath(target, path);
         if (!validPath) Debug.Log("found invalid path");
         while (!validPath)

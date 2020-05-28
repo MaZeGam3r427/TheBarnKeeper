@@ -14,6 +14,8 @@ public class ScriptPoursuite : MonoBehaviour
     public float decroche = 1;
     private ScriptDetection sComportement;
 
+    Animator RunningAnimation;
+
 
 
     // Use this for initialization
@@ -22,6 +24,7 @@ public class ScriptPoursuite : MonoBehaviour
 
         sComportement = GetComponent<ScriptDetection>();
         laCible = sComportement.cible;
+        RunningAnimation = GetComponent<Animator>();
 
     }
 
@@ -42,6 +45,7 @@ public class ScriptPoursuite : MonoBehaviour
             float sqrLen = (laCible.position - transform.position).sqrMagnitude;
             if (sqrLen < distanceDetect * distanceDetect)
             {
+                RunningAnimation.SetBool("isRunning", true);
                 detecter = true;
                 ConditionComportement();//Appel de methode
                 if (IsInvoking("Timer"))//Annule l'invocation au cas d'une invocation déjà effectué
@@ -52,6 +56,7 @@ public class ScriptPoursuite : MonoBehaviour
             //Le joueur n'est plus a distance
             if (sqrLen > distanceDetect && detecter)
             {
+                RunningAnimation.SetBool("isRunning", false);
                 detecter = false;
                 PlusAdistance();
             }
@@ -89,7 +94,6 @@ public class ScriptPoursuite : MonoBehaviour
     {
         sComportement.pause = true;
         sComportement.poursuite = false;
-        print("DESACTIVE LA POURSUITE !!");
 
     }
 

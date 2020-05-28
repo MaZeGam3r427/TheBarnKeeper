@@ -18,6 +18,12 @@ public class MainMenu : MonoBehaviour
         Screen.fullScreen = true;
     }
 
+    private void Awake()
+    {
+
+        FindObjectOfType<AudioManager>().Play("Main Theme");
+    }
+
     //Menu Principal
     public void Play()
     {

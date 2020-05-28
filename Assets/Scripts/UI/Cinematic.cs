@@ -56,11 +56,6 @@ public class Cinematic : MonoBehaviour
         }
         if (delay3 == true)
         {
-            /*if (illu4played == false)
-            {
-                FindObjectOfType<AudioManager>().Play("Illustration4");
-                illu4played = true;
-            }*/
             StartCoroutine(FadeToIllu3(Illu3, 0f, 1f));
         }
         if (delay4 == true)

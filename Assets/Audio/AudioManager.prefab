@@ -53,21 +53,35 @@ MonoBehaviour:
     source: {fileID: 0}
     audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
   - name: Illustration1
-    clip: {fileID: 8300000, guid: 777ba521e30867d459ab0fbaff8bb34a, type: 3}
+    clip: {fileID: 8300000, guid: ce339eeafe841f04ebd9d89e6304bb9d, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
     audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
   - name: Illustration2
-    clip: {fileID: 8300000, guid: bece462282b0e804a976478a9f4c047f, type: 3}
+    clip: {fileID: 8300000, guid: 15131f042eeeba64394cae15a7259f23, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
     audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
-  - name: Illustration2
-    clip: {fileID: 8300000, guid: 0f2efb7bd0d194b46843b30902c58f1b, type: 3}
+  - name: Illustration3
+    clip: {fileID: 8300000, guid: 5610150885606964580dd1527b4e81af, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Illustration5
+    clip: {fileID: 8300000, guid: 0420fdecc8911104c861a9509103a6d4, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Illustration6
+    clip: {fileID: 8300000, guid: 798488a72a2ce2048a488f438e1a4a17, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0

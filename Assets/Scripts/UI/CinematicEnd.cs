@@ -13,8 +13,9 @@ public class CinematicEnd : MonoBehaviour
     private bool delay = false;
     private bool delay1 = false;
     private bool delay2 = false;
-    /*private bool delay3 = false;
-    private bool delay4 = false;*/
+
+    private bool illu5played = false;
+    private bool illu6played = false;
 
 
 
@@ -23,10 +24,20 @@ public class CinematicEnd : MonoBehaviour
         StartCoroutine(Wait(2));
         if (delay == true)
         {
+            if (illu5played == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Illustration5");
+                illu5played = true;
+            }
             StartCoroutine(FadeToBG(BG, 0f, 1f));
         }
         if (delay1 == true)
         {
+            if (illu6played == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Illustration6");
+                illu6played = true;
+            }
             StartCoroutine(FadeToIllu1(Illu1, 0f, 1f));
         }
         if (delay2 == true)

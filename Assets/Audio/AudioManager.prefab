@@ -52,6 +52,27 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
     audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Illustration1
+    clip: {fileID: 8300000, guid: 777ba521e30867d459ab0fbaff8bb34a, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Illustration2
+    clip: {fileID: 8300000, guid: bece462282b0e804a976478a9f4c047f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Illustration2
+    clip: {fileID: 8300000, guid: 0f2efb7bd0d194b46843b30902c58f1b, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
 --- !u!114 &1598196462
 MonoBehaviour:
   m_ObjectHideFlags: 0

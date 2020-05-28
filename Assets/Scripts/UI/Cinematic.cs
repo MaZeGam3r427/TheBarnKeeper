@@ -18,25 +18,49 @@ public class Cinematic : MonoBehaviour
     private bool delay3 = false;
     private bool delay4 = false;
 
-
+    private bool illu1played = false;
+    private bool illu2played = false;
+    private bool illu3played = false;
+    private bool illu4played = false;
 
     void Update()
     {
         StartCoroutine(Wait(2));
         if (delay == true)
         {
+            if (illu1played == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Illustration1");
+                illu1played = true;
+            }
+            
             StartCoroutine(FadeToBG(BG, 0f, 1f));
         }
         if (delay1 == true)
         {
+            if (illu2played == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Illustration2");
+                illu2played = true;
+            }
             StartCoroutine(FadeToIllu1(Illu1, 0f, 1f));
         }
         if (delay2 == true)
         {
+            if (illu3played == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Illustration3");
+                illu3played = true;
+            }
             StartCoroutine(FadeToIllu2(Illu2, 0f, 1f));
         }
         if (delay3 == true)
         {
+            /*if (illu4played == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Illustration4");
+                illu4played = true;
+            }*/
             StartCoroutine(FadeToIllu3(Illu3, 0f, 1f));
         }
         if (delay4 == true)
@@ -55,6 +79,7 @@ public class Cinematic : MonoBehaviour
     IEnumerator FadeToBG(GameObject Illustration, float aValue, float aTime)
     {
         float alpha = Illustration.GetComponent<Image>().color.a;
+        
         for (float i = 0f; i < 7f; i += Time.deltaTime / aTime)
         {
             Color newcolor = new Color(Illustration.GetComponent<Image>().color.r, Illustration.GetComponent<Image>().color.g, Illustration.GetComponent<Image>().color.b, Mathf.Lerp(alpha, aValue, i));

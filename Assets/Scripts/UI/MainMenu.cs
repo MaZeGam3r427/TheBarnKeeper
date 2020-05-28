@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Cinematic");
+        FindObjectOfType<AudioManager>().StopPlaying("Main Theme");
     }
 
     public void Options()

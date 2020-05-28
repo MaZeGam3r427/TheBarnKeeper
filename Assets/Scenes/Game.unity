@@ -327,10 +327,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 259310}
-    characterCount: 497
+    characterCount: 511
     spriteCount: 0
-    spaceCount: 103
-    wordCount: 103
+    spaceCount: 105
+    wordCount: 105
     linkCount: 0
     lineCount: 18
     pageCount: 1
@@ -6711,7 +6711,7 @@ MonoBehaviour:
     it should\u2019ve improved their physical capabilities but instead, the majority
     pasted away. Across 6 tests subjects, only one tall black man survived the injection.
     But as I injected him with the solution in his cage, he began to be aggressive
-    and tried to harm me. I'll make him pay! This affront will cost him his arms!
+    and tried to harm me. I'll make him pay! This affront will cost him his hands!
     So he won\u2019t try to escape me or harm me again"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9d52b4686bf06f45a332ae5ebdcd85e, type: 2}
@@ -6782,7 +6782,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 500171085}
-    characterCount: 517
+    characterCount: 518
     spriteCount: 0
     spaceCount: 98
     wordCount: 98

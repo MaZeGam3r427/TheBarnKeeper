@@ -7,7 +7,7 @@ public class ScriptDegage : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform target;
-    public float distance;
+    public float distance = 2f;
     public float radius = 3f;
     Animator BackToIDLE;
 
@@ -17,13 +17,26 @@ public class ScriptDegage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            BackToIDLE.SetBool("isWalking", false);
-            BackToIDLE.SetBool("isRuuning", false);
-            agent.destination = target.position;
-            agent.stoppingDistance = 3f;
-            
+            Debug.Log("RUN");
         }
+
+        //else if (gameObject.CompareTag("Light"))
+        //{
+        //BackToIDLE.SetBool("isWalking", false);
+        //BackToIDLE.SetBool("isRuuning", false);
+        //agent.destination = target.position;
+        //agent.stoppingDistance = 3f;
+        //Debug.Log("Fuck");
+        //}
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Light")
+        {
+            Debug.Log("Worked");
+        }
+    }
 }
+
 

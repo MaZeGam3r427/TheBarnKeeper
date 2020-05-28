@@ -2202,6 +2202,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 134628380}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &137711544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 813355482, guid: 5d2ddd656051153489a6514f5aa403d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135156576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &137711547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137711544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.5691667, y: 5.611504, z: 33.674335}
+  m_Center: {x: 0.27280122, y: 3.803949, z: 16.720484}
 --- !u!1 &165483020
 GameObject:
   m_ObjectHideFlags: 0
@@ -24229,6 +24248,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 813355482, guid: 5d2ddd656051153489a6514f5aa403d6, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 958048115, guid: 5d2ddd656051153489a6514f5aa403d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 669691660647901532, guid: 5d2ddd656051153489a6514f5aa403d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1571602871332801820, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: ClimbText
@@ -26923,6 +26955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonstreFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296172667837940441, guid: d8bb70d155547fa40b47dd3ef356b90b,
+        type: 3}
+      propertyPath: timeForNewPath
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9134112946238720410, guid: d8bb70d155547fa40b47dd3ef356b90b,
         type: 3}

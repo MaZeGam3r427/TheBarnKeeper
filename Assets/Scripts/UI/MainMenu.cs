@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     {
         OptionMenuObj.SetActive(false);
         Screen.fullScreen = true;
+        FindObjectOfType<AudioManager>().Play("Main Theme");
     }
 
     private void Awake()

@@ -41,6 +41,7 @@ public class Raycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Ammo = 0;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

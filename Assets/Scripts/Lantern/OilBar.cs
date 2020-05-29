@@ -40,19 +40,17 @@ public class OilBar : MonoBehaviour
         if (Oil <= 0)
         {
             Light.SetActive(false);
-            FindObjectOfType<AudioManager>().Play("Off Flame");
         }
         else 
         {
             Light.SetActive(true);
-            FindObjectOfType<AudioManager>().Play("Flame On");
         }
     }
     public void RechargeClick()
     {
         if(Raycast.Ammo > 0)
         {
-            Oil = Oil + 30;
+            Oil = Oil + 50;
             Raycast.Ammo--;
         }   
     }

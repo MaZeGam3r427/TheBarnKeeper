@@ -118,6 +118,13 @@ public class MenuManager : MonoBehaviour
     public void Replay()
     {
         SceneManager.LoadScene("Game");
+        Time.timeScale = 1f;
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
     }
 
 

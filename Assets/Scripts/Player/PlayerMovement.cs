@@ -128,6 +128,11 @@ public class PlayerMovement : MonoBehaviour
             isInteracting = true;
         }
 
+        if(isInteracting)
+        {
+            FindObjectOfType<AudioManager>().Play("TakeSFX");
+        }
+
     }
 
     void CanPick()

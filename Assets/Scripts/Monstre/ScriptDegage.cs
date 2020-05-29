@@ -10,31 +10,24 @@ public class ScriptDegage : MonoBehaviour
     public float distance = 2f;
     public float radius = 3f;
     Animator BackToIDLE;
+    public GameObject activeObject;
 
+    private void Start()
+    {
+        activeObject = GameObject.Find("Monstre OBJ Riggé");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && activeObject == true)
         {
-            Debug.Log("RUN");
-        }
 
-        //else if (gameObject.CompareTag("Light"))
-        //{
-        //BackToIDLE.SetBool("isWalking", false);
-        //BackToIDLE.SetBool("isRuuning", false);
-        //agent.destination = target.position;
-        //agent.stoppingDistance = 3f;
-        //Debug.Log("Fuck");
-        //}
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Light")
-        {
-            Debug.Log("Worked");
+            agent.destination = target.position;
+            agent.stoppingDistance = 3f;
+            Debug.Log("Fuck");
+            BackToIDLE.SetBool("isWalking", false);
+            BackToIDLE.SetBool("isRuuning", false);
         }
     }
 }

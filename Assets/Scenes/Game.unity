@@ -24618,6 +24618,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.264
       objectReference: {fileID: 0}
+    - target: {fileID: 669691660647901532, guid: 5d2ddd656051153489a6514f5aa403d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1571602871332801820, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: ClimbText
@@ -24908,7 +24913,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controller
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 137711547, guid: 5d2ddd656051153489a6514f5aa403d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5d2ddd656051153489a6514f5aa403d6, type: 3}
 --- !u!114 &2135156578 stripped
 MonoBehaviour:
@@ -26285,7 +26291,7 @@ PrefabInstance:
     - target: {fileID: 6469399759978389580, guid: b8d00a1d9129d614a8695c592c90d53c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8042502143960453727, guid: b8d00a1d9129d614a8695c592c90d53c,
         type: 3}
@@ -26300,7 +26306,7 @@ PrefabInstance:
     - target: {fileID: 8042502143960453727, guid: b8d00a1d9129d614a8695c592c90d53c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.386
+      value: 30.898
       objectReference: {fileID: 0}
     - target: {fileID: 8042502143960453727, guid: b8d00a1d9129d614a8695c592c90d53c,
         type: 3}

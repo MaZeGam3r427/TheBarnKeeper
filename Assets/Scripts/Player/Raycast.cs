@@ -12,7 +12,7 @@ public class Raycast : MonoBehaviour
     public GameObject LadderFixed;
     public GameObject KeyExit;
     public GameObject FirstAmmoText;
-    public GameObject ColliderEnd;
+    public GameObject Monstre;
     bool isOpen;
 
     [Header("Notes")]
@@ -176,6 +176,7 @@ public class Raycast : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("KeyRemise") && PlayerMovement.isInteracting == true)
                 {
                     CaseManager.KeyRemise = true;
+                    Monstre.SetActive(true);
                     hit.collider.gameObject.SetActive(false);
                     TextDisplaying.KeyRemiseTakenBool = true;
                     PlayerMovement.isInteracting = false;
@@ -187,6 +188,7 @@ public class Raycast : MonoBehaviour
                     hit.collider.gameObject.tag = "Untagged";
                     KeyExit.SetActive(false);
                     TextDisplaying.KeyExitTakenBool = true;
+                    Monstre.SetActive(true);
                     PlayerMovement.isInteracting = false;
                 }
 
@@ -210,6 +212,7 @@ public class Raycast : MonoBehaviour
                                     CaseManager.KeyRemiseCheck = true;
                                     hit.collider.enabled = false;
                                     hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Open");
+                                    Monstre.SetActive(false);
                                     PlayerMovement.isInteracting = false;
                                 }
                             }
@@ -243,10 +246,8 @@ public class Raycast : MonoBehaviour
                                     TextDisplaying.KeyExitBool = true;
                                     CaseManager.KeyExitCheck = true;
                                     hit.collider.enabled = false;
-                                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Open");
                                     PlayerMovement.isInteracting = false;
-                                    ColliderEnd.SetActive(true);
-                                    StartCoroutine(SUCE());
+                                    SceneManager.LoadScene("End");
                                 }
                             }
 
@@ -411,12 +412,6 @@ public class Raycast : MonoBehaviour
                 canInteract = false;
             }
         }
-    }
-
-    IEnumerator SUCE()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        SceneManager.LoadScene("End");
     }
 
     public void ExitNotesUI()

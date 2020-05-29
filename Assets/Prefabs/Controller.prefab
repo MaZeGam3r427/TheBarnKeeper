@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 813355483}
   - component: {fileID: 813355484}
+  - component: {fileID: 137711547}
   m_Layer: 0
   m_Name: SpotLightUp
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +92,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &137711547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813355482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.5691667, y: 5.611504, z: 33.674335}
+  m_Center: {x: 0.27280122, y: 3.803949, z: 16.720484}
 --- !u!1 &958048115
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,10 +339,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CaseManager: {fileID: 0}
   TextDisplaying: {fileID: 0}
+  CursorUI: {fileID: 0}
   LadderFixed: {fileID: 0}
   KeyExit: {fileID: 0}
   FirstAmmoText: {fileID: 0}
-  ColliderEnd: {fileID: 0}
+  Monstre: {fileID: 0}
   NotesUI: {fileID: 0}
   Note1: {fileID: 0}
   Note2: {fileID: 0}
@@ -502,8 +517,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7405351267401513921}
-  m_LocalRotation: {x: 0.003117484, y: -0.9925133, z: 0.119311206, w: 0.025933392}
-  m_LocalPosition: {x: 43.50697, y: 14.797769, z: 63.8192}
+  m_LocalRotation: {x: 0.11935193, y: -0, z: -0, w: 0.9928521}
+  m_LocalPosition: {x: -0.099998385, y: 0.84999955, z: -0.13999833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7405351267925773004}
@@ -605,7 +620,6 @@ GameObject:
   - component: {fileID: 7405351267925773004}
   - component: {fileID: 364589853826036066}
   - component: {fileID: 9174544083815233501}
-  - component: {fileID: 5926736363477264120}
   - component: {fileID: 1571602871332801820}
   - component: {fileID: 3060248091223430809}
   - component: {fileID: 2126041730}
@@ -662,20 +676,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5926736363477264120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7405351267925773005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011f384d2ff2b444d8baa624dfbfd675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathScreenUI: {fileID: -927199367670048503, guid: 494d0f855e2e48b45ab91e7245b1acf9,
-    type: 3}
 --- !u!114 &1571602871332801820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +698,7 @@ MonoBehaviour:
   RepairText: {fileID: 0}
   OpenText: {fileID: 0}
   ReadText: {fileID: 0}
+  DeathScreenUI: {fileID: 0}
   GroundPlow: {fileID: 0}
   WallPlow: {fileID: 0}
   speed: 2.75

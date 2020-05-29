@@ -115,9 +115,9 @@ public class MenuManager : MonoBehaviour
         MenuPauseUI.SetActive(false);
     }
 
-    public void Exit()
+    public void Replay()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Game");
     }
 
 

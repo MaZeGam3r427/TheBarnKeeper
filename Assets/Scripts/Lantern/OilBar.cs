@@ -31,10 +31,10 @@ public class OilBar : MonoBehaviour
             Oil = Oil - 5;
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Oil -= 50;
-        }
+        //if(Input.GetKeyDown(KeyCode.Mouse0))
+        //{
+        //    Oil -= 50;
+        //}
 
         //permet de désactiver la lanterne lorsque la barre atteint zéro
         if (Oil <= 0)

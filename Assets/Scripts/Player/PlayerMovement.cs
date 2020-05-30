@@ -118,11 +118,6 @@ public class PlayerMovement : MonoBehaviour
             isInteracting = true;
         }
 
-        if(isInteracting)
-        {
-            FindObjectOfType<AudioManager>().Play("TakeSFX");
-        }
-
     }
 
     void CanPick()
@@ -202,7 +197,8 @@ public class PlayerMovement : MonoBehaviour
                 || other.gameObject.CompareTag("DoorLabo") || other.gameObject.CompareTag("DoorExit")
                 || other.gameObject.CompareTag("Drawer") || other.gameObject.CompareTag("Note1")
                 || other.gameObject.CompareTag("Note2") || other.gameObject.CompareTag("Note3")
-                || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder"))
+                || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder")
+                || other.gameObject.CompareTag("Lanterne"))
         {
             other.GetComponent<Animator>().enabled = true;
         }
@@ -219,7 +215,8 @@ public class PlayerMovement : MonoBehaviour
                 || other.gameObject.CompareTag("DoorLabo") || other.gameObject.CompareTag("DoorExit")
                 || other.gameObject.CompareTag("Drawer") || other.gameObject.CompareTag("Note1")
                 || other.gameObject.CompareTag("Note2") || other.gameObject.CompareTag("Note3")
-                || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder"))
+                || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder")
+                || other.gameObject.CompareTag("Lanterne"))
         {
             other.GetComponent<Animator>().enabled = false;
             

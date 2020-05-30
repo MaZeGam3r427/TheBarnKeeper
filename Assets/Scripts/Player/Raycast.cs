@@ -9,6 +9,7 @@ public class Raycast : MonoBehaviour
     public TextDisplaying TextDisplaying;
     public GameObject CursorUI;
 
+    int Number = 0;
     public GameObject LadderFixed;
     public GameObject KeyExit;
     public GameObject FirstAmmoText;
@@ -21,6 +22,11 @@ public class Raycast : MonoBehaviour
     public GameObject Note2;
     public GameObject Note3;
     public GameObject Note4;
+
+    public GameObject IGNote1;
+    public GameObject IGNote2;
+    public GameObject IGNote3;
+    public GameObject IGNote4;
 
     public static int Ammo = 0;
 
@@ -41,20 +47,24 @@ public class Raycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Game Theme");
         Ammo = 0;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
     IEnumerator DisplayFirstAmmoText(float time)
     {
         FirstAmmoText.SetActive(true);
         yield return new WaitForSecondsRealtime(time);
         FirstAmmoText.SetActive(false);
     }
+
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Number);
         useRayCast = PlayerMovement.useRaycast;
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -74,6 +84,10 @@ public class Raycast : MonoBehaviour
             {
                 canPick = true;
             }
+            if(!isReading)
+            {
+                Number = 0;
+            }
 
             //Si le joueur regarde l'un des objets avec lequel il peut interagir, le texte d'interaction apparaît
             if (hit.collider.gameObject.CompareTag("Planks") || hit.collider.gameObject.CompareTag("Hammer")
@@ -92,47 +106,42 @@ public class Raycast : MonoBehaviour
                     || hit.collider.gameObject.CompareTag("Note3") || hit.collider.gameObject.CompareTag("Note4"))
                 {
                     isReading = true;
-                    if(PlayerMovement.isInteracting)
+                    if (PlayerMovement.isInteracting)
                     {
+                        FindObjectOfType<AudioManager>().Play("TakePaper");
                         NotesUI.SetActive(true);
                         Time.timeScale = 0f;
 
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
                         CursorUI.SetActive(false);
-                        isReading = false;
-                        canInteract = false;
 
-                        if (hit.collider.gameObject.CompareTag("Note1"))
+                        if(hit.collider.gameObject.CompareTag("Note1"))
                         {
+                            IGNote1.SetActive(false);
                             Note1.SetActive(true);
                             PlayerMovement.isInteracting = false;
-                            isReading = false;
-                            canInteract = false;
                         }
 
                         if(hit.collider.gameObject.CompareTag("Note2"))
                         {
+                            IGNote2.SetActive(false);
                             Note2.SetActive(true);
                             PlayerMovement.isInteracting = false;
-                            isReading = false;
-                            canInteract = false;
                         }
 
                         if(hit.collider.gameObject.CompareTag("Note3"))
                         {
+                            IGNote3.SetActive(false);
                             Note3.SetActive(true);
                             PlayerMovement.isInteracting = false;
-                            isReading = false;
-                            canInteract = false;
                         }
 
-                        if (hit.collider.gameObject.CompareTag("Note4"))
+                        if(hit.collider.gameObject.CompareTag("Note4"))
                         {
+                            IGNote4.SetActive(false);
                             Note4.SetActive(true);
                             PlayerMovement.isInteracting = false;
-                            isReading = false;
-                            canInteract = false;
                         }
 
                         if(Input.GetKeyDown(KeyCode.Mouse0))
@@ -150,6 +159,7 @@ public class Raycast : MonoBehaviour
                         StartCoroutine(DisplayFirstAmmoText(3.5f));
                         gotFirstAmmo = true;
                     }
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
                     Ammo++;
                     hit.collider.gameObject.SetActive(false);
                     PlayerMovement.isInteracting = false;
@@ -176,6 +186,7 @@ public class Raycast : MonoBehaviour
 
                 if (hit.collider.gameObject.CompareTag("KeyRemise") && PlayerMovement.isInteracting == true)
                 {
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
                     CaseManager.KeyRemise = true;
                     Monstre.SetActive(true);
                     hit.collider.gameObject.SetActive(false);
@@ -185,6 +196,7 @@ public class Raycast : MonoBehaviour
 
                 if(hit.collider.gameObject.CompareTag("KeyExit") && PlayerMovement.isInteracting)
                 {
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
                     CaseManager.KeyExit = true;
                     hit.collider.gameObject.tag = "Untagged";
                     KeyExit.SetActive(false);
@@ -259,6 +271,7 @@ public class Raycast : MonoBehaviour
 
                 if (hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
                 {
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
                     CaseManager.KeyLabo = true;
                     hit.collider.gameObject.SetActive(false);
                     TextDisplaying.KeyLaboTakenBool = true;
@@ -283,6 +296,7 @@ public class Raycast : MonoBehaviour
                 //+ un message s'affiche (cf : script TextDisplaying)
                 if (hit.collider.gameObject.CompareTag("Planks") && PlayerMovement.isInteracting == true)
                 {
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
                     CaseManager.Planks = true;
                     hit.collider.gameObject.SetActive(false);
                     TextDisplaying.planksBool = true;
@@ -294,6 +308,7 @@ public class Raycast : MonoBehaviour
                 //+ un message s'affiche (cf : script TextDisplaying)
                 if (hit.collider.gameObject.CompareTag("Hammer") && PlayerMovement.isInteracting == true)
                 {
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
                     CaseManager.Hammer = true;
                     hit.collider.gameObject.SetActive(false);
                     TextDisplaying.hammerBool = true;
@@ -317,6 +332,7 @@ public class Raycast : MonoBehaviour
 
                         if (CaseManager.Hammer == true && CaseManager.Planks == true)
                         {
+                            FindObjectOfType<AudioManager>().Play("RepairLadder");
                             TextDisplaying.EtabliRessource = true;
                             PlayerMovement.isInteracting = false;
                             hit.collider.enabled = false;
@@ -408,7 +424,6 @@ public class Raycast : MonoBehaviour
                 useEtabli = false;
                 useCage = false;
                 useDoor = false;
-                isReading = false;
                 useStorageLock = false;
                 canInteract = false;
             }
@@ -419,16 +434,23 @@ public class Raycast : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        NotesUI.SetActive(false);
-        Note1.SetActive(false);
-        Note2.SetActive(false);
-        Note3.SetActive(false);
-        Note4.SetActive(false);
         CursorUI.SetActive(true);
+        NotesUI.SetActive(false);
+
+        Note1.SetActive(false);
+        IGNote1.SetActive(true);
+
+        Note2.SetActive(false);
+        IGNote2.SetActive(true);
+
+        Note3.SetActive(false);
+        IGNote3.SetActive(true);
+
+        Note4.SetActive(false);
+        IGNote4.SetActive(true);
 
         PlayerMovement.isInteracting = false;
         isReading = false;
-        canInteract = false;
         Time.timeScale = 1f;
     }
 }

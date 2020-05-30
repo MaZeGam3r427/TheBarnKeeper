@@ -60,16 +60,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //LightOn = LanterneAction.isLighting;
-
-        //if(LightOn == false)
-        //{
-        //    canWalk = true;
-        //}
-        //else
-        //{
-        //    canWalk = false;
-        //}
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -201,6 +191,38 @@ public class PlayerMovement : MonoBehaviour
             DeathScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+
+        if (other.gameObject.CompareTag("Planks") || other.gameObject.CompareTag("Hammer")
+                || other.gameObject.CompareTag("Etabli") || other.gameObject.CompareTag("LadderBroken")
+                || other.gameObject.CompareTag("LockStorage") || other.gameObject.CompareTag("LockDesktop")
+                || other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("KeyRemise")
+                || other.gameObject.CompareTag("KeyLabo") || other.gameObject.CompareTag("KeyExit")
+                || other.gameObject.CompareTag("MunLampe") || other.gameObject.CompareTag("DoorRemise")
+                || other.gameObject.CompareTag("DoorLabo") || other.gameObject.CompareTag("DoorExit")
+                || other.gameObject.CompareTag("Drawer") || other.gameObject.CompareTag("Note1")
+                || other.gameObject.CompareTag("Note2") || other.gameObject.CompareTag("Note3")
+                || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder"))
+        {
+            other.GetComponent<Animator>().enabled = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Planks") || other.gameObject.CompareTag("Hammer")
+                || other.gameObject.CompareTag("Etabli") || other.gameObject.CompareTag("LadderBroken")
+                || other.gameObject.CompareTag("LockStorage") || other.gameObject.CompareTag("LockDesktop")
+                || other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("KeyRemise")
+                || other.gameObject.CompareTag("KeyLabo") || other.gameObject.CompareTag("KeyExit")
+                || other.gameObject.CompareTag("MunLampe") || other.gameObject.CompareTag("DoorRemise")
+                || other.gameObject.CompareTag("DoorLabo") || other.gameObject.CompareTag("DoorExit")
+                || other.gameObject.CompareTag("Drawer") || other.gameObject.CompareTag("Note1")
+                || other.gameObject.CompareTag("Note2") || other.gameObject.CompareTag("Note3")
+                || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder"))
+        {
+            other.GetComponent<Animator>().enabled = false;
+            
         }
     }
 }

@@ -100,7 +100,7 @@ public class LockSystem : MonoBehaviour
             StorageLockSlot4.GetComponent<TextMeshProUGUI>().text == AlphabetArray[3].ToString())
         {
             CageAnims.SetTrigger("Open");
-            StoreRoomLock.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("DoorUnlock");
             //Monstre.SetActive(false);
         }
 
@@ -114,6 +114,7 @@ public class LockSystem : MonoBehaviour
             DrawerAnims.gameObject.tag = "KeyExit";
             LockDesktopDrawer.SetActive(false);
             UnlockDesktopDrawer.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("DoorUnlock");
         }
     }
 

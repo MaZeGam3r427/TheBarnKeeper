@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
                 || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder")
                 || other.gameObject.CompareTag("Lanterne"))
         {
-            other.GetComponent<Animator>().enabled = true;
+            other.GetComponent<Animator>().SetBool("isOn", true);
         }
     }
 
@@ -218,7 +218,7 @@ public class PlayerMovement : MonoBehaviour
                 || other.gameObject.CompareTag("Note4") || other.gameObject.CompareTag("Ladder")
                 || other.gameObject.CompareTag("Lanterne"))
         {
-            other.GetComponent<Animator>().enabled = false;
+            other.GetComponent<Animator>().SetBool("isOn", false);
             
         }
     }

@@ -41,7 +41,7 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseOpen == false && OptionsOpen == false && Input.GetKeyDown(KeyCode.Tab))
+        if (PauseOpen == false && OptionsOpen == false  && !Raycast.isReading && Input.GetKeyDown(KeyCode.Tab))
         {
             if(InventoryOpen)
             {
@@ -53,7 +53,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (InventoryOpen == false && OptionsOpen == false && Input.GetKeyDown(KeyCode.Escape))
+        if (InventoryOpen == false && OptionsOpen == false && !Raycast.isReading && Input.GetKeyDown(KeyCode.Escape))
         {
             OpenPauseMenu();
         }

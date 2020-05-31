@@ -184,9 +184,27 @@ public class Raycast : MonoBehaviour
                     }
                 }
 
+                //Si le joueur regarde la clé de la remise et appuie sur E
                 if (hit.collider.gameObject.CompareTag("KeyRemise") && PlayerMovement.isInteracting == true)
                 {
+                    //SFX de récupération d'objets
                     FindObjectOfType<AudioManager>().Play("TakeSFX");
+
+                    //Joue un cri de monstre aléatoire lorsque la clé est récupéré
+                    int random = Random.Range(1, 3);
+                    switch(random)
+                    {
+                        case 1:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream1");
+                            break;
+                        case 2:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream2");
+                            break;
+                        case 3:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream3");
+                            break;
+                    }
+
                     CaseManager.KeyRemise = true;
                     Monstre.SetActive(true);
                     hit.collider.gameObject.SetActive(false);

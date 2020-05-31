@@ -50,6 +50,7 @@ public class OilBar : MonoBehaviour
     {
         if(Raycast.Ammo > 0)
         {
+            FindObjectOfType<AudioManager>().Play("Reload");
             Oil = Oil + 50;
             Raycast.Ammo--;
         }   

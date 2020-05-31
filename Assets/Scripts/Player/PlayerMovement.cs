@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Game Theme");
         useRaycast = true;
         myRaycast = GameObject.Find("VCam1").GetComponent<Raycast>();
         Cursor.visible = false;

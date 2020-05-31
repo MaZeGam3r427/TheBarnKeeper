@@ -47,7 +47,7 @@ public class Raycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Game Theme");
+        //FindObjectOfType<AudioManager>().Play("Game Theme");
         Ammo = 0;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         Cursor.visible = false;
@@ -239,6 +239,7 @@ public class Raycast : MonoBehaviour
                                 }
                                 if (CaseManager.KeyRemise == true)
                                 {
+                                    FindObjectOfType<AudioManager>().Play("DoorUnlock");
                                     TextDisplaying.KeyRemiseBool = true;
                                     CaseManager.KeyRemiseCheck = true;
                                     hit.collider.enabled = false;
@@ -257,6 +258,7 @@ public class Raycast : MonoBehaviour
                                 }
                                 if (CaseManager.KeyLabo == true)
                                 {
+                                    FindObjectOfType<AudioManager>().Play("DoorUnlock");
                                     TextDisplaying.KeyLaboBool = true;
                                     CaseManager.KeyLaboCheck = true;
                                     hit.collider.enabled = false;
@@ -274,6 +276,7 @@ public class Raycast : MonoBehaviour
                                 }
                                 else
                                 {
+                                    FindObjectOfType<AudioManager>().Play("DoorUnlock");
                                     TextDisplaying.KeyExitBool = true;
                                     CaseManager.KeyExitCheck = true;
                                     hit.collider.enabled = false;

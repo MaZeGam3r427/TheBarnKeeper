@@ -12,6 +12,8 @@ public class OilBar : MonoBehaviour
 
     bool hasLantern;
 
+    private bool lanternoutofgazplayed = false;
+
     void Update()
     {
         //Permet de remplire la barre d'huile sans dépaser de zéro a cent 
@@ -40,6 +42,11 @@ public class OilBar : MonoBehaviour
         if (Oil <= 0)
         {
             Light.SetActive(false);
+            if (lanternoutofgazplayed == false)
+            {
+                FindObjectOfType<AudioManager>().Play("LanternOutOfGaz");
+                lanternoutofgazplayed = true;
+            }
         }
         else 
         {
@@ -50,6 +57,7 @@ public class OilBar : MonoBehaviour
     {
         if(Raycast.Ammo > 0)
         {
+            lanternoutofgazplayed = false;
             FindObjectOfType<AudioManager>().Play("Reload");
             Oil = Oil + 50;
             Raycast.Ammo--;

@@ -17,7 +17,10 @@ public class CinematicEnd : MonoBehaviour
     private bool illu5played = false;
     private bool illu6played = false;
 
-
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().StopPlaying("Game Theme");
+    }
 
     void Update()
     {

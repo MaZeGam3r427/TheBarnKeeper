@@ -9,6 +9,7 @@ public class ScriptDeath : MonoBehaviour
     {
        if(col.gameObject.name == "Group7952")
         {
+            FindObjectOfType<AudioManager>().Play("GameOver");
             gameObject.SetActive(false);
             DeathScreenUI.SetActive(true);
             Debug.Log("your dead");

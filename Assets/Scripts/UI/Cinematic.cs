@@ -21,7 +21,6 @@ public class Cinematic : MonoBehaviour
     private bool illu1played = false;
     private bool illu2played = false;
     private bool illu3played = false;
-    private bool illu4played = false;
 
     void Update()
     {

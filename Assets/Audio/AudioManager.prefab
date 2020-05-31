@@ -94,6 +94,76 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
     audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: RepairLadder
+    clip: {fileID: 8300000, guid: 8cef7fd433e31ff4aa311c41a60ee27c, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: TakePaper
+    clip: {fileID: 8300000, guid: 5bab37427e0c0484e8422c1415323a6f, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Game Theme
+    clip: {fileID: 8300000, guid: 9c27bc41bf6520d49a7d154051f97604, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: MonsterScream1
+    clip: {fileID: 8300000, guid: 90dd954d973c5f44eacfac27e6365d68, type: 3}
+    volume: 0.12
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: MonsterScream2
+    clip: {fileID: 8300000, guid: 1a0e9f265565e8f47873da9807a24f23, type: 3}
+    volume: 0.12
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: MonsterScream3
+    clip: {fileID: 8300000, guid: a5c86b61528e3da4ba4e13ea051e8191, type: 3}
+    volume: 0.12
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: Reload
+    clip: {fileID: 8300000, guid: 2a7576dc51aa9544ca75920d1de1aa53, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: LanternOutOfGaz
+    clip: {fileID: 8300000, guid: 584b5b84ab88fa247bc5d99596dced89, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: DoorUnlock
+    clip: {fileID: 8300000, guid: d4e6a4b34aa59974092622b183a65ed5, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: e164d9feca3eef144a9eff4d141fe5ce, type: 3}
+    volume: 0.131
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    audioMixer: {fileID: 24100000, guid: 647b0a97134aa4d4d9542093dc257928, type: 2}
 --- !u!114 &1598196462
 MonoBehaviour:
   m_ObjectHideFlags: 0

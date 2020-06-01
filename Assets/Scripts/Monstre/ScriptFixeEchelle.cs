@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptMonstreDepop : MonoBehaviour
+public class ScriptFixeEchelle : MonoBehaviour
 {
-    public GameObject Monstre;
-    public GameObject Pop;
-    public GameObject Depop;
+    public GameObject Echelle;
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Monstre.SetActive(false);
-            Pop.SetActive(false);
-            Depop.SetActive(false);
+            Echelle.SetActive(false);
         }
     }
 }

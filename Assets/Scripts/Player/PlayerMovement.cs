@@ -12,14 +12,15 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Variables")]
-    float climbTimer;
-    bool isClimbing;
-    bool canClimbing;
+    //float climbTimer;
+    //bool isClimbing;
+    //bool canClimbing;
+    //bool LightOn = false;
+    //bool lookAt;
+    //bool isPickable;
     bool canPick;
-    bool isPickable;
+    bool isDead;
     public static bool canWalk = true;
-    bool LightOn = false;
-    bool lookAt;
     public static bool useRaycast;
     public static bool isInteracting;
     [HideInInspector] public Raycast myRaycast;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        isDead = false;
         FindObjectOfType<AudioManager>().Play("Game Theme");
         useRaycast = true;
         myRaycast = GameObject.Find("VCam1").GetComponent<Raycast>();
@@ -61,6 +63,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        //if(isDead)
+        //{
+        //    FindObjectOfType<AudioManager>().StopPlaying("Game Theme");
+        //    FindObjectOfType<AudioManager>().Play("GameOver");
+        //    FindObjectOfType<AudioManager>().Play("HeartBeat");
+        //}
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -109,6 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
             canPick = false;
             gotLantern = true;
+
+            FindObjectOfType<AudioManager>().Play("FlameOn");
 
             GroundPlow.SetActive(true);
             WallPlow.SetActive(false);
@@ -182,7 +193,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Monstre"))
         {
-            Debug.Log("touché");
+            //isDead = true;
+            FindObjectOfType<AudioManager>().StopPlaying("Game Theme");
+            FindObjectOfType<AudioManager>().Play("GameOver");
+            FindObjectOfType<AudioManager>().Play("HeartBeat");
             Time.timeScale = 0f;
             DeathScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
@@ -220,7 +234,6 @@ public class PlayerMovement : MonoBehaviour
                 || other.gameObject.CompareTag("Lanterne"))
         {
             other.GetComponent<Animator>().SetBool("isOn", false);
-            other.enabled = false;
 
         }
     }

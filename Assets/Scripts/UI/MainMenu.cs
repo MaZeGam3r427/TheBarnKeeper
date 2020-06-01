@@ -12,18 +12,21 @@ public class MainMenu : MonoBehaviour
     public Sprite OptionWindowed;
     public Sprite OptionFullscreen;
 
+   
+
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         OptionMenuObj.SetActive(false);
         Screen.fullScreen = true;
         FindObjectOfType<AudioManager>().Play("Main Theme");
     }
 
-    private void Awake()
-    {
-
-        FindObjectOfType<AudioManager>().Play("Main Theme");
-    }
+    //private void Awake()
+    //{
+    //    FindObjectOfType<AudioManager>().Play("Main Theme");
+    //}
 
     //Menu Principal
     public void Play()

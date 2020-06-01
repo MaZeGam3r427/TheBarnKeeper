@@ -25,7 +25,6 @@ public class ScriptDegage : MonoBehaviour
 
             agent.destination = target.position;
             agent.stoppingDistance = 3f;
-            Debug.Log("Fuck");
             BackToIDLE.SetBool("isWalking", false);
             BackToIDLE.SetBool("isRuuning", false);
             BackToIDLE.SetBool("isIdle", true);

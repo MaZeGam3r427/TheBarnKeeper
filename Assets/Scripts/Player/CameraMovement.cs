@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
     float xRotation = 0f;
     float mouseY;
 
-    bool LightOn = false;
+    //bool LightOn = false;
 
     // Update is called once per frame
     void Update()

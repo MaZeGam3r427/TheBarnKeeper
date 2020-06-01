@@ -10,11 +10,12 @@ public class Raycast : MonoBehaviour
     public GameObject CursorUI;
 
     int Number = 0;
+    //bool isOpen;
     public GameObject LadderFixed;
     public GameObject KeyExit;
     public GameObject FirstAmmoText;
     public GameObject Monstre;
-    bool isOpen;
+    
 
     [Header("Notes")]
     public GameObject NotesUI;
@@ -30,7 +31,7 @@ public class Raycast : MonoBehaviour
 
     public static int Ammo = 0;
 
-    bool useRayCast = true;
+    //bool useRayCast = true;
     bool gotFirstAmmo;
     public static bool isReading = false;
     public static bool isLooking = false;
@@ -47,6 +48,7 @@ public class Raycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Number = 0;
         //FindObjectOfType<AudioManager>().Play("Game Theme");
         Ammo = 0;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -64,8 +66,7 @@ public class Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Number);
-        useRayCast = PlayerMovement.useRaycast;
+        //useRayCast = PlayerMovement.useRaycast;
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         //Bit shift the index of the layer (8) to geta bit mask
@@ -156,7 +157,7 @@ public class Raycast : MonoBehaviour
                 {
                     if (!gotFirstAmmo)
                     {
-                        StartCoroutine(DisplayFirstAmmoText(3.5f));
+                        StartCoroutine(DisplayFirstAmmoText(2f));
                         gotFirstAmmo = true;
                     }
                     FindObjectOfType<AudioManager>().Play("TakeSFX");
@@ -192,6 +193,7 @@ public class Raycast : MonoBehaviour
 
                     //Joue un cri de monstre aléatoire lorsque la clé est récupéré
                     int random = Random.Range(1, 3);
+
                     switch(random)
                     {
                         case 1:
@@ -212,11 +214,51 @@ public class Raycast : MonoBehaviour
                     PlayerMovement.isInteracting = false;
                 }
 
-                if(hit.collider.gameObject.CompareTag("KeyExit") && PlayerMovement.isInteracting)
+                if (hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
                 {
                     FindObjectOfType<AudioManager>().Play("TakeSFX");
+
+                    int random = Random.Range(1, 3);
+                    switch (random)
+                    {
+                        case 1:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream1");
+                            break;
+                        case 2:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream2");
+                            break;
+                        case 3:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream3");
+                            break;
+                    }
+
+                    CaseManager.KeyLabo = true;
+                    hit.collider.gameObject.SetActive(false);
+                    TextDisplaying.KeyLaboTakenBool = true;
+                    PlayerMovement.isInteracting = false;
+
+                }
+
+                if (hit.collider.gameObject.CompareTag("KeyExit") && PlayerMovement.isInteracting)
+                {
+                    FindObjectOfType<AudioManager>().Play("TakeSFX");
+
+                    int random = Random.Range(1, 3);
+                    switch (random)
+                    {
+                        case 1:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream1");
+                            break;
+                        case 2:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream2");
+                            break;
+                        case 3:
+                            FindObjectOfType<AudioManager>().Play("MonsterScream3");
+                            break;
+                    }
+
                     CaseManager.KeyExit = true;
-                    hit.collider.gameObject.tag = "Untagged";
+                    hit.collider.enabled = false;
                     KeyExit.SetActive(false);
                     TextDisplaying.KeyExitTakenBool = true;
                     Monstre.SetActive(true);
@@ -288,16 +330,6 @@ public class Raycast : MonoBehaviour
 
                         }
                     }
-                }   
-
-                if (hit.collider.gameObject.CompareTag("KeyLabo") && PlayerMovement.isInteracting == true)
-                {
-                    FindObjectOfType<AudioManager>().Play("TakeSFX");
-                    CaseManager.KeyLabo = true;
-                    hit.collider.gameObject.SetActive(false);
-                    TextDisplaying.KeyLaboTakenBool = true;
-                    PlayerMovement.isInteracting = false;
-
                 }
 
                 if (hit.collider.gameObject.CompareTag("Obstacle"))
@@ -356,8 +388,6 @@ public class Raycast : MonoBehaviour
                             FindObjectOfType<AudioManager>().Play("RepairLadder");
                             TextDisplaying.EtabliRessource = true;
                             PlayerMovement.isInteracting = false;
-                            hit.collider.enabled = false;
-                            hit.collider.gameObject.tag = "Untagged";
                             useEtabli = false;
                             canInteract = false;
                         }
@@ -445,6 +475,7 @@ public class Raycast : MonoBehaviour
                 useEtabli = false;
                 useCage = false;
                 useDoor = false;
+                isReading = false;
                 useStorageLock = false;
                 canInteract = false;
             }

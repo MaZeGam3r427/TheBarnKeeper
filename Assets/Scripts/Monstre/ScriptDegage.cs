@@ -22,7 +22,7 @@ public class ScriptDegage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) && activeObject == true)
         {
-
+            Debug.Log("Marche");
             agent.destination = target.position;
             agent.stoppingDistance = 3f;
             BackToIDLE.SetBool("isWalking", false);

@@ -14,7 +14,7 @@ public class ScriptDegage : MonoBehaviour
 
     private void Start()
     {
-        activeObject = GameObject.Find("Monstre OBJ Riggé");
+        activeObject = GameObject.FindWithTag("Monstre");
     }
 
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class ScriptDegage : MonoBehaviour
             Debug.Log("Fuck");
             BackToIDLE.SetBool("isWalking", false);
             BackToIDLE.SetBool("isRuuning", false);
+            BackToIDLE.SetBool("isIdle", true);
         }
     }
 }

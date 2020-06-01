@@ -1399,7 +1399,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50442805}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 40dc7cfce7465bb408912faffb16f424, type: 2}
   m_CullingMode: 0
@@ -20787,7 +20787,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704561034}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 40dc7cfce7465bb408912faffb16f424, type: 2}
   m_CullingMode: 0
@@ -27606,27 +27606,27 @@ PrefabInstance:
     - target: {fileID: 7405351267401513926, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.121002495
+      value: -0.120999835
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267401513926, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2639977
+      value: 0.26399782
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.169
+      value: 27.36
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.49
+      value: 8.334
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 36.613
+      value: 32.537
       objectReference: {fileID: 0}
     - target: {fileID: 7405351267925773004, guid: 5d2ddd656051153489a6514f5aa403d6,
         type: 3}
@@ -29657,7 +29657,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3589526288973497161}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 40dc7cfce7465bb408912faffb16f424, type: 2}
   m_CullingMode: 0
@@ -29898,7 +29898,7 @@ PrefabInstance:
     - target: {fileID: 4197681819709304606, guid: c0983c637a81d554f801d33218c1a5cb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5287441783796514470, guid: c0983c637a81d554f801d33218c1a5cb,
         type: 3}
@@ -31077,6 +31077,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.28386942
       objectReference: {fileID: 0}
+    - target: {fileID: 1704561035, guid: 23b4c309e63845543805d659a447609d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4481052036938654131, guid: 23b4c309e63845543805d659a447609d,
         type: 3}
       propertyPath: m_TagString
@@ -31086,6 +31090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: DoorRemise
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552384186857221701, guid: 23b4c309e63845543805d659a447609d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5552384186857221703, guid: 23b4c309e63845543805d659a447609d,
         type: 3}
@@ -31151,6 +31160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PorteRemise
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552384187423247404, guid: 23b4c309e63845543805d659a447609d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b4c309e63845543805d659a447609d, type: 3}

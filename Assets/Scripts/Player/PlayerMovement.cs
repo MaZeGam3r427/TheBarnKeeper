@@ -220,7 +220,8 @@ public class PlayerMovement : MonoBehaviour
                 || other.gameObject.CompareTag("Lanterne"))
         {
             other.GetComponent<Animator>().SetBool("isOn", false);
-            
+            other.enabled = false;
+
         }
     }
 }

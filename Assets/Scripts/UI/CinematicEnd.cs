@@ -45,7 +45,7 @@ public class CinematicEnd : MonoBehaviour
         }
         if (delay2 == true)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Credits");
         }
 
     }

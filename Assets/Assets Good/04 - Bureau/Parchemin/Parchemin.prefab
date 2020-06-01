@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2755439521549293528}
   - component: {fileID: 6586038479452089838}
   - component: {fileID: 602011688841007383}
+  - component: {fileID: 8296172668661476911}
   m_Layer: 0
   m_Name: Parchemin
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181650084334560715}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.98163, y: 15.9897, z: 37.087143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8296172668661476911
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181650084334560715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6976098275286290718, guid: a4f659a1699f05b41b99c92125b7f18c, type: 3}

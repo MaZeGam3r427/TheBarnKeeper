@@ -48,6 +48,17 @@ public class Raycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isReading = false;
+        isLooking = false;
+        canPick = false;
+        canInteract = false;
+        useEtabli = false;
+        useLadder = false;
+        useCage = false;
+        useDoor = false;
+        useObstacle = false;
+        useStorageLock = false;
+        useDesktopLock = false;
         Number = 0;
         //FindObjectOfType<AudioManager>().Play("Game Theme");
         Ammo = 0;
@@ -66,7 +77,6 @@ public class Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //useRayCast = PlayerMovement.useRaycast;
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         //Bit shift the index of the layer (8) to geta bit mask
@@ -106,9 +116,9 @@ public class Raycast : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("Note1") || hit.collider.gameObject.CompareTag("Note2")
                     || hit.collider.gameObject.CompareTag("Note3") || hit.collider.gameObject.CompareTag("Note4"))
                 {
-                    isReading = true;
                     if (PlayerMovement.isInteracting)
                     {
+                        isReading = true;
                         FindObjectOfType<AudioManager>().Play("TakePaper");
                         NotesUI.SetActive(true);
                         Time.timeScale = 0f;
@@ -119,6 +129,7 @@ public class Raycast : MonoBehaviour
 
                         if(hit.collider.gameObject.CompareTag("Note1"))
                         {
+                            isReading = true;
                             IGNote1.SetActive(false);
                             Note1.SetActive(true);
                             PlayerMovement.isInteracting = false;
@@ -126,6 +137,7 @@ public class Raycast : MonoBehaviour
 
                         if(hit.collider.gameObject.CompareTag("Note2"))
                         {
+                            isReading = true;
                             IGNote2.SetActive(false);
                             Note2.SetActive(true);
                             PlayerMovement.isInteracting = false;
@@ -133,6 +145,7 @@ public class Raycast : MonoBehaviour
 
                         if(hit.collider.gameObject.CompareTag("Note3"))
                         {
+                            isReading = true;
                             IGNote3.SetActive(false);
                             Note3.SetActive(true);
                             PlayerMovement.isInteracting = false;
@@ -140,6 +153,7 @@ public class Raycast : MonoBehaviour
 
                         if(hit.collider.gameObject.CompareTag("Note4"))
                         {
+                            isReading = true;
                             IGNote4.SetActive(false);
                             Note4.SetActive(true);
                             PlayerMovement.isInteracting = false;
@@ -475,7 +489,6 @@ public class Raycast : MonoBehaviour
                 useEtabli = false;
                 useCage = false;
                 useDoor = false;
-                isReading = false;
                 useStorageLock = false;
                 canInteract = false;
             }

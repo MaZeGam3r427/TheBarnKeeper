@@ -41,6 +41,9 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Pause : " + PauseOpen);
+        Debug.Log("Options : " + OptionsOpen);
+        Debug.Log("Notes : " + Raycast.isReading);
         if (PauseOpen == false && OptionsOpen == false  && Raycast.isReading == false && Input.GetKeyDown(KeyCode.Tab))
         {
             if(InventoryOpen)
